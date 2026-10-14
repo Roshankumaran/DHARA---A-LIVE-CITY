@@ -1,0 +1,61 @@
+{
+  "scope": "Real HTTPS requests and production C# parser; not UnityWebRequest execution",
+  "executedUtc": "2026-10-14T13:46:39.8301397Z",
+  "results": [
+    {
+      "requestedLatitude": 12.97194,
+      "geocodedLatitude": 12.97194,
+      "forecastHours": 48,
+      "timestamp": "2026-10-14T19:15",
+      "passed": true,
+      "geocodedLongitude": 77.59369,
+      "requestedLongitude": 77.59369,
+      "intervalSeconds": 900.0,
+      "location": "Bengaluru"
+    },
+    {
+      "requestedLatitude": 13.08784,
+      "geocodedLatitude": 13.08784,
+      "forecastHours": 48,
+      "timestamp": "2026-10-14T19:15",
+      "passed": true,
+      "geocodedLongitude": 80.27847,
+      "requestedLongitude": 80.27847,
+      "intervalSeconds": 900.0,
+      "location": "Chennai"
+    },
+    {
+      "requestedLatitude": 19.07283,
+      "geocodedLatitude": 19.07283,
+      "forecastHours": 48,
+      "timestamp": "2026-10-14T19:15",
+      "passed": true,
+      "geocodedLongitude": 72.88261,
+      "requestedLongitude": 72.88261,
+      "intervalSeconds": 900.0,
+      "location": "Mumbai"
+    },
+    {
+      "requestedLatitude": 28.62137,
+      "geocodedLatitude": 28.62137,
+      "forecastHours": 48,
+      "timestamp": "2026-10-14T19:15",
+      "passed": true,
+      "geocodedLongitude": 77.2148,
+      "requestedLongitude": 77.2148,
+      "intervalSeconds": 900.0,
+      "location": "Delhi"
+    },
+    {
+      "requestedLatitude": 17.38405,
+      "geocodedLatitude": 17.38405,
+      "forecastHours": 48,
+      "timestamp": "2026-10-14T19:15",
+      "passed": true,
+      "geocodedLongitude": 78.45636,
+      "requestedLongitude": 78.45636,
+      "intervalSeconds": 900.0,
+      "location": "Hyderabad"
+    }
+  ]
+}

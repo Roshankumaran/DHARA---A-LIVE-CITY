@@ -1,0 +1,90 @@
+{
+  "executedUtc": "2026-10-14T13:45:13.8121830Z",
+  "scope": "Compiled production core via PowerShell Add-Type; not Unity Play Mode",
+  "results": [
+    {
+      "name": "Rain increases emission",
+      "passed": true
+    },
+    {
+      "name": "Rain cannot reduce water",
+      "passed": true
+    },
+    {
+      "name": "Lower drainage retains more water",
+      "passed": true
+    },
+    {
+      "name": "Wind increases effect intensity",
+      "passed": true
+    },
+    {
+      "name": "Clouds reduce lighting",
+      "passed": true
+    },
+    {
+      "name": "Scenario reset restores live baseline",
+      "passed": true
+    },
+    {
+      "name": "Missing input pauses safely",
+      "passed": true
+    },
+    {
+      "name": "Water bounded under 10000 extreme updates",
+      "passed": true
+    },
+    {
+      "name": "Nonfinite inputs are sanitized",
+      "passed": true
+    },
+    {
+      "name": "Dry weather removes water",
+      "passed": true
+    },
+    {
+      "name": "Identical inputs produce deterministic state",
+      "passed": true
+    },
+    {
+      "name": "Current rainfall interval conversion",
+      "passed": true
+    },
+    {
+      "name": "Missing and null are not zero",
+      "passed": true
+    },
+    {
+      "name": "Forecast index preserves value and timestamp",
+      "passed": true
+    },
+    {
+      "name": "Failed request status remains available",
+      "passed": true
+    },
+    {
+      "name": "Stale retrieval detected",
+      "passed": true
+    },
+    {
+      "name": "Unchanged inputs do not produce duplicate events",
+      "passed": true
+    },
+    {
+      "name": "Small slider changes eventually log",
+      "passed": true
+    },
+    {
+      "name": "Offline scenario has explicit cloud baseline",
+      "passed": true
+    },
+    {
+      "name": "Strict JSON rejects malformed responses",
+      "passed": true
+    },
+    {
+      "name": "JSON escapes and numeric exponents",
+      "passed": true
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+{"name":"Dhara.Runtime","rootNamespace":"Dhara","references":["Dhara.Core","Unity.TextMeshPro","UnityEngine.UI","Unity.InputSystem","Unity.RenderPipelines.Core.Runtime","Unity.RenderPipelines.Universal.Runtime"],"defineConstraints":["DHARA_READY"]}
