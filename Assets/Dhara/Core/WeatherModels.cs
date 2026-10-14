@@ -13,7 +13,7 @@ namespace Dhara {
     {
         public bool Loading; public string Error; public DateTime? RetrievedUtc;
         public bool Stale => RetrievedUtc.HasValue && DateTime.UtcNow - RetrievedUtc.Value > TimeSpan.FromMinutes(10);
-        public string Label => Loading ? "Retrieving weather…" : Error != null ? (Stale ? "Stale data · " : "") + "Request failed · " + Error : !RetrievedUtc.HasValue ? "No weather data" : Stale ? "Stale weather data" : "Weather model connected";
+        public string Label => Loading ? (Stale ? "Stale data · " : "") + "Retrieving weather…" : Error != null ? (Stale ? "Stale data · " : "") + "Request failed · " + Error : !RetrievedUtc.HasValue ? "No weather data" : Stale ? "Stale weather data" : "Weather model connected";
     }
     public sealed class ApiValues
     {

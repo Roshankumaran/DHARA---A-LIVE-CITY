@@ -1,6 +1,40 @@
 # Verification and remaining work
 
-## Executed on 14 October 2026
+## Existing-project validation pass — 14 October 2026
+
+Project root confirmed: `C:/Users/Roshan/OneDrive/Desktop/DHARA_CODEX`. Inspected the README and this report before changes, then checked `ProjectVersion.txt`, the full manifest/lockfile, scene/bootstrap/material references, all C# sources, five assembly definitions, dependency automation, build settings, and all four scripts under `Tools/`. The recorded Editor is `6000.3.26f1`; the template manifest pins URP `17.0.4`. Package compatibility remains an Editor-resolution check; package versions were not manually replaced.
+
+Executed results:
+
+- Initial standalone baseline: **21 passed, zero failed**. After corrections and regression coverage: **33 passed, zero failed**, compiling the production core through PowerShell `Add-Type`.
+- Initial source check: **13 C# files and five assembly definitions passed**. After adding the data store and editor regression fixture: **15 C# files and five assembly definitions passed**, with zero reported syntax, source-branding, required-reference, or metadata issues. This does not resolve Unity API types.
+- Initial weather run inside the restricted network sandbox: **five requests failed with `No such host is known`**; none was counted as a pass. An allowed network-enabled rerun passed all five locations. The strengthened integration checks then also passed **five of five**: Bengaluru, Chennai, Mumbai, Delhi, and Hyderabad. Each returned **48 hourly records**, of which **28** were future records after production filtering at the tested 19:30 IST valid time. Current and hourly units, interval conversion inputs, and configured coordinates were verified against real responses/geocoding. No fake API response was used as a fallback.
+- Unity CLI reported **zero installed Editors**, **zero running Editor instances**, and `LICENSING_CLIENT_UNAVAILABLE`. Unity Hub was not found in the standard Program Files/user Programs paths or the checked Windows uninstall registry. Windows player support cannot be verified without an Editor. No additional installer retries were made during this validation pass.
+- Unity compilation, Console inspection, scene rendering, manual interaction checks, and Unity Test Runner execution remain **blocked**, not passed. No Windows build was attempted because compilation and scene execution are prerequisites.
+
+Source defects corrected:
+
+- Scene preparation previously recreated the main scene and replaced the build-scene list. It now reuses the existing bootstrap, preserves configuration/other objects and build entries, and fills only missing references. The saved scene and its GUID were not regenerated during this pass.
+- Manual refresh previously cleared the successful same-location weather, forecast, and retrieval timestamp. The shared production data store now retains those through refresh/failure, clears them for a new location, and validates responses before replacement.
+- Forecast refresh previously silently selected the first hour while retaining storage from the old selection. Refresh now retains the selected timestamp, or reports expiry and resets preview storage when the hour disappears.
+- Changing locations could switch simulation mode while leaving What-if controls visible. Controls now subscribe to actual mode/reset changes.
+- Returning to live now clears stored hypothetical overrides; live refresh keeps active hypothetical overrides separate from the live object.
+- Nonfinite required weather inputs pause integration. Stale data stays labelled during refresh. Temperature changes now generate actual drying-rule events; bounded inputs no longer create spurious repeated input-change events.
+- Generated camera/world/dashboard/input objects now share application ownership for cleanup. Wind amplitude and particle drift transition smoothly in source; missing direction does not imply a fabricated north wind. Visual behavior still requires Play Mode verification.
+
+The original **18 Edit Mode and two Play Mode tests** were confirmed in source. The updated suite has **22 Edit Mode tests** (including scene-preservation, cache, forecast-refresh, and mode-reset regressions) and **two expanded Play Mode tests**. **Zero Unity tests were executed**. Standalone tests do not substitute for these runs. No rendered visual defects can be confirmed or declared fixed without the Editor.
+
+Snapshots in `Verification/core-results.json`, `source-results.json`, and `weather-results.json` reflect this pass. Historical notes below describe the initial implementation, not additional successful Unity verification.
+
+Minimum remaining setup and launch:
+
+1. Install Unity Hub, sign in, and install **Unity 6000.3.26f1** for Windows with Windows 64-bit player support; activate the appropriate license. The project uses the Mono scripting backend, so an IL2CPP toolchain is optional.
+2. Add the existing root folder to Hub and open it with that Editor. Let Package Manager resolve; inspect any compatibility errors before changing package versions. Required package setup uses `DHARA > Install or repair dependencies`.
+3. Allow TMP essentials preparation, then run `DHARA > Prepare main scene` if needed. Confirm no Console compilation errors; open `Assets/Scenes/Dhara.unity` and press Play.
+4. Run the 22 Edit Mode and two Play Mode tests, then the manual acceptance pass below. Only after successful scene execution use `DHARA > Build Windows application`.
+5. Expected output is `C:/Users/Roshan/OneDrive/Desktop/DHARA_CODEX/Builds/Windows/DHARA.exe`. This file does **not** currently exist. Distribute its entire output folder after a verified build and standalone smoke test.
+
+## Initial implementation checks — 14 October 2026
 
 - Production core compiled through PowerShell 7 `Add-Type`.
 - **21/21** standalone core checks passed. Coverage includes causal rain/wind/cloud rules, drainage sensitivity, bounds under 10,000 extreme updates, nonfinite input sanitization, deterministic state, scenario reset, missing data, interval conversion, null-preserving JSON, exact forecast indexing, error/stale status, event deduplication, offline scenarios, and malformed JSON rejection.

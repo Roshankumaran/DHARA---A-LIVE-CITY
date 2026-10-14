@@ -1,8 +1,8 @@
 {
-  "executedUtc": "2026-10-14T13:51:22.0208926Z",
   "issues": [],
-  "scope": "Syntax and source checks, not Unity compilation or rendering",
   "assemblies": 5,
-  "sourceFiles": 13,
-  "passed": true
+  "passed": true,
+  "sourceFiles": 15,
+  "executedUtc": "2026-10-14T14:06:45.7746172Z",
+  "scope": "Syntax and source checks, not Unity compilation or rendering"
 }

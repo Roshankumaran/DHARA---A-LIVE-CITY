@@ -11,12 +11,14 @@ namespace Dhara
         public WeatherService Weather { get; private set; }
         public ProceduralCity World { get; private set; }
         public const float SimulatedSecondsPerSecond = 60;
+        public event System.Action ControlsChanged;
         float accumulated;
         int waterBand;
         void Start()
         {
             Application.targetFrameRate=60; Application.runInBackground=true;
             World=new GameObject("Procedural urban district").AddComponent<ProceduralCity>();
+            World.transform.SetParent(transform,false);
             World.SurfaceTemplate=SurfaceTemplate; World.ParticleTemplate=ParticleTemplate; World.Settings=City; World.Generate();
             // Match the central viewport between the persistent monitoring panels.
             World.ViewCamera.rect=new Rect(.19f,.25f,.59f,.65f);
@@ -26,24 +28,26 @@ namespace Dhara
         }
         void ReceiveWeather()
         {
-            Simulation.Live=Weather.Current;
-            if(Simulation.Mode==WorldMode.Forecast)
-                Simulation.Forecast=Weather.Forecast.Count>0 ? Weather.Forecast[0] : null;
+            if(Simulation.UpdateWeather(Weather.Current,Weather.Forecast))
+            {
+                Engine.Reset(); accumulated=0; waterBand=0;
+                Engine.Record("Selected forecast hour is no longer available; preview selection and simulated storage reset.");
+            }
             if(Weather.Status.Error!=null) Engine.Record("Weather request failed; retained data is labelled and simulation remains available. " + Weather.Status.Error);
             else if(Weather.Current!=null) Engine.Record("Weather model updated for " + Location.All[Weather.Selected].Name + " · valid " + Weather.Current.Time + " IST.");
         }
         public void SelectLocation(int index)
         {
+            index=Mathf.Clamp(index,0,Location.All.Length-1);
             SetMode(WorldMode.Live); Simulation.Live=null; Simulation.Forecast=null; Weather.Select(index); Engine.Reset(); waterBand=0;
             Engine.Record("Location changed to " + Location.All[index].Name + "; awaiting weather. Water storage reset.");
         }
         public void SetMode(WorldMode mode)
         {
-            if(mode==WorldMode.WhatIf) Simulation.ResetScenario();
-            if(mode==WorldMode.Forecast) Simulation.Forecast=Weather.Forecast.Count>0 ? Weather.Forecast[0] : null;
-            Simulation.Mode=mode; Engine.Reset(); accumulated=0; waterBand=0;
+            Simulation.ChangeMode(mode,Weather.Forecast);
+            Engine.Reset(); accumulated=0; waterBand=0;
             Engine.Record("Mode changed to " + (mode==WorldMode.WhatIf ? "WHAT-IF" : mode==WorldMode.Forecast ? "FORECAST PREVIEW" : "LIVE CONDITIONS") + "; simulated storage reset.");
-            ApplyInputs();
+            ApplyInputs(); ControlsChanged?.Invoke();
         }
         public void SelectForecast(int index)
         {
@@ -53,8 +57,8 @@ namespace Dhara
         }
         public void ResetScenario()
         {
-            Simulation.ResetScenario(); Engine.Reset(); waterBand=0;
-            Engine.Record("Scenario reset to available live inputs and 12 mm/h drainage; storage reset."); ApplyInputs();
+            Simulation.ResetScenario(); Engine.Reset(); accumulated=0; waterBand=0;
+            Engine.Record("Scenario reset to available live inputs and 12 mm/h drainage; storage reset."); ApplyInputs(); ControlsChanged?.Invoke();
         }
         public void ApplyInputs() => Engine.Step(Simulation.Active,Simulation.Drainage,0);
         void Update()

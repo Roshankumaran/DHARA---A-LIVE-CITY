@@ -26,6 +26,8 @@ namespace Dhara
         Light sunlight;
         ParticleSystem rain;
         float visualWetness;
+        float visualWind;
+        Vector2 visualDrift;
         public Camera ViewCamera { get; private set; }
         Material Material(string name, Color color, float smoothness = .1f)
         {
@@ -122,6 +124,7 @@ namespace Dhara
             RenderSettings.ambientEquatorColor=new Color(.42f,.47f,.46f); RenderSettings.ambientGroundColor=new Color(.22f,.23f,.21f);
             RenderSettings.fog=true; RenderSettings.fogMode=FogMode.ExponentialSquared; RenderSettings.fogDensity=.0018f; RenderSettings.fogColor=new Color(.64f,.72f,.74f);
             var cameraObj=new GameObject("Overview camera"); ViewCamera=cameraObj.AddComponent<Camera>(); cameraObj.tag="MainCamera";
+            cameraObj.transform.SetParent(transform,false);
             ViewCamera.clearFlags=CameraClearFlags.SolidColor; ViewCamera.backgroundColor=new Color(.64f,.72f,.74f); ViewCamera.fieldOfView=43; ViewCamera.nearClipPlane=.3f; ViewCamera.farClipPlane=450;
             cameraObj.AddComponent<AudioListener>(); cameraObj.AddComponent<OrbitCamera>();
             var cameraData=ViewCamera.GetUniversalAdditionalCameraData(); cameraData.renderPostProcessing=true; cameraData.antialiasing=AntialiasingMode.SubpixelMorphologicalAntiAliasing;
@@ -155,9 +158,11 @@ namespace Dhara
             var emission=rain.emission; emission.rateOverTime=Mathf.Lerp(emission.rateOverTime.constant,(float)state.RainIntensity*3500,blend);
             float direction=(float)(weather?.WindDegrees ?? 0)*Mathf.Deg2Rad;
             // Meteorological direction is where wind comes FROM.
-            float drift=(float)state.WindIntensity*9;
-            var velocity=rain.velocityOverLifetime; velocity.x=-Mathf.Sin(direction)*drift; velocity.z=-Mathf.Cos(direction)*drift;
-            for(int i=0;i<Trees.Count;i++) Trees[i].localRotation=Quaternion.Euler(Mathf.Sin(Time.time*1.7f+i)*2.5f*(float)state.WindIntensity,0,Mathf.Cos(Time.time*1.3f+i)*3.5f*(float)state.WindIntensity);
+            visualWind=Mathf.Lerp(visualWind,(float)state.WindIntensity,blend);
+            float drift=Numbers.IsFinite(weather?.WindDegrees) ? visualWind*9 : 0;
+            visualDrift=Vector2.Lerp(visualDrift,new Vector2(-Mathf.Sin(direction)*drift,-Mathf.Cos(direction)*drift),blend);
+            var velocity=rain.velocityOverLifetime; velocity.x=visualDrift.x; velocity.z=visualDrift.y;
+            for(int i=0;i<Trees.Count;i++) Trees[i].localRotation=Quaternion.Euler(Mathf.Sin(Time.time*1.7f+i)*2.5f*visualWind,0,Mathf.Cos(Time.time*1.3f+i)*3.5f*visualWind);
         }
         void OnDestroy() { foreach(var material in generatedMaterials) Destroy(material); }
     }

@@ -9,6 +9,7 @@ using UnityEditor.SceneManagement;
 using UnityEngine;
 using UnityEngine.Rendering;
 using UnityEngine.Rendering.Universal;
+using UnityEngine.SceneManagement;
 
 namespace Dhara.Editor
 {
@@ -49,10 +50,15 @@ namespace Dhara.Editor
             particles.SetFloat("_Surface",1); particles.SetFloat("_Blend",0);
             particles.SetFloat("_SrcBlend",(float)BlendMode.SrcAlpha); particles.SetFloat("_DstBlend",(float)BlendMode.OneMinusSrcAlpha);
             particles.SetFloat("_ZWrite",0); particles.EnableKeyword("_SURFACE_TYPE_TRANSPARENT"); particles.renderQueue=(int)RenderQueue.Transparent;
-            var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
-            var app=new GameObject("DHARA · A Living World").AddComponent<DharaApplication>(); app.SurfaceTemplate=surface; app.ParticleTemplate=particles;
-            EditorSceneManager.SaveScene(scene,ScenePath);
-            EditorBuildSettings.scenes=new[]{new EditorBuildSettingsScene(ScenePath,true)};
+            var scene=File.Exists(ScenePath) ? SceneManager.GetSceneByPath(ScenePath) : default(Scene);
+            if(!scene.IsValid() || !scene.isLoaded)
+                scene=File.Exists(ScenePath) ? EditorSceneManager.OpenScene(ScenePath,OpenSceneMode.Single) : EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Single);
+            EnsureBootstrap(scene,surface,particles);
+            if(scene.isDirty || !File.Exists(ScenePath)) EditorSceneManager.SaveScene(scene,ScenePath);
+            var buildScenes=EditorBuildSettings.scenes.ToList();
+            var main=buildScenes.Find(entry=>entry.path==ScenePath);
+            if(main==null) buildScenes.Add(new EditorBuildSettingsScene(ScenePath,true)); else main.enabled=true;
+            EditorBuildSettings.scenes=buildScenes.ToArray();
             PlayerSettings.companyName="DHARA"; PlayerSettings.productName="DHARA — A Living World";
             PlayerSettings.defaultScreenWidth=1600; PlayerSettings.defaultScreenHeight=1000;
             PlayerSettings.fullScreenMode=FullScreenMode.Windowed; PlayerSettings.resizableWindow=true;
@@ -67,6 +73,23 @@ namespace Dhara.Editor
             if(material!=null) return material;
             var shader=Shader.Find(shaderName); if(shader==null) throw new InvalidOperationException("Missing URP shader: "+shaderName);
             material=new Material(shader); AssetDatabase.CreateAsset(material,path); return material;
+        }
+        public static DharaApplication EnsureBootstrap(Scene scene,Material surface,Material particles)
+        {
+            var applications=scene.GetRootGameObjects().SelectMany(root=>root.GetComponentsInChildren<DharaApplication>(true)).ToArray();
+            if(applications.Length>1) throw new InvalidOperationException("Multiple DHARA bootstrap components exist; keep one before preparation.");
+            DharaApplication app;
+            bool changed=false;
+            if(applications.Length==0)
+            {
+                var obj=new GameObject("DHARA · A Living World"); SceneManager.MoveGameObjectToScene(obj,scene);
+                app=obj.AddComponent<DharaApplication>(); changed=true;
+            }
+            else app=applications[0];
+            if(app.SurfaceTemplate==null && surface!=null) { app.SurfaceTemplate=surface; changed=true; }
+            if(app.ParticleTemplate==null && particles!=null) { app.ParticleTemplate=particles; changed=true; }
+            if(changed) { EditorUtility.SetDirty(app); EditorSceneManager.MarkSceneDirty(scene); }
+            return app;
         }
         static void EssentialsImported(string packageName)
         {

@@ -2,7 +2,7 @@
 
 A Unity environmental simulation prototype for Innovation Mission 4: Procedural Environments — Real-Time API Integration.
 
-**Status:** application source, a saved bootstrap scene, official URP settings, setup automation, and tests are present. The production C# core passed 21 standalone checks; real Open-Meteo requests and parsing passed for all five locations. Unity compilation, Play Mode, visual quality, and Windows deployment remain **unverified** because no Editor could be installed in this session. No Windows executable has been generated. See [verification details](docs/VERIFICATION.md).
+**Status:** the existing implementation has been inspected and corrected without replacing its scene, assets, GUIDs, or package configuration. The production C# core passed **33 standalone checks**; real Open-Meteo requests, parsing, response units, coordinates, and future-forecast filtering passed for all five locations. Unity compilation, Play Mode, visual quality, and Windows deployment remain **unverified** because no Editor is installed. No Windows executable has been generated. See [verification details](docs/VERIFICATION.md).
 
 ## Open and run
 
@@ -10,7 +10,7 @@ A Unity environmental simulation prototype for Innovation Mission 4: Procedural 
 2. Add this folder as a project in Hub and open it. Keep internet access available during the first package import.
 3. `DharaDependencies` resolves required packages through Unity's Package Manager API. Once successful, it adds `DHARA_READY` to Standalone scripting defines. Runtime/editor/test assemblies are gated until dependencies resolve.
 4. First-open preparation imports the official TextMeshPro essentials, assigns the URP asset, prepares `Assets/Scenes/Dhara.unity`, and configures Windows build settings. Wait for package/font imports and script recompilation to finish. A successful preparation writes `Assets/Dhara/SetupComplete.txt`.
-5. If preparation reports an error, resolve it in the Console and choose **DHARA > Install or repair dependencies**, then **DHARA > Prepare main scene**. TMP essentials can also be imported through **Window > TextMeshPro > Import TMP Essential Resources**. Preparation rebuilds the bootstrap scene; save custom work elsewhere before rerunning it.
+5. If preparation reports an error, resolve it in the Console and choose **DHARA > Install or repair dependencies**, then **DHARA > Prepare main scene**. TMP essentials can also be imported through **Window > TextMeshPro > Import TMP Essential Resources**. Preparation preserves the existing scene and bootstrap configuration, fills missing material references, and keeps other build scenes. A new bootstrap or scene is created only if it is missing. Multiple bootstraps are reported as an error instead of being deleted.
 6. Open `Assets/Scenes/Dhara.unity` and press **Play**. The bootstrap component generates the district, camera, effects, Canvas dashboard, and weather service at runtime. The 3D world is therefore visible in Play Mode, not in the saved scene hierarchy before Play.
 
 Use a landscape Game view, preferably **1600 × 1000**. Package/setup automation is provided but could not be executed here; address any Console compilation errors before continuing.
@@ -18,10 +18,10 @@ Use a landscape Game view, preferably **1600 × 1000**. Package/setup automation
 ## Use the simulation
 
 - Select **Bengaluru, Chennai, Mumbai, Delhi, or Hyderabad** in the header. Changing location clears the previous location's data and simulated storage.
-- **LIVE WORLD** uses current weather-model estimates. The dashboard reports source, valid time in IST, retrieval time in UTC, missing fields, request failures, and stale data after ten minutes. These are model estimates rather than physical-sensor readings. Requests refresh every five minutes, time out after 20 seconds, and retry after 15/30/60/120/240/300 seconds on failure. **Refresh weather** retries immediately.
+- **LIVE WORLD** uses current weather-model estimates. The dashboard reports source, valid time in IST, retrieval time in UTC, missing fields, request failures, and stale data after ten minutes, including during refresh. These are model estimates rather than physical-sensor readings. Requests refresh every five minutes, time out after 20 seconds, and retry after 15/30/60/120/240/300 seconds on failure. **Refresh weather** retries immediately while retaining the current location's last successful data.
 - **WHAT-IF LAB** changes rainfall, wind speed, temperature, and drainage without extra network requests. Inputs are hypothetical. Other available weather values remain from the latest live baseline. Offline scenarios explicitly assume 50% cloud cover and leave unavailable solar radiation, humidity, and wind direction unreported.
-- **Reset scenario** restores available live rainfall/wind/temperature and 12 mm/h nominal drainage, then clears simulated storage. **Return to live** leaves the scenario and restores current model inputs. Each mode change starts water storage at zero, so scenario water cannot leak into live output.
-- **FORECAST PREVIEW** selects actual returned hourly timestamps. Hour offset zero is the first available future hourly value; the selected valid time is displayed. Each selection resets storage and applies that hour's weather as a constant input. This previews conditions at a timestamp; it does not integrate the intervening forecast hours.
+- **Reset scenario** restores available live rainfall/wind/temperature and 12 mm/h nominal drainage, then clears simulated storage. **Return to live** clears hypothetical overrides and restores current model inputs. Location changes also switch the visible controls back to live mode. Each mode change starts water storage at zero, so scenario water cannot leak into live output.
+- **FORECAST PREVIEW** selects actual returned hourly timestamps. Hour offset zero is the first available future hourly value; the selected valid time is displayed. Refresh preserves the selected timestamp while it remains available. If that hour expires, the preview advances to the first available hour and resets storage with a log entry. Each manual selection also resets storage and applies that hour's weather as a constant input. This previews conditions at a timestamp; it does not integrate the intervening forecast hours.
 - Right mouse drag orbits, middle drag or WASD/arrows pans, wheel zooms, and **Home** or **Reset camera** restores the overview. Camera mouse navigation yields to dashboard controls.
 
 ## Environment and model
@@ -68,9 +68,9 @@ From PowerShell 7 in this directory:
 .\Tools\Test-Source.ps1
 ```
 
-The first compiles the production engine/parser with PowerShell's C# compiler and runs 21 checks without Unity. The second makes real HTTPS requests for all five locations using the production request builder/parser; it needs network access. The third parses C# syntax, validates assembly JSON and local asset GUID references, and checks visible string literals for prohibited branding. These are narrower than compiling or rendering in Unity. Reports are written under ignored `TestResults/`.
+The first compiles the production engine/parser/data store with PowerShell's C# compiler and runs 33 checks without Unity. The second makes real HTTPS requests for all five locations using the production request builder/parser/store, and checks units and geocoded coordinates; it needs network access. The third parses C# syntax, validates assembly JSON and local asset GUID references, and checks visible string literals for prohibited branding. These are narrower than compiling or rendering in Unity. Reports are written under ignored `TestResults/`.
 
-In Unity, open **Window > General > Test Runner**. Run the 18 **EditMode** tests and the two **PlayMode** tests after preparation. Play Mode tests cover scene startup, scenario-driven water/rain/wind, and a real failed network request. They were authored but **not executed in this session**. Perform the manual checks in [verification details](docs/VERIFICATION.md) before presenting the application.
+In Unity, open **Window > General > Test Runner**. Run the 22 **EditMode** tests and the two **PlayMode** tests after preparation. The original counts were 18 and two; four Edit Mode regression tests have been added. Play Mode tests cover scene startup, scenario-driven water/rain/wind, control-panel synchronization, location clearing, and a real failed network request. They were authored but **not executed**. Perform the manual checks in [verification details](docs/VERIFICATION.md) before presenting the application.
 
 ## Windows build
 

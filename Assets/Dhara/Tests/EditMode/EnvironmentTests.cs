@@ -24,5 +24,27 @@ namespace Dhara.Tests
         [Test] public void LogIsBoundedAndDeduplicated() { var engine=new CausalEnvironmentEngine();for(int i=0;i<100;i++)engine.Step(Weather(),12,6);Assert.That(engine.Events.Count,Is.Zero);for(int i=0;i<100;i++)engine.Record(i.ToString());Assert.That(engine.Events.Count,Is.EqualTo(30)); }
         [Test] public void SmallSliderMovementsEventuallyLog() { var engine=new CausalEnvironmentEngine();for(int i=0;i<20;i++)engine.Step(Weather(i*.1),12,0);Assert.That(engine.Events.Count,Is.GreaterThan(0)); }
         [Test] public void OfflineScenarioIsExplicitAndUsable() { var state=new SimulationState { Mode=WorldMode.WhatIf };state.ResetScenario();Assert.That(state.Active.HasSimulationInputs,Is.True);Assert.That(state.Active.SolarWm2,Is.Null);Assert.That(state.Active.CloudPercent,Is.EqualTo(50)); }
+        [Test] public void RefreshRetainsDataButLocationChangeClearsIt()
+        {
+            var store=new WeatherDataStore();store.Accept(WeatherJson.Parse("{\"current\":{\"time\":\"2026-01-01T12:00\"}}"),DateTime.UtcNow);
+            var original=store.Current;var retrieved=store.Status.RetrievedUtc;
+            store.BeginRequest(false);store.Fail("Network unavailable");
+            Assert.That(store.Current,Is.SameAs(original));Assert.That(store.Status.RetrievedUtc,Is.EqualTo(retrieved));
+            store.BeginRequest(true);Assert.That(store.Current,Is.Null);Assert.That(store.Status.RetrievedUtc,Is.Null);
+        }
+        [Test] public void ForecastRefreshPreservesSelectedHourAndDetectsExpiry()
+        {
+            var a=Weather();a.Time="2026-01-01T13:00";var b=Weather();b.Time="2026-01-01T14:00";
+            var state=new SimulationState { Mode=WorldMode.Forecast,Forecast=b };
+            var changed=state.UpdateWeather(Weather(),new[]{a,b});Assert.That(changed,Is.False);Assert.That(state.Active,Is.SameAs(b));
+            changed=state.UpdateWeather(Weather(),new[]{a});Assert.That(changed,Is.True);Assert.That(state.Active,Is.SameAs(a));
+        }
+        [Test] public void ReturnToLiveClearsHypotheticalOverrides()
+        {
+            var state=new SimulationState { Mode=WorldMode.WhatIf,Live=Weather(8,22) };
+            state.Scenario.RainMmPerHour=99;state.Scenario.DrainageMmPerHour=0;
+            state.ChangeMode(WorldMode.Live,null);Assert.That(state.Active,Is.SameAs(state.Live));
+            Assert.That(state.Scenario.RainMmPerHour,Is.EqualTo(8));Assert.That(state.Scenario.DrainageMmPerHour,Is.EqualTo(12));
+        }
     }
 }

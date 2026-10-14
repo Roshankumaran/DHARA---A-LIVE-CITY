@@ -1,1 +1,1 @@
-{"name":"Dhara.Tests","rootNamespace":"Dhara.Tests","references":["Dhara.Core","Dhara.Runtime"],"includePlatforms":["Editor"],"optionalUnityReferences":["TestAssemblies"],"defineConstraints":["DHARA_READY"]}
+{"name":"Dhara.Tests","rootNamespace":"Dhara.Tests","references":["Dhara.Core","Dhara.Runtime","Dhara.Editor"],"includePlatforms":["Editor"],"optionalUnityReferences":["TestAssemblies"],"defineConstraints":["DHARA_READY"]}

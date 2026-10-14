@@ -1,6 +1,6 @@
 $ErrorActionPreference = 'Stop'
 Set-Location (Split-Path $PSScriptRoot -Parent)
-Add-Type -Path 'Assets/Dhara/Core/EnvironmentModel.cs','Assets/Dhara/Core/WeatherModels.cs','Assets/Dhara/Core/WeatherJson.cs'
+Add-Type -Path (Get-ChildItem 'Assets/Dhara/Core/*.cs').FullName
 $results = [System.Collections.Generic.List[object]]::new()
 function Check([string]$name,[scriptblock]$test) {
     try { & $test; $results.Add([pscustomobject]@{name=$name;passed=$true}); Write-Output "PASS $name" }
@@ -31,6 +31,46 @@ Check 'Small slider changes eventually log' { $e=[Dhara.CausalEnvironmentEngine]
 Check 'Offline scenario has explicit cloud baseline' { $s=[Dhara.SimulationState]::new();$s.Mode=[Dhara.WorldMode]::WhatIf;$s.ResetScenario();Assert ($s.Active.HasSimulationInputs -and $null -eq $s.Active.SolarWm2 -and $s.Active.CloudPercent -eq 50) }
 Check 'Strict JSON rejects malformed responses' { foreach($json in @('{','{"x":01}','{"x":NaN}','{"x":1,}','[] trailing','{"x":1,"x":2}')) { $failed=$false;try {[void][Dhara.WeatherJson]::Parse($json)}catch {$failed=$true};Assert $failed $json } }
 Check 'JSON escapes and numeric exponents' { $r=[Dhara.WeatherJson]::Parse('{"current":{"time":"line\n\u0041","rain":2e-1,"interval":900}}');Assert ($r.current.time -eq "line`nA" -and [Math]::Abs($r.current.Convert().RainMmPerHour-.8) -lt .000001) }
+Check 'Refresh failure preserves same-location data' {
+    $store=[Dhara.WeatherDataStore]::new();$response=[Dhara.WeatherJson]::Parse('{"current":{"time":"2026-01-01T12:00","rain":2,"interval":900},"hourly":{"time":["2026-01-01T13:00"],"rain":[3]}}')
+    $store.Accept($response,[DateTime]::UtcNow);$original=$store.Current;$retrieved=$store.Status.RetrievedUtc
+    $store.BeginRequest($false);$store.Fail('Network unavailable')
+    Assert ([object]::ReferenceEquals($store.Current,$original) -and $store.Status.RetrievedUtc -eq $retrieved -and $store.Forecast.Count -eq 1 -and -not $store.Status.Loading)
+}
+Check 'Location change clears unrelated data and timestamp' {
+    $store=[Dhara.WeatherDataStore]::new();$store.Accept([Dhara.WeatherJson]::Parse('{"current":{"time":"2026-01-01T12:00"}}'),[DateTime]::UtcNow)
+    $store.BeginRequest($true);Assert ($null -eq $store.Current -and $store.Forecast.Count -eq 0 -and $null -eq $store.Status.RetrievedUtc -and $store.Status.Loading)
+}
+Check 'Malformed refresh is rejected without replacing data' {
+    $store=[Dhara.WeatherDataStore]::new();$store.Accept([Dhara.WeatherJson]::Parse('{"current":{"time":"2026-01-01T12:00"}}'),[DateTime]::UtcNow);$original=$store.Current
+    $rejected=$false;try {$store.Accept([Dhara.WeatherJson]::Parse('{"current":{"time":"invalid"}}'),[DateTime]::UtcNow)}catch {$rejected=$true}
+    Assert ($rejected -and [object]::ReferenceEquals($store.Current,$original))
+}
+Check 'Forecast refresh retains selected timestamp and updates values' {
+    $s=[Dhara.SimulationState]::new();$a=Weather;$a.Time='2026-01-01T13:00';$b=Weather;$b.Time='2026-01-01T14:00';$list=[Collections.Generic.List[Dhara.WeatherData]]::new();$list.Add($a);$list.Add($b)
+    $s.ChangeMode([Dhara.WorldMode]::Forecast,$list);$s.Forecast=$b;$new=$b.Copy();$new.RainMmPerHour=42;$list[1]=$new
+    $changed=$s.UpdateWeather((Weather),$list);Assert (-not $changed -and $s.Forecast.Time -eq $b.Time -and $s.Active.RainMmPerHour -eq 42)
+}
+Check 'Expired forecast selection requests storage reset' {
+    $s=[Dhara.SimulationState]::new();$a=Weather;$a.Time='2026-01-01T13:00';$b=Weather;$b.Time='2026-01-01T14:00';$s.Forecast=$a;$s.Mode=[Dhara.WorldMode]::Forecast
+    $list=[Collections.Generic.List[Dhara.WeatherData]]::new();$list.Add($b);Assert ($s.UpdateWeather((Weather),$list) -and $s.Active.Time -eq $b.Time)
+}
+Check 'Returning to live clears hypothetical overrides' {
+    $s=[Dhara.SimulationState]::new();$s.Live=Weather 8 22;$s.Mode=[Dhara.WorldMode]::WhatIf;$s.Scenario.RainMmPerHour=99;$s.Scenario.DrainageMmPerHour=0
+    $s.ChangeMode([Dhara.WorldMode]::Live,$null);Assert ($s.Active.RainMmPerHour -eq 8 -and $s.Scenario.RainMmPerHour -eq 8 -and $s.Scenario.DrainageMmPerHour -eq 12)
+}
+Check 'Live refresh preserves active hypothetical overrides' {
+    $s=[Dhara.SimulationState]::new();$s.Live=Weather;$s.Mode=[Dhara.WorldMode]::WhatIf;$s.Scenario.RainMmPerHour=99
+    [void]$s.UpdateWeather((Weather 2 10 70),$null);Assert ($s.Active.RainMmPerHour -eq 99 -and $s.Active.CloudPercent -eq 70 -and $s.Live.RainMmPerHour -eq 2)
+}
+Check 'Stale data remains identified during refresh' { $s=[Dhara.DataSourceStatus]::new();$s.RetrievedUtc=[DateTime]::UtcNow.AddMinutes(-11);$s.Loading=$true;Assert ($s.Label.Contains('Stale')) }
+Check 'Nonfinite weather inputs pause integration' { $e=[Dhara.CausalEnvironmentEngine]::new();$w=Weather;$w.WindKmh=[double]::NaN;$e.Step($w,12,6);Assert ($e.State.ElapsedSimulatedSeconds -eq 0) }
+Check 'Rain increases wetness and heat increases drying' {
+    $a=[Dhara.CausalEnvironmentEngine]::new();$b=[Dhara.CausalEnvironmentEngine]::new();$a.Step((Weather 0),12,60);$b.Step((Weather 40),12,60)
+    Assert ($b.State.Wetness -gt $a.State.Wetness);Assert ([Dhara.WaterAccumulationModel]::Step(20,0,0,45,600) -lt [Dhara.WaterAccumulationModel]::Step(20,0,0,10,600))
+}
+Check 'Temperature changes produce an actual causal event' { $e=[Dhara.CausalEnvironmentEngine]::new();$w=Weather;$e.Step($w,12,6);$w.Temperature=40;$e.Step($w,12,6);Assert ($e.Events.Count -eq 1 -and $e.Events[0].Message.Contains('Temperature')) }
+Check 'Bounded inputs do not fabricate repeated change events' { $e=[Dhara.CausalEnvironmentEngine]::new();$w=Weather 300 250 150;$w.Temperature=100;for($i=0;$i -lt 10;$i++) {$e.Step($w,12,6)};Assert ($e.Events.Count -eq 0) }
 New-Item -ItemType Directory -Path 'TestResults' -Force | Out-Null
 @{ executedUtc=[DateTime]::UtcNow.ToString('o');scope='Compiled production core via PowerShell Add-Type; not Unity Play Mode';results=$results.ToArray() } | ConvertTo-Json -Depth 6 | Set-Content 'TestResults/core-results.json'
 if(($results | Where-Object { -not $_.passed }).Count -gt 0) { exit 1 }

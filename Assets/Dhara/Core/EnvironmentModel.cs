@@ -6,6 +6,7 @@ namespace Dhara
     public enum WorldMode { Live, Forecast, WhatIf }
     public static class Numbers
     {
+        public static bool IsFinite(double? value) => value.HasValue && !double.IsNaN(value.Value) && !double.IsInfinity(value.Value);
         public static double Clamp(double value, double min, double max) => double.IsNaN(value) || double.IsInfinity(value) ? min : Math.Max(min, Math.Min(max, value));
     }
     [Serializable]
@@ -14,7 +15,7 @@ namespace Dhara
         public string Time;
         public double? Temperature, RainMmPerHour, PrecipitationMm, WindKmh, WindDegrees, CloudPercent, HumidityPercent, SolarWm2;
         public WeatherData Copy() => (WeatherData)MemberwiseClone();
-        public bool HasSimulationInputs => Temperature.HasValue && RainMmPerHour.HasValue && WindKmh.HasValue && CloudPercent.HasValue;
+        public bool HasSimulationInputs => Numbers.IsFinite(Temperature) && Numbers.IsFinite(RainMmPerHour) && Numbers.IsFinite(WindKmh) && Numbers.IsFinite(CloudPercent);
     }
     public sealed class EnvironmentState
     {
@@ -70,16 +71,18 @@ namespace Dhara
             double rain = Numbers.Clamp(input.RainMmPerHour.Value, 0, 200);
             double wind = Numbers.Clamp(input.WindKmh.Value, 0, 180);
             double cloud = Numbers.Clamp(input.CloudPercent.Value, 0, 100);
+            double temperature = Numbers.Clamp(input.Temperature.Value, -30, 60);
             if (previous != null)
             {
                 if (Math.Abs(rain - previous.RainMmPerHour.Value) >= 0.5) { Record($"Rainfall {previous.RainMmPerHour:0.0} → {rain:0.0} mm/h; rain emission and wetness target changed."); previous.RainMmPerHour=rain; }
                 if (Math.Abs(wind - previous.WindKmh.Value) >= 2) { Record($"Wind {previous.WindKmh:0} → {wind:0} km/h; vegetation sway and particle drift changed."); previous.WindKmh=wind; }
                 if (Math.Abs(cloud - previous.CloudPercent.Value) >= 5) { Record($"Cloud cover {previous.CloudPercent:0} → {cloud:0}%; daylight target changed."); previous.CloudPercent=cloud; }
                 if (Math.Abs(drainage - previousDrainage) >= 0.1) { Record($"Drainage {previousDrainage:0.0} → {drainage:0.0} mm/h; removal rate changed to {drainage * .8:0.0} mm/h."); previousDrainage=drainage; }
+                if (Math.Abs(temperature - previous.Temperature.Value) >= 0.5) { Record($"Temperature {previous.Temperature:0.0} → {temperature:0.0} °C; temperature-dependent drying rate changed."); previous.Temperature=temperature; }
             }
-            if (previous == null) { previous = input.Copy(); previousDrainage = drainage; }
+            if (previous == null) { previous = input.Copy(); previous.RainMmPerHour=rain; previous.WindKmh=wind; previous.CloudPercent=cloud; previous.Temperature=temperature; previousDrainage = drainage; }
             double dt = Numbers.Clamp(seconds, 0, 3600);
-            State.WaterMm = WaterAccumulationModel.Step(State.WaterMm, rain, drainage, input.Temperature.Value, dt);
+            State.WaterMm = WaterAccumulationModel.Step(State.WaterMm, rain, drainage, temperature, dt);
             double wetTarget = Math.Min(1, rain / 5 + State.WaterMm / 20);
             double blend = 1 - Math.Exp(-dt / 45);
             State.Wetness += (wetTarget - State.Wetness) * blend;
@@ -98,6 +101,28 @@ namespace Dhara
         public ScenarioOverrides Scenario = new ScenarioOverrides();
         public double Drainage => Mode == WorldMode.WhatIf ? Scenario.DrainageMmPerHour : 12;
         public WeatherData Active => Mode == WorldMode.WhatIf ? Scenario.Apply(Live) : Mode == WorldMode.Forecast ? Forecast : Live;
+        public void ChangeMode(WorldMode mode, IList<WeatherData> forecasts)
+        {
+            ResetScenario(); // Clear hypothetical overrides whenever a mode is selected.
+            Mode=mode;
+            Forecast=mode==WorldMode.Forecast && forecasts!=null && forecasts.Count>0 ? forecasts[0] : null;
+        }
+        public bool UpdateWeather(WeatherData live, IList<WeatherData> forecasts)
+        {
+            Live=live;
+            if(Mode!=WorldMode.WhatIf) ResetScenario();
+            if(Mode!=WorldMode.Forecast) return false;
+            string previousTime=Forecast?.Time;
+            WeatherData selected=null;
+            if(forecasts!=null)
+            {
+                for(int i=0;i<forecasts.Count;i++)
+                    if(forecasts[i]?.Time==previousTime) { selected=forecasts[i]; break; }
+                if(selected==null && forecasts.Count>0) selected=forecasts[0];
+            }
+            Forecast=selected;
+            return previousTime!=Forecast?.Time;
+        }
         public void ResetScenario()
         {
             Scenario = new ScenarioOverrides { RainMmPerHour = Live?.RainMmPerHour ?? 0, WindKmh = Live?.WindKmh ?? 0, Temperature = Live?.Temperature ?? 25 };

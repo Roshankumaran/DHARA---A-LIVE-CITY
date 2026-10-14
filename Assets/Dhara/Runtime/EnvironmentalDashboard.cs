@@ -60,10 +60,12 @@ namespace Dhara
         {
             app=application;
             var canvasObj=new GameObject("Environmental monitoring dashboard",typeof(RectTransform),typeof(Canvas),typeof(UnityEngine.UI.CanvasScaler),typeof(UnityEngine.UI.GraphicRaycaster));
+            canvasObj.transform.SetParent(app.transform,false);
             var canvas=canvasObj.GetComponent<Canvas>(); canvas.renderMode=RenderMode.ScreenSpaceOverlay;
             var scaler=canvasObj.GetComponent<UnityEngine.UI.CanvasScaler>(); scaler.uiScaleMode=UnityEngine.UI.CanvasScaler.ScaleMode.ScaleWithScreenSize;
             scaler.referenceResolution=new Vector2(1600,1000); scaler.matchWidthOrHeight=.5f;
             var eventSystem=new GameObject("Dashboard input",typeof(EventSystem),typeof(InputSystemUIInputModule));
+            eventSystem.transform.SetParent(app.transform,false);
             var root=canvasObj.transform;
             var header=Region("Header",root,new Vector2(0,.90f),Vector2.one,panel);
             Text(header,"DHARA",32,ink,new Vector2(0,.35f),new Vector2(.14f,1));
@@ -100,7 +102,7 @@ namespace Dhara
             live=Region("Live controls",footer,new Vector2(.01f,.13f),new Vector2(.99f,.77f));
             Text(live,"A compact urban environment responding to weather-model inputs.\nOpen WHAT-IF LAB to explore rainfall, wind, temperature and drainage.\nRight drag: orbit  ·  Middle drag / WASD: pan  ·  Scroll: zoom  ·  Home: reset view",17,ink,Vector2.zero,new Vector2(.8f,1));
             Text(footer,"SIMULATED OUTPUTS · 60× water-model clock · effective surface storage, not a calibrated flood forecast · generic district, not a city reconstruction",12,muted,Vector2.zero,new Vector2(1,.13f));
-            Sync();
+            app.ControlsChanged+=Sync; Sync();
         }
         void Sync()
         {
@@ -117,6 +119,7 @@ namespace Dhara
             for(int i=0;i<tabs.Count;i++) tabs[i].GetComponent<UnityEngine.UI.Image>().color=i==(int)active ? new Color(.15f,.32f,.30f) : raised;
         }
         static string Value(double? value,string unit,string format="0.0") => value.HasValue && !double.IsNaN(value.Value) && !double.IsInfinity(value.Value) ? value.Value.ToString(format)+" "+unit : "Unavailable";
+        void OnDestroy() { if(app!=null) app.ControlsChanged-=Sync; }
         void Update()
         {
             if(app==null || Time.unscaledTime<nextRefresh) return; nextRefresh=Time.unscaledTime+.25f;
