@@ -1,0 +1,22 @@
+{
+  "verifiedUtc": "2026-10-14T16:32:30.4375044Z",
+  "buildResult": "Succeeded",
+  "editorVersion": "6000.3.26f1",
+  "target": "StandaloneWindows64",
+  "executable": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX\\Builds\\Windows\\DHARA.exe",
+  "runtimeAssemblySha256": "9DFB47303E0060DD42107E5CCA227782D8DD9378CEB45172D1A2BA2CF16D2606",
+  "totalBytes": 104638339.0,
+  "editModePassed": 22,
+  "playModePassed": 8,
+  "standaloneSmokeTest": "Startup, live location change, all four scenario sliders, forecast selection, live restoration and normal exit observed",
+  "screenshots": [
+    "Screenshots/standalone-live.png",
+    "Screenshots/standalone-what-if.png",
+    "Screenshots/standalone-forecast.png",
+    "Screenshots/standalone-final.png"
+  ],
+  "correctiveRebuildJob": "fa67bbf0a5444e94b518c8d961f89a58",
+  "finalConsoleErrors": 0,
+  "finalConsoleWarnings": 1,
+  "finalStartup": "Final release ZIP extracted to a fresh directory and launched; live Bengaluru then Chennai retrieval and rendering observed."
+}

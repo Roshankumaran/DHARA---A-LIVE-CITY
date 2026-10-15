@@ -1,0 +1,36 @@
+{
+  "success": true,
+  "command": "command eval",
+  "data": {
+    "command": "eval",
+    "parameters": {
+      "code": "return new { version=UnityEngine.Application.unityVersion, backend=UnityEditor.PlayerSettings.GetScriptingBackend(UnityEditor.Build.NamedBuildTarget.Standalone).ToString(), target=UnityEditor.EditorUserBuildSettings.activeBuildTarget.ToString(), pipeline=UnityEngine.Rendering.GraphicsSettings.defaultRenderPipeline.name, font=TMPro.TMP_Settings.defaultFontAsset.name, scenes=UnityEditor.EditorBuildSettings.scenes };"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "version": "6000.3.26f1",
+        "backend": "Mono2x",
+        "target": "StandaloneWindows64",
+        "pipeline": "PC_RPAsset",
+        "font": "LiberationSans SDF",
+        "scenes": [
+          {
+            "enabled": true,
+            "path": "Assets/Scenes/Dhara.unity",
+            "guid": {}
+          }
+        ]
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

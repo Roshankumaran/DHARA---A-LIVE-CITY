@@ -1,0 +1,418 @@
+[
+  {
+    "path": "Assets/Dhara/Core/AirQualityData.cs",
+    "sha256": "9A7E77A6B0BDB316C2D0BE903872D0694398932D84EF8704853AF4671871D5ED"
+  },
+  {
+    "path": "Assets/Dhara/Core/AirQualityData.cs.meta",
+    "sha256": "D66DE73F55E349CEB672C6ABB391AB575AB1347ABB8B3FC9C1807BCDF31EE48A"
+  },
+  {
+    "path": "Assets/Dhara/Core/Dhara.Core.asmdef",
+    "sha256": "07E32E0D008BF8152D7193635A5C524331A3B3F48D84EE13A2FFFF9FEE9F2198"
+  },
+  {
+    "path": "Assets/Dhara/Core/Dhara.Core.asmdef.meta",
+    "sha256": "B663BB61359A451EF290AB660482D047261C49C0DC8DC48B497F16E7E3067725"
+  },
+  {
+    "path": "Assets/Dhara/Core/DistrictExperiment.cs",
+    "sha256": "7FF2B15584DEFE3D402707950B0239540EDCB7176A24E6170FDB26523C945BF7"
+  },
+  {
+    "path": "Assets/Dhara/Core/DistrictExperiment.cs.meta",
+    "sha256": "7831D21E015DA89F6F5FD9905FB76EB6D87A809C9A5B3F23733E716AB23CD50C"
+  },
+  {
+    "path": "Assets/Dhara/Core/DistrictHydrology.cs",
+    "sha256": "3CD8802FC1ABDE727594E9BC515DEFBBFCFCB08E43AF3778FE24057778FA12F4"
+  },
+  {
+    "path": "Assets/Dhara/Core/DistrictHydrology.cs.meta",
+    "sha256": "11FE3F3CF653C4968E31322B6605C8E5E7C4851069471404542F961DC13F8820"
+  },
+  {
+    "path": "Assets/Dhara/Core/DrainageExperiment.cs",
+    "sha256": "DCC1A228CAF8D4EFAEFEEA6D78F8A8BA74FA9318741A25A3BBEE61FB4D7DC9C0"
+  },
+  {
+    "path": "Assets/Dhara/Core/DrainageExperiment.cs.meta",
+    "sha256": "C71FE3A586F68B333C66E4042C31D1BE2851DCBDFF9E0A2BC9E81006FBB870F8"
+  },
+  {
+    "path": "Assets/Dhara/Core/EnvironmentModel.cs",
+    "sha256": "3BCA8016AA4B94F31118DE6BC7FDEE0AAFF08430842C10713D0988E67DC6915E"
+  },
+  {
+    "path": "Assets/Dhara/Core/EnvironmentModel.cs.meta",
+    "sha256": "C57443370EBFB503C73B97E1A244BD457845C311B1D0937FD3BC50783EBEF157"
+  },
+  {
+    "path": "Assets/Dhara/Core/HistoricalWeather.cs",
+    "sha256": "E2D810E40AA13A8135743E82CE658CBCF661654CE191D2133D46C35E67ACBC66"
+  },
+  {
+    "path": "Assets/Dhara/Core/HistoricalWeather.cs.meta",
+    "sha256": "08DD0E13BD3F319CE2CEBDB172E0BA2B9D1B5DDE21C38B71730E2A71DCC8D433"
+  },
+  {
+    "path": "Assets/Dhara/Core/ImpactTrace.cs",
+    "sha256": "2E7A99944F48A4C7B5E4238EA63FD22970E33B9079E0F4E402980A8FB74D9B7F"
+  },
+  {
+    "path": "Assets/Dhara/Core/ImpactTrace.cs.meta",
+    "sha256": "771A91BF182D0D2C3E2BAB73AF0DBFA34D3A472D8DD327975519861795E515B3"
+  },
+  {
+    "path": "Assets/Dhara/Core/InterventionPlanner.cs",
+    "sha256": "F473A9446FEFE513FDACBD049A7289F392893505CFFF99BF2B573DBD01ABAF3E"
+  },
+  {
+    "path": "Assets/Dhara/Core/InterventionPlanner.cs.meta",
+    "sha256": "696FF6D6D7D468E5DB5DB1A5FBB9696991C2154FE4DA16E1DFE9131E0C548986"
+  },
+  {
+    "path": "Assets/Dhara/Core/ScenarioReport.cs",
+    "sha256": "4A1A0E8D5D764D9037216A1A3F61CA02CC50473D5A54CFBDB9C25A7E9F6F61E9"
+  },
+  {
+    "path": "Assets/Dhara/Core/ScenarioReport.cs.meta",
+    "sha256": "4769F27545678BA36839C55C4BB68FA4C87DD80928AA4091ECDC4F10B747C1C5"
+  },
+  {
+    "path": "Assets/Dhara/Core/SensitivityAnalysis.cs",
+    "sha256": "C69AF023856FCE515EE5727895A2E945974201A782F2751F1777D4048EECEB74"
+  },
+  {
+    "path": "Assets/Dhara/Core/SensitivityAnalysis.cs.meta",
+    "sha256": "1B89C1DCBDEE507EB209B8A1F01D31C7DAC59896B5B9EE7BDC6435DFA5D5346F"
+  },
+  {
+    "path": "Assets/Dhara/Core/WeatherDataStore.cs",
+    "sha256": "61BF8B88750386B70CA255619025A7031A411F4BC1C4599C6C891DBE0A188B80"
+  },
+  {
+    "path": "Assets/Dhara/Core/WeatherDataStore.cs.meta",
+    "sha256": "24EF85917F288609D8D625B8A7AB3CE01509D499CFF63529227D98F8D1FD63DB"
+  },
+  {
+    "path": "Assets/Dhara/Core/WeatherJson.cs",
+    "sha256": "69CE22EF600AFBF2093E769864282FEA40CADC9EB5DC0F1A76A807CF7600D96F"
+  },
+  {
+    "path": "Assets/Dhara/Core/WeatherJson.cs.meta",
+    "sha256": "9D2178EA8652AAF6582C10499027EBC077C1F6C1E782C2186EB5152C4D33F9CE"
+  },
+  {
+    "path": "Assets/Dhara/Core/WeatherModels.cs",
+    "sha256": "91B460EECE697BEADC3DAD3CC151EEF60573C650509DC3C0439206D82F7A1065"
+  },
+  {
+    "path": "Assets/Dhara/Core/WeatherModels.cs.meta",
+    "sha256": "FEAE78D07557EA59840B65DBEE3AC0472D80E60CE18DE6BE987E78351E780D82"
+  },
+  {
+    "path": "Assets/Dhara/Core/WeatherRequest.cs",
+    "sha256": "7D5904FB17229A55FB3D85D82E3DAEBC28700D319B204D09B2E1D120AC765A63"
+  },
+  {
+    "path": "Assets/Dhara/Core/WeatherRequest.cs.meta",
+    "sha256": "39FDC4300EF1FA37F9C0E62CC19F6D775D57E0EC0F32EC8C3A7857A2BD8773B2"
+  },
+  {
+    "path": "Assets/Dhara/Editor/Dhara.Editor.asmdef",
+    "sha256": "6349296638D905A12AE71C4C392083D0C77E2EE29B5DF24B079627396AF001BC"
+  },
+  {
+    "path": "Assets/Dhara/Editor/Dhara.Editor.asmdef.meta",
+    "sha256": "1C650EDCB8A38569944AE9FA3C372E5BD084432FC5130A13F274A02D5A67C3F8"
+  },
+  {
+    "path": "Assets/Dhara/Editor/DharaProject.cs",
+    "sha256": "0E931482423F264FF085176B738B2AA16F51AB0199CE597988685F3930705E89"
+  },
+  {
+    "path": "Assets/Dhara/Editor/DharaProject.cs.meta",
+    "sha256": "716B29F820897AC98A03A2FD1B8FD6BEF4D7645F2F00CDDC0CE3C3D35B3487F9"
+  },
+  {
+    "path": "Assets/Dhara/Materials/Rain.mat.meta",
+    "sha256": "CA3F583A3B797F77675F7B98F91448CA9E499E0DB3ACD32C6FC9F99E998D9BC1"
+  },
+  {
+    "path": "Assets/Dhara/Materials/Surface.mat.meta",
+    "sha256": "EDECB4DFA16C75517C8F602167A6B558EF163FA837EA044DF022BD7D4DF517BE"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/AirQualityService.cs",
+    "sha256": "FDFED395E69E71E7F8C6E639D8E085A86D131D23429A09AFE46C032A1E5BEAB9"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/AirQualityService.cs.meta",
+    "sha256": "3F21427CCD69AB763183982BAA9BB83C93900B6DC0233D19A0558EBAAC6EF182"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/AnalysisDashboard.cs",
+    "sha256": "D6CB57BFFC10EA4938C41F9A71C974C982E8DFCE179477D52F2E0884B83B2BD0"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/AnalysisDashboard.cs.meta",
+    "sha256": "8BFCA77C36B804CCA74CB0199A520263057631E107296084C9DDEA85CF061A97"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/CityComparisonService.cs",
+    "sha256": "4A62DCA985879B319BC08B5FBD8579CC2D5C9C7269AD0234A5686375EC1639E0"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/CityComparisonService.cs.meta",
+    "sha256": "3BF402E875DB9B18869C0158E5447312CB334307D01E2C9E6A2485E336AFC7CB"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/DataDashboard.cs",
+    "sha256": "46E7F3ED2A6D2AC58C17C1ED202914D97193EDA187578842C4FC6095C4531741"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/DataDashboard.cs.meta",
+    "sha256": "B874943D72D59C17FBE380BD8B41E680322E432EA505A4989ABB4BADB30F5227"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/DemonstrationDashboard.cs",
+    "sha256": "7F4B56D209521A0219B9855EC43BB763B15876C3AF97345CA7784AFBCECD8970"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/DemonstrationDashboard.cs.meta",
+    "sha256": "370E11528CC4AD825E93703518C7E470F032C384CA752F04B1E918D680090B88"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/Dhara.Runtime.asmdef",
+    "sha256": "95952E02C53523BA194FF2C2CFB96DC49EBB017BC2BF2D2E24B0D89990F5C844"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/Dhara.Runtime.asmdef.meta",
+    "sha256": "67EF5A38CDA5BF3E3ACE584766302178DC2D6F8CA103564B18F8011A1C9D3253"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/DharaApplication.cs",
+    "sha256": "B349E02A646B01A2FF04C715D026FC1BFED0DE123D7716A555C655474E390E8D"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/DharaApplication.cs.meta",
+    "sha256": "4EB6EE7544C30B06543FB4566FE61C8BCEB8477C01D84792A7D7AD90EEDA36E3"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/EnvironmentalDashboard.cs",
+    "sha256": "F0F377C5787CEBB157B98D6C8FF24E22D91E2310F178D79210C145286AE88EE0"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/EnvironmentalDashboard.cs.meta",
+    "sha256": "7921B41B69016F723F6323E6DC09520650C74051BA49F59C5ABFC682DDEFEBBE"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/HistoricalService.cs",
+    "sha256": "C533078AE0725455D6A078F366F0C18F2C713A47762EED63BFEFDBF930B2CD78"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/HistoricalService.cs.meta",
+    "sha256": "240579DBF861AE83B4CD5B872C6E05D15CA18E8A005BEB56323F81DF990D5C04"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/OrbitCamera.cs",
+    "sha256": "79294CF023568109B342C9CE4A1CD4ED21E87F00B1CB205358CC17B1BA785977"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/OrbitCamera.cs.meta",
+    "sha256": "9DB2DA5C6F8EF12B12B3481D199176CDFB1AA42124FB8B3DC7D59A1644A92DB4"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/ProceduralCity.cs",
+    "sha256": "69621B74869708AE199F46DE7B034D53334F17E75C44A30351667FC6CA76B922"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/ProceduralCity.cs.meta",
+    "sha256": "90CA56C8B356C3662BD51F300FC205488A0F0E168FF7F508E47C8448EC6EB05B"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/ResilienceDashboard.cs",
+    "sha256": "EEAD39FA6A6166A5D16914CD05808E93C0F3EB9F956EC6C9583B689C475B5980"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/ResilienceDashboard.cs.meta",
+    "sha256": "D60D96F5935D00191084B73FB5E12464B79FCA7D9DF720CEA5FC580A262F37A4"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/ScenarioDashboard.cs",
+    "sha256": "7F8B6BC8AADCB92778D6E3FE383B9CF0BA5FBF7D9ACB6C3A07640AC42AC58046"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/ScenarioDashboard.cs.meta",
+    "sha256": "29B3C8B000AD567122D527637D6B2A105089E35F818872B5541ACF3F07F5B2F4"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/SensitivityDashboard.cs",
+    "sha256": "009B329A1C34484E4485366BBBE32ABBBD3BC69289534AEF87FAA869F33847B4"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/SensitivityDashboard.cs.meta",
+    "sha256": "16C5795384C2775DE5D7ACAA4D6AEC7EB258315BCB0D1456B290762A17C1C35A"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/SpatialDistrict.cs",
+    "sha256": "C88FEE9E2B8B1732785E75493B8B021F48CE2E667830D91248E4D37F988E08A3"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/SpatialDistrict.cs.meta",
+    "sha256": "F5E1152362CB4300621CFDC7BDAAD057FEE1DF5CB8DC3C46F0F91A9F82775320"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/TimelineDashboard.cs",
+    "sha256": "22DE1A3A8DE482DE1C033BD8D5D4794F5B345F309E16D8A6CF8E222DBF534476"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/TimelineDashboard.cs.meta",
+    "sha256": "67E61DA233EB680B8798E043990501770B0CD584640EF9529507931AB1B0C11D"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/WeatherService.cs",
+    "sha256": "1D156FE182FC631C56480E2A12DAD1AB01E32639527A9B8B7C79C36ECF2BFC4A"
+  },
+  {
+    "path": "Assets/Dhara/Runtime/WeatherService.cs.meta",
+    "sha256": "EC78A065E8E70ADD413523B52793B58BD2521887755148CF267063A04BF8ADB4"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/AirQualityTests.cs",
+    "sha256": "E04CAB10C86B2B57D87D0DCAC883421A3F66667C3F7461D192C47C1EE1EC2024"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/AirQualityTests.cs.meta",
+    "sha256": "C86FA001605E9A3BFF7FAA10FE031C8433ADCE1BFD2777485A7E87840ADC5A39"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/Dhara.Tests.asmdef",
+    "sha256": "91BC0D12522F2BA680727406E3BF1E0ED5971A44E1AD95D2C0C37A0DF61B31E2"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/Dhara.Tests.asmdef.meta",
+    "sha256": "2A06A4E78AFB3CAE9C92A3CC1EB185209889A31382A1A76E9D37053A89204D96"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/DistrictHydrologyTests.cs",
+    "sha256": "4A1869A8787CD117BC29BE96FC4583B746CECC0960227DF0B95CC1D3857093EF"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/DistrictHydrologyTests.cs.meta",
+    "sha256": "2307EF50E2A2EA8317DD96A06ABB0CBA8A3E6C882AD8966FB5357FB50F67C765"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/DrainageExperimentTests.cs",
+    "sha256": "13DAF613733B982F480745F30122A14D643D05FC24800E155E545AA7ACC1FE2E"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/DrainageExperimentTests.cs.meta",
+    "sha256": "D64FE456BB353B098392A4843344F6B59F6CA8AAC6BE4F643F970DEFAFBF38A5"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/EnvironmentTests.cs",
+    "sha256": "F7AF4342419F3B91C804B7DCFC117C01E8ED7E49871A56FD420F381DCA1900DC"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/EnvironmentTests.cs.meta",
+    "sha256": "D6884AF7046E09A47AFACDC81A3F68C1933F9F6B7248F1F5A51F255BE41127F0"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/PlannerTests.cs",
+    "sha256": "2119620062F8B7C631867E749337B67492FB75002B622F48357EBD0C8925F65C"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/PlannerTests.cs.meta",
+    "sha256": "9378390976559CAD322F6EEFAE66F2FD707A035E128F631C4CB69A3BD6EB30EB"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/ScenarioReportTests.cs",
+    "sha256": "71836BB6CD0F460163623B7EE96617CE57DBD0AC4EACBAD9B51CBA87BFDBC0CD"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/ScenarioReportTests.cs.meta",
+    "sha256": "3E3594904BCEF38A2B38A09CAE225A1B29278AB6B7CFEBFA53D431E52D393C54"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/ScenePreparationTests.cs",
+    "sha256": "022D95A95C3DA4D3C95ACF2E691A2488C395FBF2412C8723CDC4E855C79EB7B9"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/ScenePreparationTests.cs.meta",
+    "sha256": "D599DB8B2C56F07897EA52BBE61093D7556A71E1498BD0E33F3D0C30FEAED02B"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/SensitivityTests.cs",
+    "sha256": "E975925006892C508D2A90D0D572D2A3F294A7D71EB9170212531FDCB34C7111"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/SensitivityTests.cs.meta",
+    "sha256": "DC9504A9685D6FFE92D46F40BC01FC0275425139381E0153FC2B0BE6C088C345"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/TemporalTests.cs",
+    "sha256": "B911B8B08F934E3713B3AEAB6C43039504B41A5F3B5B5B415A84A1888FD8370A"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode/TemporalTests.cs.meta",
+    "sha256": "07D2910395A476B3E46280EBFFE96C0CC6829E9995052055387A9B9254FE4106"
+  },
+  {
+    "path": "Assets/Dhara/Tests/PlayMode/ApplicationTests.cs",
+    "sha256": "268970622DA5BC1FD2241C9BB9CDFFF30773A4FF1F35BAE0C872D19B2EABC9D7"
+  },
+  {
+    "path": "Assets/Dhara/Tests/PlayMode/ApplicationTests.cs.meta",
+    "sha256": "975613AFC6A07C17D9059B88D1038C5F25E933CBDE0C340D5F1C3A720B8F69BE"
+  },
+  {
+    "path": "Assets/Dhara/Tests/PlayMode/Dhara.PlayModeTests.asmdef",
+    "sha256": "B5792A6E19B0AAD2265864867DAA34B0913ED9B96D083D462BD51C3F72D251AA"
+  },
+  {
+    "path": "Assets/Dhara/Tests/PlayMode/Dhara.PlayModeTests.asmdef.meta",
+    "sha256": "B76EE75439E82DE6979C2EF616AA4A9BD2B81C15C35D3746CCD3ED67FF4401D9"
+  },
+  {
+    "path": "Assets/Dhara/Tests/PlayMode/ResilienceTests.cs",
+    "sha256": "480561598F671815A9350C8854654C62FD6F00C928CC3C211A2F48654D3A66BE"
+  },
+  {
+    "path": "Assets/Dhara/Tests/PlayMode/ResilienceTests.cs.meta",
+    "sha256": "ADC91F16DF69A746B50F0A049EA55E9616CD73E1AB6884E8CB92E13A8DBC0829"
+  },
+  {
+    "path": "Assets/Dhara/Tests/EditMode.meta",
+    "sha256": "6C115C5BC957A6AC98EA59C66C16AB771C7C7B51F72F536D865A4B62C4B8AA20"
+  },
+  {
+    "path": "Assets/Dhara/Tests/PlayMode.meta",
+    "sha256": "1FF67A792620E0E7327C970B1EB3B227793E4E913FBA8D399A8A2F907561887C"
+  },
+  {
+    "path": "Assets/Dhara/Core.meta",
+    "sha256": "4E589FC8F7C6990B37C0F3A6D4424E9FC6970246EB8BE07000F7A17D016A7DD8"
+  },
+  {
+    "path": "Assets/Dhara/Editor.meta",
+    "sha256": "7A5489B3F5D9BA3BA24EA55C409B8D5DFD8A2237E83A3AD0F5C2B7029A6B0C11"
+  },
+  {
+    "path": "Assets/Dhara/Materials.meta",
+    "sha256": "6CEB8317E6A4FD71B477827075DA8775DEB701E34BBAEC5F0E57506137D7E7A7"
+  },
+  {
+    "path": "Assets/Dhara/Runtime.meta",
+    "sha256": "3A2DE1F5CC2E6BD772831263931ABFF1C0F5E217280402CA2F65E2D2B614DAD2"
+  },
+  {
+    "path": "Assets/Dhara/SetupComplete.txt.meta",
+    "sha256": "0F59D35CDB9BF27E0439C15973F3EF73EBC8C7438E72BC3B33AC88D4A920DB5A"
+  },
+  {
+    "path": "Assets/Dhara/Tests.meta",
+    "sha256": "50A0E55D5EF95BAE97BD9853BECF4D0E213CAFA460CA66C578F16FC26FFD32CE"
+  }
+]

@@ -1,0 +1,18 @@
+{
+  "executedUtc": "2026-10-14T16:30:23.6615811Z",
+  "findings": [
+    "No application API key/authentication header or embedded provider secret found.",
+    "Application requests are HTTPS public Open-Meteo endpoints; city coordinates are configured public cities.",
+    "No application source deletes files or directories. Existing build automation creates output and builds only the main scene. Packaging stages copies and never deletes source/build data.",
+    "Weather requests time out after 20 seconds; retry delay is bounded to 15..300 seconds with one active coroutine/request; cancellation and cleanup passed runtime tests.",
+    "Strict parser rejects malformed/oversized/deep responses. Missing inputs remain nullable and pause live integration.",
+    "Release Pipeline is disabled; no runtime control listener is configured.",
+    "Logs reviewed contain system/device diagnostics and weather/status, without credentials."
+  ],
+  "scope": "Targeted credential pattern scan plus manual review of all application sources, build/dependency automation and request logging; not a comprehensive security audit",
+  "credentialPatternHits": [],
+  "filesScanned": 45,
+  "limitations": [
+    "Dependency binaries and all possible credential formats were not exhaustively audited."
+  ]
+}

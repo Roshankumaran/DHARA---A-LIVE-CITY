@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Dhara
 {
-    public enum WorldMode { Live, Forecast, WhatIf }
+    public enum WorldMode { Live, Forecast, WhatIf, Historical, Demonstration, Recorded }
     public static class Numbers
     {
         public static bool IsFinite(double? value) => value.HasValue && !double.IsNaN(value.Value) && !double.IsInfinity(value.Value);
@@ -19,7 +19,7 @@ namespace Dhara
     }
     public sealed class EnvironmentState
     {
-        public double WaterMm, Wetness, RainIntensity, WindIntensity, LightIntensity, SolarKw;
+        public double WaterMm, CollectionM3, Wetness, RainIntensity, WindIntensity, LightIntensity, SolarKw;
         public double ElapsedSimulatedSeconds;
     }
     public sealed class ScenarioOverrides
@@ -56,10 +56,11 @@ namespace Dhara
     public sealed class CausalEnvironmentEngine
     {
         public EnvironmentState State { get; private set; } = new EnvironmentState();
+        public DistrictHydrology District { get; private set; } = new DistrictHydrology(new InterventionConfig());
         public readonly List<EnvironmentalEvent> Events = new List<EnvironmentalEvent>();
         WeatherData previous;
         double previousDrainage = 12;
-        public void Reset() { State = new EnvironmentState(); previous = null; }
+        public void Reset() { State = new EnvironmentState(); District=new DistrictHydrology(new InterventionConfig()); previous = null; }
         public void Record(string message)
         {
             Events.Insert(0, new EnvironmentalEvent(message));
@@ -82,6 +83,8 @@ namespace Dhara
             }
             if (previous == null) { previous = input.Copy(); previous.RainMmPerHour=rain; previous.WindKmh=wind; previous.CloudPercent=cloud; previous.Temperature=temperature; previousDrainage = drainage; }
             double dt = Numbers.Clamp(seconds, 0, 3600);
+            District.Step(rain,dt,drainage);
+            State.CollectionM3=District.Result.StorageM3;
             State.WaterMm = WaterAccumulationModel.Step(State.WaterMm, rain, drainage, temperature, dt);
             double wetTarget = Math.Min(1, rain / 5 + State.WaterMm / 20);
             double blend = 1 - Math.Exp(-dt / 45);
@@ -98,12 +101,16 @@ namespace Dhara
         public WorldMode Mode = WorldMode.Live;
         public WeatherData Live;
         public WeatherData Forecast;
+        public WeatherData Historical, Demonstration, Recorded;
+        public WeatherData FrozenPreview;
+        public string FrozenPreviewRetrievedUtc;
         public ScenarioOverrides Scenario = new ScenarioOverrides();
         public double Drainage => Mode == WorldMode.WhatIf ? Scenario.DrainageMmPerHour : 12;
-        public WeatherData Active => Mode == WorldMode.WhatIf ? Scenario.Apply(Live) : Mode == WorldMode.Forecast ? Forecast : Live;
+        public WeatherData Active => FrozenPreview!=null&&(Mode==WorldMode.Forecast||Mode==WorldMode.Historical)?FrozenPreview:Mode==WorldMode.Historical?Historical:Mode==WorldMode.Demonstration?Demonstration:Mode==WorldMode.Recorded?Recorded:Mode == WorldMode.WhatIf ? Scenario.Apply(Live) : Mode == WorldMode.Forecast ? Forecast : Live;
         public void ChangeMode(WorldMode mode, IList<WeatherData> forecasts)
         {
             ResetScenario(); // Clear hypothetical overrides whenever a mode is selected.
+            FrozenPreview=null;FrozenPreviewRetrievedUtc=null;
             Mode=mode;
             Forecast=mode==WorldMode.Forecast && forecasts!=null && forecasts.Count>0 ? forecasts[0] : null;
         }
@@ -112,6 +119,7 @@ namespace Dhara
             Live=live;
             if(Mode!=WorldMode.WhatIf) ResetScenario();
             if(Mode!=WorldMode.Forecast) return false;
+            if(FrozenPreview!=null){Forecast=FrozenPreview;return false;}
             string previousTime=Forecast?.Time;
             WeatherData selected=null;
             if(forecasts!=null)

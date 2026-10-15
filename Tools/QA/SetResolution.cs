@@ -1,0 +1,15 @@
+var assembly=typeof(UnityEditor.Editor).Assembly;
+var sizesType=assembly.GetType("UnityEditor.GameViewSizes");
+var singleton=typeof(UnityEditor.ScriptableSingleton<>).MakeGenericType(sizesType);
+var sizes=singleton.GetProperty("instance").GetValue(null);
+var group=sizesType.GetProperty("currentGroup").GetValue(sizes);
+var sizeType=assembly.GetType("UnityEditor.GameViewSize");
+var enumType=assembly.GetType("UnityEditor.GameViewSizeType");
+var size=System.Activator.CreateInstance(sizeType,new object[]{System.Enum.Parse(enumType,"FixedResolution"),1600,900,"DHARA QA 1600x900"});
+group.GetType().GetMethod("AddCustomSize").Invoke(group,new object[]{size});
+int index=(int)group.GetType().GetMethod("GetTotalCount").Invoke(group,null)-1;
+var viewType=assembly.GetType("UnityEditor.GameView");
+var window=UnityEditor.EditorWindow.GetWindow(viewType);
+viewType.GetProperty("selectedSizeIndex",System.Reflection.BindingFlags.Public|System.Reflection.BindingFlags.NonPublic|System.Reflection.BindingFlags.Instance).SetValue(window,index);
+window.Repaint();
+return index;

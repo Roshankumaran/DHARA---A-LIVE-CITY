@@ -1,0 +1,9 @@
+{
+  "durationSeconds": 22.177,
+  "pipelineJobStatusUnavailableAfterEditorClosed": true,
+  "output": "Builds/Windows-Visual/DHARA.exe",
+  "source": "Saved Editor.log PlayerBuildInfo and Build Successful / Result Success messages",
+  "runtimeDllSha256": "D67F5ABBF7572FEB91BCF6543A3FD3EF649C7B90D2C647ED07B647AC403E59DD",
+  "result": "Succeeded",
+  "log": "Verification/visual-final-build-log.txt"
+}

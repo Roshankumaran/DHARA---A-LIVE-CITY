@@ -1,1 +1,1 @@
-{"name":"Dhara.PlayModeTests","references":["Dhara.Core","Dhara.Runtime","UnityEngine.UI"],"optionalUnityReferences":["TestAssemblies"],"defineConstraints":["DHARA_READY","UNITY_INCLUDE_TESTS"],"autoReferenced":false}
+{"name":"Dhara.PlayModeTests","references":["Dhara.Core","Dhara.Runtime","UnityEngine.UI","Unity.TextMeshPro"],"optionalUnityReferences":["TestAssemblies"],"defineConstraints":["DHARA_READY","UNITY_INCLUDE_TESTS"],"autoReferenced":false}

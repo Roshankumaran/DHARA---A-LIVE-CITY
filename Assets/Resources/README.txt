@@ -1,0 +1,1 @@
+This Resources folder is intentionally retained. Unity Performance Testing creates temporary build metadata here; retaining the directory prevents its post-build cleanup from deleting a OneDrive-managed directory. No weather fallback data is stored here.

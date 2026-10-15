@@ -1,0 +1,10 @@
+{
+  "processId": 30724,
+  "allExtractionHashesVerified": true,
+  "filesVerified": 174,
+  "launchedUtc": "2026-10-15T12:24:35.9240982Z",
+  "runtimeDllSha256": "F1A62ED555331C053F699CC0CEE94C1B8CE7096C9751D2239EC7B05FD584B0EF",
+  "executable": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX\\TestResults\\Extracted-LivingCity-20261015-175433\\DHARA\\DHARA.exe",
+  "log": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX\\Verification\\city-final-player.log",
+  "extractedDirectory": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX\\TestResults\\Extracted-LivingCity-20261015-175433\\DHARA"
+}

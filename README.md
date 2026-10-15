@@ -1,89 +1,59 @@
-# DHARA — A Living World
+# DHARA — A LIVING CITY
 
-A Unity environmental simulation prototype for Innovation Mission 4: Procedural Environments — Real-Time API Integration.
+REAL DATA. CONNECTED SYSTEMS. LIVING ENVIRONMENTS.
 
-**Status:** the existing implementation has been inspected and corrected without replacing its scene, assets, GUIDs, or package configuration. The production C# core passed **33 standalone checks**; real Open-Meteo requests, parsing, response units, coordinates, and future-forecast filtering passed for all five locations. Unity compilation, Play Mode, visual quality, and Windows deployment remain **unverified** because no Editor is installed. No Windows executable has been generated. See [verification details](docs/VERIFICATION.md).
+A Unity environmental simulation for **Innovation Mission 4 — Procedural Environments: Real-Time API Integration**. The existing Unity 6.3 LTS / URP project is extended with connected surface-water modeling, reproducible urban interventions, and transparent data provenance.
 
-## Open and run
+Read the [implementation, verification and model report](docs/LIVING-CITY.md) for feature details, actual test evidence, provider access limits and delivery paths. Earlier work is preserved in the [historical redesign report](docs/REFERENCE-REDESIGN.md).
 
-1. Install **Unity 6.3 LTS** using Unity Hub; the project records `6000.3.26f1`. Sign in and activate an appropriate Unity license. Include Windows desktop support. A Mono Windows build avoids an IL2CPP toolchain requirement.
-2. Add this folder as a project in Hub and open it. Keep internet access available during the first package import.
-3. `DharaDependencies` resolves required packages through Unity's Package Manager API. Once successful, it adds `DHARA_READY` to Standalone scripting defines. Runtime/editor/test assemblies are gated until dependencies resolve.
-4. First-open preparation imports the official TextMeshPro essentials, assigns the URP asset, prepares `Assets/Scenes/Dhara.unity`, and configures Windows build settings. Wait for package/font imports and script recompilation to finish. A successful preparation writes `Assets/Dhara/SetupComplete.txt`.
-5. If preparation reports an error, resolve it in the Console and choose **DHARA > Install or repair dependencies**, then **DHARA > Prepare main scene**. TMP essentials can also be imported through **Window > TextMeshPro > Import TMP Essential Resources**. Preparation preserves the existing scene and bootstrap configuration, fills missing material references, and keeps other build scenes. A new bootstrap or scene is created only if it is missing. Multiple bootstraps are reported as an error instead of being deleted.
-6. Open `Assets/Scenes/Dhara.unity` and press **Play**. The bootstrap component generates the district, camera, effects, Canvas dashboard, and weather service at runtime. The 3D world is therefore visible in Play Mode, not in the saved scene hierarchy before Play.
+## Run the project
 
-Use a landscape Game view, preferably **1600 × 1000**. Package/setup automation is provided but could not be executed here; address any Console compilation errors before continuing.
+Open this folder in **Unity 6000.3.26f1** with Windows desktop support. Let package imports finish, open `Assets/Scenes/Dhara.unity`, then press Play. The city and dashboard are generated at runtime. If setup is missing, use **DHARA > Install or repair dependencies**, then **DHARA > Prepare main scene**. Preparation preserves the existing scene and GUID references.
 
-## Use the simulation
+The application uses URP 17.3.0, Input System 1.20.1, uGUI 2.0.0 and Test Framework 1.6.0. No additional package was required for the Living City upgrade. Source namespaces and the main scene remain intact.
 
-- Select **Bengaluru, Chennai, Mumbai, Delhi, or Hyderabad** in the header. Changing location clears the previous location's data and simulated storage.
-- **LIVE WORLD** uses current weather-model estimates. The dashboard reports source, valid time in IST, retrieval time in UTC, missing fields, request failures, and stale data after ten minutes, including during refresh. These are model estimates rather than physical-sensor readings. Requests refresh every five minutes, time out after 20 seconds, and retry after 15/30/60/120/240/300 seconds on failure. **Refresh weather** retries immediately while retaining the current location's last successful data.
-- **WHAT-IF LAB** changes rainfall, wind speed, temperature, and drainage without extra network requests. Inputs are hypothetical. Other available weather values remain from the latest live baseline. Offline scenarios explicitly assume 50% cloud cover and leave unavailable solar radiation, humidity, and wind direction unreported.
-- **Reset scenario** restores available live rainfall/wind/temperature and 12 mm/h nominal drainage, then clears simulated storage. **Return to live** clears hypothetical overrides and restores current model inputs. Location changes also switch the visible controls back to live mode. Each mode change starts water storage at zero, so scenario water cannot leak into live output.
-- **FORECAST PREVIEW** selects actual returned hourly timestamps. Hour offset zero is the first available future hourly value; the selected valid time is displayed. Refresh preserves the selected timestamp while it remains available. If that hour expires, the preview advances to the first available hour and resets storage with a log entry. Each manual selection also resets storage and applies that hour's weather as a constant input. This previews conditions at a timestamp; it does not integrate the intervening forecast hours.
-- Right mouse drag orbits, middle drag or WASD/arrows pans, wheel zooms, and **Home** or **Reset camera** restores the overview. Camera mouse navigation yields to dashboard controls.
+## Explore
 
-## Environment and model
+- Select Bengaluru, Chennai, Mumbai, Delhi or Hyderabad. Current and forecast weather comes from Open-Meteo; missing, failed and stale data is labeled.
+- **Live World / Forecast Preview / What-if Lab** retain their existing functions. Right-drag orbits, middle-drag / WASD pans, wheel zooms, and Home resets the view.
+- **Resilience Studio** freezes the selected forcing and compares a dry-start hour with green-roof coverage, permeable road coverage, additional drainage and garden storage. Reset clears interventions. Assumptions explains every supported rule. World coverage colors identify the affected categories.
+- **City tools** opens impact trace, deterministic planner, historical/live/future timeline, forecast-to-impact comparison, air quality/advisory status, five-city weather comparison, scenario save/export, guided demonstration and sensitivity analysis.
+- Click a modeled roof, road, green strip or collection area to inspect its actual assigned area, parameters, connection and computed state. Values are conceptual model contributions using shared weather, not object sensors.
+- Time Machine playback evaluates independent one-hour cases from real source timestamps. It does not claim continuous hydraulic replay. Frozen temporal inputs remain independent of background live refreshes.
+- Scenario files are written only when requested, to the local folder shown in the UI. One versioned snapshot slot (`scenario.json`) and JSON/CSV report slots are supported. Saving/exporting replaces those named files. Loading validates and recalculates a snapshot, marks it RECORDED, and retains its source provenance.
+- The deterministic demonstration is explicitly synthetic and separate from live weather. Start, Next, Reset and Stop exercise real calculations and selection actions.
 
-The seeded procedural district includes twelve mineral-facade buildings, road markings and crossings, pavements, trees, open stormwater channels, grates, streetlights, benches, rooftop service housings, and sixteen 2 × 3 m solar panels. City seed, height range, tree density, and placement jitter are Inspector settings on the bootstrap component. This is a generic district, not a reconstruction of the selected city.
+## Model
 
-Weather retrieval, typed data, deterministic calculations, and visual rendering are separate components. Rain drives particle emission, surface wetness, and effective water storage. Wind drives canopy sway and particle drift using meteorological direction. Cloud cover changes directional lighting. Available shortwave radiation drives an illustrative solar output using **96 m² × 20% efficiency**.
+The primary water display and basin use a **4,652 m² conceptual catchment**: 1,404 m² roofs, 2,128 m² road union and 1,120 m² green strips. Rain depth × area / 1000 gives m³. Green roofs retain up to 20 mm; permeable paving infiltrates up to 15 mm/h; green strips infiltrate up to 8 mm/h. Runoff routes immediately to a shared collection node. Garden storage retains up to its configured capacity. Drainage removes 0.8 × nominal mm/h × catchment area / 1000, limited by available water. Collection is bounded at 150 m³ and excess is reported as overflow.
 
-Water depth is an aggregate **effective surface-storage depth in millimetres**, bounded to 0–150 mm. Per model hour:
+The Studio, planner, sensitivity, reports and live district use these same rules. Comparisons start dry for 60 minutes with fixed six-second steps. The runtime model clock advances 60 simulated seconds per real second. The retained legacy drainage-depth comparator uses its separately disclosed effective-surface equation; it does not supply the new district volume results.
 
-`storage change = 0.85 × rainfall − 0.8 × nominal drainage − max(0, temperature − 5) × 0.02`
+This is a simplified, uncalibrated model with uniform category coverage, no hydraulic network, soil saturation, travel time or groundwater model. It does not predict real street flood depths, infrastructure failure or damage. The procedural district is generic. Solar output and atmospheric effects remain illustrative.
 
-Storage is clamped after each step. The model uses fixed six-second simulation steps at ten updates per real second: **60 simulated seconds per real second**. The basin's visible water footprint and dashboard depth represent this aggregate storage. Wetness follows rainfall/storage with an exponential response. There is no terrain flow, catchment calibration, hydraulic network, infiltration map, measured water level, or calibrated flood forecast. Solar output omits shading, temperature losses, panel orientation losses, and inverter losses. Wind effects are visual, not structural physics.
+## Sources
 
-The environmental change log records actual input changes, water-depth bands, mode changes, and retrieval outcomes. It retains 30 entries and displays the latest three; small input changes accumulate toward logging thresholds. No fabricated alerts or decorative data charts are used.
+Weather and forecast: [Open-Meteo](https://open-meteo.com/en/docs), CC BY 4.0. ERA5 history: [Open-Meteo Historical Weather API](https://open-meteo.com/en/docs/historical-weather-api). PM2.5 / PM10: [CAMS global via Open-Meteo](https://open-meteo.com/en/docs/air-quality-api), with source attribution in the application. Values are model estimates, not physical sensor readings. Units, source times and retrieval times are retained separately.
 
-## Weather source
+**IMD weather advisories remain unavailable:** the documented district-warning endpoint returned HTTP 401 during verification. No warnings or credentials are fabricated. Details and actual probe evidence are in the implementation report.
 
-[Open-Meteo Forecast API documentation](https://open-meteo.com/en/docs). Coordinates were verified against [Open-Meteo's geocoding service](https://open-meteo.com/en/docs/geocoding-api). Data attribution: Open-Meteo, CC BY 4.0. Review the provider's terms for deployment beyond a noncommercial demonstration.
+## Test and build
 
-Requests use `temperature_2m`, `relative_humidity_2m`, `precipitation`, `rain`, `wind_speed_10m`, `wind_direction_10m`, `cloud_cover`, and `shortwave_radiation` for current and hourly data, with °C, km/h, mm, and Asia/Kolkata timestamps. Current rainfall is a preceding-interval sum; `rain × 3600 / interval` converts it to a simulation rate in mm/h. Hourly rain is a preceding-hour sum and is used as that hour's mean rate. Precipitation totals remain separate from rain rates. Forecasts use returned timestamps, never invented timeline values.
-
-JSON parsing preserves missing/null numbers as nullable values. Malformed JSON, oversized/deep responses, nonfinite numbers, and duplicate properties are rejected. No successful API response is bundled as an application fallback. Network failure preserves previously retrieved data for the same location; the UI reports the failure and any staleness. Missing required simulation inputs pause integration; the hypothetical lab remains available.
-
-## Dependencies
-
-The baseline settings/assets come from Unity's official **Universal 3D** template `com.unity.template.urp-blank` **17.1.0**. Its original manifest/lockfile are preserved. First-open setup resolves compatible versions through the Package Manager API rather than manually changing package dependencies:
-
-- `com.unity.render-pipelines.universal` — URP/Core renderer and Volume framework.
-- `com.unity.ugui` — Canvas UI and TextMeshPro.
-- `com.unity.inputsystem` — camera and event-system input.
-- `com.unity.test-framework` — Edit Mode and Play Mode tests.
-- Built-in modules: `com.unity.modules.unitywebrequest`, `com.unity.modules.particlesystem`, `com.unity.modules.audio`, `com.unity.modules.physics`.
-
-ProBuilder, Cinemachine, downloaded art, a backend, and external JSON libraries are not required. The template also includes development packages not used by DHARA's application code. Final resolved versions are recorded by Unity in `Packages/packages-lock.json` after import.
-
-## Tests
-
-From PowerShell 7 in this directory:
+Use PowerShell 7 from this directory. Close the interactive Editor before batch tests/builds.
 
 ```powershell
-.\Tools\Test-Core.ps1
-.\Tools\Test-Weather.ps1
-.\Tools\Test-Source.ps1
+pwsh -NoProfile -File Tools/Test-Core.ps1
+pwsh -NoProfile -File Tools/Test-Source.ps1
+pwsh -NoProfile -File Tools/Test-Weather.ps1
+unity test . --editor-version 6000.3.26f1 --mode EditMode --report-format nunit --output TestResults/city-editmode.xml --timeout 600 --format json
+unity test . --editor-version 6000.3.26f1 --mode PlayMode --report-format nunit --output TestResults/city-playmode.xml --timeout 600 --format json
+unity build . --editor-version 6000.3.26f1 --target StandaloneWindows64 --execute-method Dhara.Editor.DharaProject.BuildLivingCityWindows --format json
+pwsh -NoProfile -File Tools/Package-Windows.ps1 -BuildDirectory Builds/Windows-LivingCity -ReportPath Verification/city-windows-package.json
 ```
 
-The first compiles the production engine/parser/data store with PowerShell's C# compiler and runs 33 checks without Unity. The second makes real HTTPS requests for all five locations using the production request builder/parser/store, and checks units and geocoded coordinates; it needs network access. The third parses C# syntax, validates assembly JSON and local asset GUID references, and checks visible string literals for prohibited branding. These are narrower than compiling or rendering in Unity. Reports are written under ignored `TestResults/`.
+The Living City build target is `Builds/Windows-LivingCity/DHARA.exe`. Keep all companion files together. Older verified releases in `Builds/Windows` and `Builds/Windows-Visual` are preserved. Final package paths, hashes, executed test counts and extracted-player verification are recorded in `docs/LIVING-CITY.md` and `Verification/city-*`.
 
-In Unity, open **Window > General > Test Runner**. Run the 22 **EditMode** tests and the two **PlayMode** tests after preparation. The original counts were 18 and two; four Edit Mode regression tests have been added. Play Mode tests cover scene startup, scenario-driven water/rain/wind, control-panel synchronization, location clearing, and a real failed network request. They were authored but **not executed**. Perform the manual checks in [verification details](docs/VERIFICATION.md) before presenting the application.
+## Download the Windows app
 
-## Windows build
+The verified Windows build is included in [the downloadable ZIP](Builds/DHARA-LivingCity-Windows-x64-20261015-175316.zip). Download the ZIP, extract the entire folder, and run DHARA.exe. Keep its accompanying data and runtime folders together.
 
-After successful preparation and tests, choose **DHARA > Build Windows application**. Output: `Builds/Windows/DHARA.exe` plus its accompanying data/runtime files. Distribute the entire Windows output folder. The command uses the saved main scene and throws on build failure. A build has **not** been created here.
-
-With the Editor installed and first-open setup already completed, the official CLI can also run:
-
-```powershell
-unity test . --editor-version 6000.3.26f1 --mode EditMode --output TestResults/editmode.xml
-unity test . --editor-version 6000.3.26f1 --mode PlayMode --output TestResults/playmode.xml
-unity build . --editor-version 6000.3.26f1 --target StandaloneWindows64 --execute-method Dhara.Editor.DharaProject.BuildWindows
-```
-
-Editor integration is optional for running DHARA. To enable it, close the Editor after saving, run `unity pipeline install --project-path <project-directory>`, reopen, and verify `unity status`. The official Unity plugin and CLI were installed during development; no connected Editor or Pipeline integration was verified.
-
-Optional historical weather, air-quality integration, scenario comparison, and advanced hydrology are not implemented.

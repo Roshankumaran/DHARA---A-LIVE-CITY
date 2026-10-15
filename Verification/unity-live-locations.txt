@@ -1,0 +1,5 @@
+Bengaluru | 2026-10-14T21:45 IST | 22.1 C | 11.5 km/h | 26 future hours
+Chennai | 2026-10-14T21:45 IST | 26.4 C | 3.1 km/h | 26 future hours
+Mumbai | 2026-10-14T21:45 IST | 31.6 C | 9.4 km/h | 26 future hours
+Delhi | 2026-10-14T21:45 IST | 26.8 C | 4.7 km/h | 26 future hours
+Hyderabad | 2026-10-14T21:45 IST | 27.9 C | 7.7 km/h | 26 future hours

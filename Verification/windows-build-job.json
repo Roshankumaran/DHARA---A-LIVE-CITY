@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "command": "job status",
+  "data": {
+    "jobId": "fa67bbf0a5444e94b518c8d961f89a58",
+    "command": "eval",
+    "state": "completed",
+    "cancellationRequested": false,
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "command": "eval",
+      "result": "DHARA completion Windows build finished",
+      "executionTimeMs": 6413,
+      "message": null,
+      "error": null,
+      "errorDetails": null,
+      "executedAt": "2026-10-14T16:29:32.438459Z"
+    },
+    "error": null,
+    "errorDetails": null,
+    "progress": null
+  },
+  "errors": [],
+  "warnings": []
+}

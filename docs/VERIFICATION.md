@@ -1,79 +1,78 @@
-# Verification and remaining work
+> Historical verification record. See [Living City implementation and current evidence](LIVING-CITY.md) for the current source and release.
 
-## Existing-project validation pass — 14 October 2026
+# DHARA completion and verification — 14 October 2026
 
-Project root confirmed: `C:/Users/Roshan/OneDrive/Desktop/DHARA_CODEX`. Inspected the README and this report before changes, then checked `ProjectVersion.txt`, the full manifest/lockfile, scene/bootstrap/material references, all C# sources, five assembly definitions, dependency automation, build settings, and all four scripts under `Tools/`. The recorded Editor is `6000.3.26f1`; the template manifest pins URP `17.0.4`. Package compatibility remains an Editor-resolution check; package versions were not manually replaced.
+This is the earlier release record. The current light dashboard, intervention experiment and 15 October Windows delivery are documented in [REFERENCE-REDESIGN.md](REFERENCE-REDESIGN.md).
 
-Executed results:
+Project: `C:/Users/Roshan/OneDrive/Desktop/DHARA_CODEX`. Branch: `master`. HEAD: `d194b8f532e6ef1432014eca8b121f34fcebc5a2`; its parent is `4aaec67`. Subsequent runtime refinements and the current completion changes are uncommitted. Existing changes were preserved, not reset. Source/configuration checkpoint: `TestResults/Checkpoints/before-completion-pass.zip`.
 
-- Initial standalone baseline: **21 passed, zero failed**. After corrections and regression coverage: **33 passed, zero failed**, compiling the production core through PowerShell `Add-Type`.
-- Initial source check: **13 C# files and five assembly definitions passed**. After adding the data store and editor regression fixture: **15 C# files and five assembly definitions passed**, with zero reported syntax, source-branding, required-reference, or metadata issues. This does not resolve Unity API types.
-- Initial weather run inside the restricted network sandbox: **five requests failed with `No such host is known`**; none was counted as a pass. An allowed network-enabled rerun passed all five locations. The strengthened integration checks then also passed **five of five**: Bengaluru, Chennai, Mumbai, Delhi, and Hyderabad. Each returned **48 hourly records**, of which **28** were future records after production filtering at the tested 19:30 IST valid time. Current and hourly units, interval conversion inputs, and configured coordinates were verified against real responses/geocoding. No fake API response was used as a fallback.
-- Unity CLI reported **zero installed Editors**, **zero running Editor instances**, and `LICENSING_CLIENT_UNAVAILABLE`. Unity Hub was not found in the standard Program Files/user Programs paths or the checked Windows uninstall registry. Windows player support cannot be verified without an Editor. No additional installer retries were made during this validation pass.
-- Unity compilation, Console inspection, scene rendering, manual interaction checks, and Unity Test Runner execution remain **blocked**, not passed. No Windows build was attempted because compilation and scene execution are prerequisites.
+## Acceptance status
 
-Source defects corrected:
+The Windows application is built, packaged, and observed running from a freshly extracted ZIP. Required core functionality passed actual Unity tests. This is a verified demonstration prototype; it is not declared exhaustively production-ready. Release-player forced network-failure testing, low-end hardware benchmarks, full retry-backoff progression and extended endurance remain unverified. No current compilation, licensing, dependency or deployment blocker was observed.
 
-- Scene preparation previously recreated the main scene and replaced the build-scene list. It now reuses the existing bootstrap, preserves configuration/other objects and build entries, and fills only missing references. The saved scene and its GUID were not regenerated during this pass.
-- Manual refresh previously cleared the successful same-location weather, forecast, and retrieval timestamp. The shared production data store now retains those through refresh/failure, clears them for a new location, and validates responses before replacement.
-- Forecast refresh previously silently selected the first hour while retaining storage from the old selection. Refresh now retains the selected timestamp, or reports expiry and resets preview storage when the hour disappears.
-- Changing locations could switch simulation mode while leaving What-if controls visible. Controls now subscribe to actual mode/reset changes.
-- Returning to live now clears stored hypothetical overrides; live refresh keeps active hypothetical overrides separate from the live object.
-- Nonfinite required weather inputs pause integration. Stale data stays labelled during refresh. Temperature changes now generate actual drying-rule events; bounded inputs no longer create spurious repeated input-change events.
-- Generated camera/world/dashboard/input objects now share application ownership for cleanup. Wind amplitude and particle drift transition smoothly in source; missing direction does not imply a fabricated north wind. Visual behavior still requires Play Mode verification.
+Initial checklist: live data, forecast, What-if/reset, deterministic model, procedural effects and build automation were implemented; earlier runtime evidence covered 22 Edit Mode and five Play Mode tests. New gaps were HTTP/invalid/missing responses through UnityWebRequest, timeout, rapid switching/refresh, scene reload and delivery integrity. These now passed. No additional application-code defect was reproduced during this pass. Machine-readable checklist: `Verification/completion-checklist.json`.
 
-The original **18 Edit Mode and two Play Mode tests** were confirmed in source. The updated suite has **22 Edit Mode tests** (including scene-preservation, cache, forecast-refresh, and mode-reset regressions) and **two expanded Play Mode tests**. **Zero Unity tests were executed**. Standalone tests do not substitute for these runs. No rendered visual defects can be confirmed or declared fixed without the Editor.
+## Inspection and changes
 
-Snapshots in `Verification/core-results.json`, `source-results.json`, and `weather-results.json` reflect this pass. Historical notes below describe the initial implementation, not additional successful Unity verification.
+Inspected README, prior verification/setup/build instructions, version, manifest/lockfile, scenes/build settings, all 15 DHARA C# files, five assembly definitions, standalone scripts and Git state/history. Runtime responsibilities remain `DharaApplication` (ownership/startup), `WeatherService`/`WeatherDataStore` (requests/cache/status), `ProceduralCity` (world/effects), `CausalEnvironmentEngine`/`SimulationState`/`WaterAccumulationModel` (rules/modes/log), `EnvironmentalDashboard` (controls), and `OrbitCamera` (navigation). Existing `DharaProject.BuildWindows()` was used.
 
-Minimum remaining setup and launch:
+This completion pass modified:
 
-1. Install Unity Hub, sign in, and install **Unity 6000.3.26f1** for Windows with Windows 64-bit player support; activate the appropriate license. The project uses the Mono scripting backend, so an IL2CPP toolchain is optional.
-2. Add the existing root folder to Hub and open it with that Editor. Let Package Manager resolve; inspect any compatibility errors before changing package versions. Required package setup uses `DHARA > Install or repair dependencies`.
-3. Allow TMP essentials preparation, then run `DHARA > Prepare main scene` if needed. Confirm no Console compilation errors; open `Assets/Scenes/Dhara.unity` and press Play.
-4. Run the 22 Edit Mode and two Play Mode tests, then the manual acceptance pass below. Only after successful scene execution use `DHARA > Build Windows application`.
-5. Expected output is `C:/Users/Roshan/OneDrive/Desktop/DHARA_CODEX/Builds/Windows/DHARA.exe`. This file does **not** currently exist. Distribute its entire output folder after a verified build and standalone smoke test.
+- `Assets/Dhara/Tests/PlayMode/ApplicationTests.cs`: added real timeout/cleanup, loopback failure injection, rapid switching/refresh and scene-reload coverage. Eight tests now exist and ran. Loopback fixtures provide only explicit error/malformed/missing responses, never successful fabricated weather; they are excluded from release builds.
+- `Tools/Test-Weather.ps1`: records HTTP status, parsing, retrieval/data timestamps, complete weather values, missing fields and coordinates in addition to its existing unit checks.
+- `Tools/Package-Windows.ps1`: new repeatable AMD64 validation, staging, launch notes, ZIP creation, per-file hashes and ZIP-entry hash verification. It excludes DoNotShip debug artifacts and deletes no source or build files.
+- README, this report and `Verification/`: current results and delivery evidence.
 
-## Initial implementation checks — 14 October 2026
+Earlier runtime improvements remain: overview bounds/aspect fitting; readable dashboard spacing/hierarchy; clearer rain and channels; mineral building palette, solar-cell seams, emissive lamps/windows and fuller canopies; smooth sky/fog/light transitions and readable night exposure; generated Volume cleanup; preview-scene test isolation; retained Resources directory to prevent OneDrive post-build cleanup failure. Files: `OrbitCamera.cs`, `EnvironmentalDashboard.cs`, `ProceduralCity.cs`, `ScenePreparationTests.cs`, `Assets/Resources/README.txt`, `Tools/Test-Source.ps1`. The saved main scene/GUID and user assets/configuration were preserved. Unity-generated upgrades/imports remain in the working tree, including TMP and URP settings; they were not discarded or silently represented as solely agent-authored.
 
-- Production core compiled through PowerShell 7 `Add-Type`.
-- **21/21** standalone core checks passed. Coverage includes causal rain/wind/cloud rules, drainage sensitivity, bounds under 10,000 extreme updates, nonfinite input sanitization, deterministic state, scenario reset, missing data, interval conversion, null-preserving JSON, exact forecast indexing, error/stale status, event deduplication, offline scenarios, and malformed JSON rejection.
-- **5/5** real Open-Meteo HTTPS request/parser/geocoding checks passed, including a second run after applying the verified coordinates. All five responses contained required current fields and 48 hourly forecast records. This proves the request contract and production parser against real responses; it does not execute UnityWebRequest.
-- C# syntax, assembly-definition names/JSON, required local asset GUIDs, metadata coverage, and runtime string-branding checks are covered by `Tools/Test-Source.ps1`. The saved result states the actual outcome. These checks do not resolve all Unity API types or compile the Unity assemblies.
-- Git initialized locally. There was no existing project to preserve at the start.
+## Environment and actual execution
 
-Machine-readable snapshots of the executed checks are in `Verification/`. Raw API responses and repeat-run reports are under ignored `TestResults/`. Neither directory is used by the running application as a weather source.
+Unity CLI is current at `1.0.0-beta.13`. Connected Editor is **6000.3.26f1**, with resolved URP **17.3.0**, Input System **1.20.1**, uGUI **2.0.0**, Test Framework **1.6.0** and official Pipeline **0.8.0-exp.1**. Windows standalone support exists. Editor inspection confirmed `PC_RPAsset`, LiberationSans SDF, enabled main scene `Assets/Scenes/Dhara.unity`, target `StandaloneWindows64` and Mono2x backend. Actual Test Runner/build execution confirms licensing allowed execution, rather than assuming account sign-in means a valid license. Evidence: `unity-environment.json`, `unity-compilation.json`.
 
-## Environment blocker
+Executed in this pass:
 
-The official Unity plugin `unity@unity-agent-plugin` **0.1.8-beta** was installed through its documented marketplace. Unity CLI **1.0.0-beta.13** was installed and confirmed current. The release catalog reported Unity **6000.3.26f1** as a Unity 6.3 LTS release.
+- **33/33 standalone core checks passed** through PowerShell Add-Type against production parser/store/engine. `core-results.json`.
+- **5/5 genuine weather HTTPS checks passed**, HTTP 200, valid units/coordinates, no missing requested current fields. All returned 48 hourly / 26 future records at retrieval. `weather-results.json`.
+- **15 C# files / five assembly definitions passed source checks** (syntax, metadata, GUID references and visible strings); this is separate from Unity compilation. `source-results.json`.
+- **22/22 actual Unity Edit Mode tests passed**, approximately 0.38 seconds. `unity-editmode.json`.
+- **8/8 actual Unity Play Mode tests passed**, approximately 44.93 seconds. `unity-playmode.json`.
+- Unity compilation completed with zero errors/warnings. Final cached Windows rebuild succeeded in approximately 6.41 seconds. Final Console: **zero errors, one warning**. `windows-build-job.json`, `unity-console-final.json`, `windows-build-console.json`.
 
-There was no pre-existing Editor, open Unity process, signed-in Unity CLI account, or connected Pipeline instance. The first installer exited with **code 2**, and its command reported **INSTALL_FAILED / INSTALL_ERROR**. A no-elevation retry diagnosed **ELEVATION_REQUIRED** for Program Files. User-profile overrides were rejected as nonexistent by the CLI. A final writable workspace install path was accepted, but the installer again reported **INSTALL_FAILED / INSTALL_ERROR**. No successful Editor installation was detected. License status reported **LICENSING_CLIENT_UNAVAILABLE**. Pipeline connection status reported **STATUS_NO_INSTANCES**.
+All evidence filenames above are under `Verification/`. No authored-only tests are counted as executed.
 
-Further automatic installation retries were stopped. Install the Editor through Unity Hub and activate its license to unblock execution. The CLI's saved Editor installation root was changed during the final attempt to this workspace's ignored `.bootstrap/Editors` folder; choose the desired permanent location in Hub, or use `unity install-path --set <existing-directory>` to change it. The original default was `C:/Program Files/Unity/Hub/Editor`.
+Play Mode coverage: scene/bootstrap/weather initialization; supported shaders and complete overview framing; actual sliders and modes; particles, canopy motion/direction, asphalt smoothness, basin footprint, cloud-driven light/sky; low/high drainage comparisons, drying, reset and live restoration; genuine requests from all five location buttons and identity of the object delivered to live simulation state; exact forecast timestamp/object; actual failed `.invalid` request; retained data/stale label and first automatic 15-second retry recovery; HTTP 503, malformed JSON and missing current data over real loopback HTTP; actual 20-second timeout (observed 20.07 seconds); cancelling a pending request on destruction; rapid location changes and refresh; main-scene reload and removal of old camera/world. Rejected responses never became successful live data.
 
-The project uses the downloaded **official Universal 3D 17.1.0 template** settings/assets as a baseline. Required package resolution, TMP import, scene preparation, and build commands are implemented but have not been executed in an Editor.
+Earlier corrections included an Edit Mode fixture failing when creating an additive untitled scene; preview-scene isolation fixed it before successful runs. The first Windows build's nonfatal OneDrive Resources cleanup IOException was fixed by retaining that directory; subsequent builds completed without it. Initial diagnostics remain in `windows-build-initial-diagnostics.json`. A previous URP Core DebugOccluder shader warning did not recur in the final cached rebuild. The sole final warning says Pipeline has no runtime config and is disabled in release players; no release control server is configured.
 
-## Authored, not executed
+## Genuine API observations
 
-- 18 Edit Mode NUnit tests in `Assets/Dhara/Tests/EditMode`.
-- Two Play Mode tests in `Assets/Dhara/Tests/PlayMode`: scene/scenario responses and a genuine failing UnityWebRequest to a reserved `.invalid` host.
-- URP scene preparation and font/material setup.
-- Unity compilation, renderer/shader variants, UI layout, input controls, network retry coroutine, visual transitions, and performance.
-- Windows build and standalone smoke test. **No executable exists.**
+Production endpoint: `https://api.open-meteo.com/v1/forecast`, requesting current/hourly temperature, humidity, precipitation, rain, wind speed/direction, cloud cover and shortwave radiation; Celsius, km/h, mm and Asia/Kolkata. Geocoding checks use `https://geocoding-api.open-meteo.com/v1/search`. Retrieval and model-valid timestamps are separate.
 
-## Required manual acceptance pass
+At model-valid **2026-10-14 21:45 IST**, all five returned HTTP 200 and parsed successfully:
 
-After opening in licensed Unity 6.3 LTS and completing first-open setup:
+- Bengaluru (12.97194, 77.59369): 22.1°C, precipitation 0 mm, rain 0 mm/h, wind 11.5 km/h from 73°, cloud 100%.
+- Chennai (13.08784, 80.27847): 26.4°C, precipitation 0.6 mm, rain 0.4 mm/h, wind 3.1 km/h from 350°, cloud 91%.
+- Mumbai (19.07283, 72.88261): 31.6°C, precipitation 0 mm, rain 0 mm/h, wind 9.4 km/h from 2°, cloud 0%.
+- Delhi (28.62137, 77.2148): 26.8°C, precipitation 0 mm, rain 0 mm/h, wind 4.7 km/h from 97°, cloud 0%.
+- Hyderabad (17.38405, 78.45636): 27.9°C, precipitation 0 mm, rain 0 mm/h, wind 7.7 km/h from 49°, cloud 95%.
 
-1. Confirm no Console compilation errors or runtime exceptions. Run both Test Runner suites.
-2. Enter Play Mode and confirm the district, readable dashboard, natural materials, rain system, and useful overview camera. Inspect all three modes at 1600 × 1000 and a smaller landscape window. Check that all visible controls receive input and text does not clip.
-3. Select each city. Verify the displayed selected location, source, IST valid time, UTC retrieval time, null/unavailable fields, and actual returned values. Confirm that switching locations never displays the previous location's weather.
-4. Verify five-minute refresh, the refresh button, failure status, retry/backoff, preserved same-location data, and stale status. Disconnect/reconnect networking for this check; confirm the scene remains navigable and hypothetical mode remains available.
-5. In WHAT-IF LAB set rain to 80 mm/h and drainage to zero. Watch rain emission, wetness, storage depth, basin footprint, and the actual change log. Raise drainage and compare storage after the same elapsed model time from a reset. Increase wind and confirm sway and particle drift.
-6. Reset the scenario, return to live, and verify the mode indicator, baseline values, and zeroed storage. Confirm hypothetical rain/wind never overwrites the retrieved weather object.
-7. Select several forecast hours. Compare the displayed valid timestamp and values to the corresponding actual API response entries. Confirm forecast data is labelled, preview storage resets, and controls make no extra requests.
-8. Review the full visible experience for consistent environmental identity, accurate simulated/model/missing-data labels, and absence of prohibited branding or decorative statistics. The automated string scan is only part of this review.
-9. Build Windows through the DHARA menu, inspect the build report, and run the executable with its companion data/runtime files. Repeat camera, location, scenario, forecast, and network-failure smoke checks in the standalone player.
+Per-city UTC retrieval timestamps, field units and coordinates are preserved in `weather-results.json`. Direct UnityWebRequest city observations are in `unity-live-locations.txt`. These are Open-Meteo model estimates, not physical-sensor measurements. Current rainfall is normalized from the returned interval; precipitation total remains separate.
 
-Do not call the application ready until these checks have evidence. Historical replay, air quality, scenario comparison, and advanced hydrology are outside the implemented scope.
+## Windows delivery and manual evidence
+
+Release executable: `C:/Users/Roshan/OneDrive/Desktop/DHARA_CODEX/Builds/Windows/DHARA.exe`.
+
+Delivery ZIP: `Builds/DHARA-Windows-x64-20261014-220013.zip` (approximately 40 MB). `windows-package.json` records SHA256, AMD64 PE-header verification and **174/174 ZIP file hashes verified**. Includes executable, data, UnityPlayer, Mono runtime, companions, launch notes and checksum manifest; excludes Burst DoNotShip artifacts. No installed Unity Editor is needed to run it.
+
+The ZIP was extracted to a fresh `TestResults/Extracted-*` directory and that executable was launched at 1600×900. The district and dashboard rendered. Bengaluru retrieval succeeded; clicking Chennai showed loading/unavailable/paused state, then genuine Chennai 22:00 IST conditions (26.3°C, 0.4 mm/h, 2.9 km/h from 7°, cloud 94%). Light rain was visible and wetness reached 8%. What-if mode opened with the correct baseline and hypothetical label. Screenshot: `Screenshots/packaged-chennai-live.png`.
+
+Prior direct player interaction also verified all four scenario sliders, visible heavy rain and wind drift, wetness/storage response, forecast step 14 with its real timestamp/solar values, return to live and normal Alt+F4 exit. Prior screenshots `standalone-live.png`, `standalone-what-if.png`, `standalone-forecast.png` and `standalone-final.png` remain valid evidence for that build. The final release has the same application runtime assembly hash; this pass changed tests/tools/docs. The packaged player's log was inspected for fatal startup exceptions: none observed. The device reports a D3D12 debug-info-queue query failure but rendered successfully. Forced offline/timeout/error behavior was exercised in Unity tests, not manually forced in this release player.
+
+## Security, limits and reproduction
+
+Targeted scan reviewed 45 application/tool/config files with zero credential-pattern hits. Manual review found no application secret, API-key header, destructive deletion or unbounded busy retry; public forecast needs no key. Timeout/backoff and cancellation were actually tested. Packaging copies data without deleting originals. Evidence/scope: `security-review.json`; this is not a comprehensive dependency audit. No credentials are included in delivery notes.
+
+Run: double-click `Builds/Windows/DHARA.exe`, or extract the complete ZIP and double-click its `DHARA/DHARA.exe`. Keep companion files together. Editor: open the existing project in 6000.3.26f1 and run `Assets/Scenes/Dhara.unity`. Rebuild through **DHARA > Build Windows application**. Package with `.\Tools\Package-Windows.ps1`. Test commands and controls are in README.
+
+Limits: water is aggregate effective storage, not terrain/hydraulic flood prediction; solar is illustrative radiation×96 m²×20% with omitted losses; the district is generic. Forecast applies one returned hour as constant input, not intervening-hour integration. Missing inputs pause live integration; offline What-if explicitly assumes 50% cloud and leaves missing solar/humidity/direction unavailable. No fake weather fallback or inference feature was added. Full five-minute-refresh soak/backoff sequence, long endurance, broad resolutions/hardware and student-laptop performance remain unverified. Earlier RTX 4070 observation near 61 FPS is not a general hardware claim. Historical replay, air quality and scenario comparison remain unimplemented and optional.
+

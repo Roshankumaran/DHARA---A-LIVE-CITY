@@ -1,0 +1,76 @@
+{
+  "status": "completed",
+  "duration": 45.66,
+  "summary": {
+    "total": 9,
+    "passed": 9,
+    "failed": 0,
+    "skipped": 0,
+    "inconclusive": 0
+  },
+  "results": [
+    {
+      "FullName": "Dhara.Tests.ApplicationTests.ActualSlidersDriveEffectsDrainageCloudLightingAndReset",
+      "Status": "Passed",
+      "Duration": 2.5382138,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Dhara.Tests.ApplicationTests.FailedWeatherRequestLeavesApplicationUsable",
+      "Status": "Passed",
+      "Duration": 0.1923078,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Dhara.Tests.ApplicationTests.HttpMalformedAndMissingResponsesFailHonestly",
+      "Status": "Passed",
+      "Duration": 0.1167904,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Dhara.Tests.ApplicationTests.InterventionControlsPreserveFrozenBaselineAndLiveData",
+      "Status": "Passed",
+      "Duration": 0.4837652,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Dhara.Tests.ApplicationTests.RapidSwitchRefreshAndSceneReloadPreserveLatestLocation",
+      "Status": "Passed",
+      "Duration": 2.3599878,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Dhara.Tests.ApplicationTests.RealRefreshFailureRetainsDataAndAutomaticRetryRecovers",
+      "Status": "Passed",
+      "Duration": 15.4105096,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Dhara.Tests.ApplicationTests.RealRequestTimeoutIsBoundedAndCleanupCancelsPendingRequest",
+      "Status": "Passed",
+      "Duration": 20.0838444,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Dhara.Tests.ApplicationTests.RealWeatherForAllLocationButtonsAndExactForecastSelection",
+      "Status": "Passed",
+      "Duration": 1.9284728,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Dhara.Tests.ApplicationTests.SceneBootsAndScenarioDrivesWaterRainAndWind",
+      "Status": "Passed",
+      "Duration": 2.5029388,
+      "Message": null,
+      "StackTrace": null
+    }
+  ]
+}

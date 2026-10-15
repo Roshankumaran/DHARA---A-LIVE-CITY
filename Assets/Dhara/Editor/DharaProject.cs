@@ -59,7 +59,7 @@ namespace Dhara.Editor
             var main=buildScenes.Find(entry=>entry.path==ScenePath);
             if(main==null) buildScenes.Add(new EditorBuildSettingsScene(ScenePath,true)); else main.enabled=true;
             EditorBuildSettings.scenes=buildScenes.ToArray();
-            PlayerSettings.companyName="DHARA"; PlayerSettings.productName="DHARA — A Living World";
+            PlayerSettings.companyName="DHARA"; PlayerSettings.productName="DHARA — A LIVING CITY";
             PlayerSettings.defaultScreenWidth=1600; PlayerSettings.defaultScreenHeight=1000;
             PlayerSettings.fullScreenMode=FullScreenMode.Windowed; PlayerSettings.resizableWindow=true;
             PlayerSettings.colorSpace=ColorSpace.Linear; PlayerSettings.runInBackground=true;
@@ -99,13 +99,28 @@ namespace Dhara.Editor
         [MenuItem("DHARA/Build Windows application")]
         public static void BuildWindows()
         {
+            BuildWindowsAt("Builds/Windows");
+        }
+        [MenuItem("DHARA/Build Windows visual release")]
+        public static void BuildVisualWindows()
+        {
+            BuildWindowsAt("Builds/Windows-Visual");
+        }
+        [MenuItem("DHARA/Build Living City Windows release")]
+        public static void BuildLivingCityWindows()
+        {
+            PlayerSettings.productName="DHARA — A LIVING CITY";AssetDatabase.SaveAssets();
+            BuildWindowsAt("Builds/Windows-LivingCity");
+        }
+        static void BuildWindowsAt(string directory)
+        {
             if(!File.Exists("Assets/Dhara/SetupComplete.txt")) Prepare();
             if(!File.Exists("Assets/Dhara/SetupComplete.txt")) throw new InvalidOperationException("Finish first-open package and font preparation before building.");
             if(!File.Exists(ScenePath)) throw new InvalidOperationException("Main scene was not prepared.");
-            Directory.CreateDirectory("Builds/Windows");
-            var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions { scenes=new[]{ScenePath}, locationPathName="Builds/Windows/DHARA.exe",target=BuildTarget.StandaloneWindows64,options=BuildOptions.None });
+            Directory.CreateDirectory(directory);
+            var report=BuildPipeline.BuildPlayer(new BuildPlayerOptions { scenes=new[]{ScenePath}, locationPathName=Path.Combine(directory,"DHARA.exe"),target=BuildTarget.StandaloneWindows64,options=BuildOptions.None });
             if(report.summary.result!=BuildResult.Succeeded) throw new InvalidOperationException("Windows build failed: "+report.summary.result);
-            Debug.Log("Windows build created: Builds/Windows/DHARA.exe");
+            Debug.Log("Windows build created: "+Path.Combine(directory,"DHARA.exe"));
         }
     }
 }

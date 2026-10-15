@@ -1,0 +1,50 @@
+[
+  {
+    "width": 1920,
+    "height": 1080,
+    "frame": 6918,
+    "mode": "Live",
+    "weatherValid": "2026-10-15T00:30",
+    "loading": false,
+    "error": null,
+    "viewport": "(x:393.60, y:275.40, width:1036.80, height:610.20)",
+    "overflow": [],
+    "controlsOutside": []
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "frame": 7202,
+    "mode": "Forecast",
+    "weatherValid": "2026-10-15T00:30",
+    "loading": false,
+    "error": null,
+    "viewport": "(x:393.60, y:275.40, width:1036.80, height:610.20)",
+    "overflow": [],
+    "controlsOutside": []
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "frame": 7479,
+    "mode": "WhatIf",
+    "weatherValid": "2026-10-15T00:30",
+    "loading": false,
+    "error": null,
+    "viewport": "(x:393.60, y:275.40, width:1036.80, height:610.20)",
+    "overflow": [],
+    "controlsOutside": []
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "frame": 7770,
+    "mode": "WhatIf",
+    "weatherValid": "2026-10-15T00:30",
+    "loading": false,
+    "error": null,
+    "viewport": "(x:393.60, y:275.40, width:1036.80, height:610.20)",
+    "overflow": [],
+    "controlsOutside": []
+  }
+]

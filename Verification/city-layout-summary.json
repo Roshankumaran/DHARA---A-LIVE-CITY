@@ -1,0 +1,296 @@
+[
+  {
+    "width": 1280,
+    "height": 800,
+    "view": "Live",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1280,
+    "height": 800,
+    "view": "Forecast",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1280,
+    "height": 800,
+    "view": "WhatIf",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1280,
+    "height": 800,
+    "view": "Studio",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1280,
+    "height": 800,
+    "view": "Assumptions",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1280,
+    "height": 800,
+    "view": "Trace",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1280,
+    "height": 800,
+    "view": "Planner",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1280,
+    "height": 800,
+    "view": "Timeline",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1280,
+    "height": 800,
+    "view": "DataSources",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1280,
+    "height": 800,
+    "view": "CityComparison",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1280,
+    "height": 800,
+    "view": "ScenarioFiles",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1280,
+    "height": 800,
+    "view": "Demo",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1280,
+    "height": 800,
+    "view": "Sensitivity",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1280,
+    "height": 800,
+    "view": "ObjectInspector",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1600,
+    "height": 900,
+    "view": "Live",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1600,
+    "height": 900,
+    "view": "Forecast",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1600,
+    "height": 900,
+    "view": "WhatIf",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1600,
+    "height": 900,
+    "view": "Studio",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1600,
+    "height": 900,
+    "view": "Assumptions",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1600,
+    "height": 900,
+    "view": "Trace",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1600,
+    "height": 900,
+    "view": "Planner",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1600,
+    "height": 900,
+    "view": "Timeline",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1600,
+    "height": 900,
+    "view": "DataSources",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1600,
+    "height": 900,
+    "view": "CityComparison",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1600,
+    "height": 900,
+    "view": "ScenarioFiles",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1600,
+    "height": 900,
+    "view": "Demo",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1600,
+    "height": 900,
+    "view": "Sensitivity",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1600,
+    "height": 900,
+    "view": "ObjectInspector",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "view": "Live",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "view": "Forecast",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "view": "WhatIf",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "view": "Studio",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "view": "Assumptions",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "view": "Trace",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "view": "Planner",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "view": "Timeline",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "view": "DataSources",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "view": "CityComparison",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "view": "ScenarioFiles",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "view": "Demo",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "view": "Sensitivity",
+    "overflow": 0,
+    "controlsOutside": 0
+  },
+  {
+    "width": 1920,
+    "height": 1080,
+    "view": "ObjectInspector",
+    "overflow": 0,
+    "controlsOutside": 0
+  }
+]

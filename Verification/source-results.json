@@ -1,8 +1,8 @@
 {
-  "issues": [],
-  "assemblies": 5,
   "passed": true,
+  "scope": "Syntax and source checks, not Unity compilation or rendering",
+  "issues": [],
+  "executedUtc": "2026-10-14T16:34:30.3391089Z",
   "sourceFiles": 15,
-  "executedUtc": "2026-10-14T14:06:45.7746172Z",
-  "scope": "Syntax and source checks, not Unity compilation or rendering"
+  "assemblies": 5
 }

@@ -1,0 +1,100 @@
+ExitCode: 4 Duration: 9s840ms
+ExitCode: 0 Duration: 0s426ms
+Starting: C:\Program Files\Unity\Hub\Editor\6000.3.26f1\Editor\Data\Tools\BuildPipeline\bee_backend.exe --ipc --dagfile="Library/Bee/Player5bcd51e7.dag" --dagfilejson="Library\Bee\Player5bcd51e7.dag.json" --profile="Library/Bee/backend2.traceevents" Player
+WorkingDir: C:/Users/Roshan/OneDrive/Desktop/DHARA_CODEX
+Finished compiling graph: 451 nodes, 1169 flattened edges (1169 ToBuild, 0 ToUse), maximum node priority 279
+*** Tundra build success (0.11 seconds), 0 items updated, 450 evaluated
+ExitCode: 0 Duration: 0s208ms
+Total cache size 110303548
+Total cache size after purge 110303548, took 00:00:00.0837986
+Refreshing native plugins compatible for Editor in 1.45 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Asset Pipeline Refresh (id=79f0b5aa2d308be4db9b3ccc63eea1b4): Total: 0.096 seconds - Initiated by RefreshV2(NoUpdateAssetOptions)
+Refreshing native plugins compatible for Editor in 1.64 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+
+-------------------------------------------------------------------------------
+Build Report
+Information on used Assets is not available, since player data was not rebuilt.
+Do a clean build to view the Asset build report information.
+-------------------------------------------------------------------------------
+Unloading 1 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 116 unused Assets / (0.8 MB). Loaded Objects now: 8371.
+Memory consumption went from 394.1 MB to 393.3 MB.
+Total: 99.932600 ms (FindLiveObjects: 0.457100 ms CreateObjectMapping: 0.169300 ms MarkObjects: 93.847200 ms  DeleteObjects: 5.457000 ms)
+
+DisplayProgressNotification: Build Successful
+Build Finished, Result: Success.
+##utp:{"type":"PlayerBuildInfo","version":2,"phase":"Immediate","time":1792034209537,"processId":12996,"steps":[{"description":"Preprocess Player","duration":908},{"description":"Prepare For Build","duration":30},{"description":"ProducePlayerScriptAssemblies","duration":8888},{"description":"Verify Build setup","duration":629},{"description":"Prepare assets for target platform","duration":36},{"description":"Prepare splash screen","duration":1},{"description":"Run script only build","duration":80},{"description":"Postprocess built player","duration":11605}],"duration":22177}
+Unloading 0 Unused Serialized files (Serialized files now loaded: 0)
+Loaded scene 'Temp/__Backupscenes/0.backup'
+	Deserialize:            2.685 ms
+	Integration:            485.779 ms
+	Integration of assets:  0.004 ms
+	Thread Wait Time:       5.092 ms
+	Total Operation Time:   493.560 ms
+Unloading 0 unused Assets / (10.3 MB). Loaded Objects now: 8327.
+Memory consumption went from 388.5 MB to 378.2 MB.
+Total: 62.198900 ms (FindLiveObjects: 0.665300 ms CreateObjectMapping: 0.400100 ms MarkObjects: 61.107500 ms  DeleteObjects: 0.024000 ms)
+
+Windows build created: Builds/Windows-Visual\DHARA.exe
+UnityEngine.Debug:ExtractStackTraceNoAlloc (byte*,int,string)
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:Internal_Log (UnityEngine.LogType,UnityEngine.LogOption,string,UnityEngine.Object)
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:Log (object)
+Dhara.Editor.DharaProject:BuildWindowsAt (string) (at Assets/Dhara/Editor/DharaProject.cs:117)
+Dhara.Editor.DharaProject:BuildVisualWindows () (at Assets/Dhara/Editor/DharaProject.cs:107)
+PipelineEvaluation.PipelineEval_71d2ea22:Execute ()
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+Unity.Pipeline.Compilation.EvalCodeCompiler:ExecuteCompiledAssembly (System.Reflection.Assembly) (at ./Library/PackageCache/com.unity.pipeline@62c08c808737/Runtime/Compilation/EvalCodeCompiler.cs:190)
+Unity.Pipeline.Compilation.EvalCodeCompiler:CompileAndExecuteOnMainThread (string,int,System.Diagnostics.Stopwatch) (at ./Library/PackageCache/com.unity.pipeline@62c08c808737/Runtime/Compilation/EvalCodeCompiler.cs:54)
+Unity.Pipeline.Runtime.Commands.CodeEvalCommand:EvaluateSource (string,int,string) (at ./Library/PackageCache/com.unity.pipeline@62c08c808737/Runtime/Commands/CodeEvalCommand.cs:112)
+Unity.Pipeline.Runtime.Commands.CodeEvalCommand:EvaluateCode (string,int) (at ./Library/PackageCache/com.unity.pipeline@62c08c808737/Runtime/Commands/CodeEvalCommand.cs:24)
+System.Reflection.RuntimeMethodInfo:Invoke (object,System.Reflection.BindingFlags,System.Reflection.Binder,object[],System.Globalization.CultureInfo)
+System.Reflection.MethodBase:Invoke (object,object[])
+Unity.Pipeline.BasePipelineServer:ExecuteCommandDirect (Unity.Pipeline.Commands.CommandInfo,object[]) (at ./Library/PackageCache/com.unity.pipeline@62c08c808737/Runtime/Common/BasePipelineServer.cs:2820)
+Unity.Pipeline.BasePipelineServer/<>c__DisplayClass138_0:<ExecuteCommand>b__1 () (at ./Library/PackageCache/com.unity.pipeline@62c08c808737/Runtime/Common/BasePipelineServer.cs:2694)
+Unity.Pipeline.Threading.Dispatcher/WorkItem`1<object>:ExecuteCore () (at ./Library/PackageCache/com.unity.pipeline@62c08c808737/Runtime/Common/Dispatcher.cs:284)
+Unity.Pipeline.Threading.Dispatcher/WorkItem:Execute () (at ./Library/PackageCache/com.unity.pipeline@62c08c808737/Runtime/Common/Dispatcher.cs:229)
+Unity.Pipeline.Threading.Dispatcher:ProcessWorkQueue (int) (at ./Library/PackageCache/com.unity.pipeline@62c08c808737/Runtime/Common/Dispatcher.cs:195)
+Unity.Pipeline.Threading.Dispatcher:ProcessWorkQueue () (at ./Library/PackageCache/com.unity.pipeline@62c08c808737/Runtime/Common/Dispatcher.cs:210)
+UnityEditor.EditorApplication:Internal_CallUpdateFunctions ()
+
+(Filename: Assets/Dhara/Editor/DharaProject.cs Line: 117)
+
+Asset Pipeline Refresh (id=c6269ad56e7879745b92ca196ff51084): Total: 0.009 seconds - Initiated by RefreshV2(AllowForceSynchronousImport)
+Asset Pipeline Refresh (id=046e0e39db38b8e4fafa1cf03df6a699): Total: 0.004 seconds - Initiated by RefreshV2(AllowForceSynchronousImport)
+Asset Pipeline Refresh (id=0c83e97bb6c61ca4f87f05186a5447a3): Total: 0.003 seconds - Initiated by RefreshV2(AllowForceSynchronousImport)
+[LAYOUT] About to save layout C:\Users\Roshan\OneDrive\Desktop\DHARA_CODEX\UserSettings\Layouts\default-6000.dwlt
+[LAYOUT] About to save layout C:/Users/Roshan/AppData/Roaming/Unity/Editor-5.x/Preferences\Layouts\current\default-6000.dwlt
+Pipeline Server stopped
+Input System module state changed to: ShutdownInProgress.
+Input System polling thread exited.
+Input System module state changed to: Shutdown.
+[Physics::Module] Cleanup current backend.
+[Physics::Module] Id: 0xf2b8ea05
+[Licensing::IpcConnector] LicenseClient-Roshan-notifications channel disconnected successfully.
+[Licensing::IpcConnector] LicenseClient-Roshan channel disconnected successfully.
+AcceleratorClientConnectionCallback - disconnected - :0
+Cleanup mono
+abort_threads: Failed aborting id: 0000000000003CCC, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 00000000000047B4, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 000000000000440C, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 0000000000003CCC, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 00000000000047B4, mono_thread_manage will ignore it
+
+abort_threads: Failed aborting id: 000000000000440C, mono_thread_manage will ignore it
+
+debugger-agent: Unable to listen on 5016
+VBCSCompilerServerWatchdog: requested VBCSCompiler shutdown
+Checking for leaked weakptr:
+  Found no leaked weakptrs.
+[Package Manager] Server process was shutdown
+##utp:{"type":"MemoryLeaks","version":2,"phase":"Immediate","time":1792034230872,"processId":12996,"allocatedMemory":17316902,"memoryLabels":[{"Default":29317},{"Permanent":15236},{"NewDelete":70361},{"Thread":4240264},{"Manager":2340352},{"VertexData":8},{"Geometry":816},{"Texture":296},{"Shader":89621},{"Material":24},{"GfxDevice":57928},{"GfxThread":6912},{"Animation":392},{"Audio":2664},{"FreeType":8},{"FontEngine":736},{"Physics":1970},{"Physics2D":16},{"Serialization":260488},{"Input":14984},{"JobScheduler":33024},{"TextLib":22456},{"Mono":32},{"MonoCode":320},{"ScriptingNativeRuntime":155060},{"BaseObject":1620672},{"Resource":1336},{"Renderer":3008},{"Transform":4685},{"File":3937},{"WebCam":616},{"Culling":32},{"Terrain":11394},{"Wind":24},{"STL":40},{"String":11487},{"DynamicArray":103918},{"HashMap":105839},{"Utility":2661802},{"Curl":48},{"PoolAlloc":2728},{"AI":80},{"TypeTree":152353},{"ScriptManager":512},{"RuntimeInitializeOnLoadManager":64},{"SpriteAtlas":112},{"GI":7792},{"Director":8240},{"CloudService":7192},{"WebRequest":10811},{"VR":47994},{"SceneManager":504},{"Video":208},{"LazyScriptCache":32},{"NativeArray":1620},{"Camera":17},{"Secure":265},{"SerializationCache":1576},{"APIUpdating":10320},{"Subsystems":336},{"VirtualTexturing":57888},{"StaticSafetyDebugInfo":278528},{"Analytics":640},{"Hierarchy":608},{"CoreStats":13112},{"Identifiers":6480},{"Gui":234},{"EditorUtility":197549},{"VersionControl":4},{"Undo":947},{"AssetDatabase":4577891},{"EditorGi":328},{"UnityConnect":29432},{"Upm":1972},{"AssetCompliance":64},{"DrivenProperties":72},{"LocalIPC":262},{"ProfilerEditor":9746},{"CoreBusinessMetrics":3500},{"Licensing":12806},{"AssetReference":32},{"IPCStream":32}]}

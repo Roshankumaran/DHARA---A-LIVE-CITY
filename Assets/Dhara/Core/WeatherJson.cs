@@ -9,6 +9,7 @@ namespace Dhara
     // No reflection serializer, runtime code generation, or external JSON dependency.
     public static class WeatherJson
     {
+        public static Dictionary<string,object> Object(string json) => new Reader(json).Read() as Dictionary<string,object> ?? throw new FormatException("Expected JSON object");
         public static WeatherResponse Parse(string json)
         {
             var root=new Reader(json).Read() as Dictionary<string,object>;

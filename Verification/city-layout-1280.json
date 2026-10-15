@@ -1,0 +1,212 @@
+[
+  {
+    "view": "Live",
+    "layout": {
+      "width": 1280,
+      "height": 800,
+      "frame": 1491,
+      "mode": "Live",
+      "weatherValid": "2026-10-15T17:45",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:262.40, y:204.00, width:691.20, height:452.00)",
+      "overflow": [],
+      "controlsOutside": []
+    }
+  },
+  {
+    "view": "Forecast",
+    "layout": {
+      "width": 1280,
+      "height": 800,
+      "frame": 1522,
+      "mode": "Forecast",
+      "weatherValid": "2026-10-15T17:45",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:262.40, y:204.00, width:691.20, height:452.00)",
+      "overflow": [],
+      "controlsOutside": []
+    }
+  },
+  {
+    "view": "WhatIf",
+    "layout": {
+      "width": 1280,
+      "height": 800,
+      "frame": 1552,
+      "mode": "WhatIf",
+      "weatherValid": "2026-10-15T17:45",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:262.40, y:204.00, width:691.20, height:452.00)",
+      "overflow": [],
+      "controlsOutside": []
+    }
+  },
+  {
+    "view": "Studio",
+    "layout": {
+      "width": 1280,
+      "height": 800,
+      "frame": 1581,
+      "mode": "WhatIf",
+      "weatherValid": "2026-10-15T17:45",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:262.40, y:204.00, width:691.20, height:452.00)",
+      "overflow": [],
+      "controlsOutside": []
+    }
+  },
+  {
+    "view": "Assumptions",
+    "layout": {
+      "width": 1280,
+      "height": 800,
+      "frame": 1608,
+      "mode": "WhatIf",
+      "weatherValid": "2026-10-15T17:45",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:262.40, y:204.00, width:691.20, height:452.00)",
+      "overflow": [],
+      "controlsOutside": []
+    }
+  },
+  {
+    "view": "Trace",
+    "layout": {
+      "width": 1280,
+      "height": 800,
+      "frame": 1639,
+      "mode": "WhatIf",
+      "weatherValid": "2026-10-15T17:45",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:262.40, y:204.00, width:691.20, height:452.00)",
+      "overflow": [],
+      "controlsOutside": []
+    }
+  },
+  {
+    "view": "Planner",
+    "layout": {
+      "width": 1280,
+      "height": 800,
+      "frame": 1969,
+      "mode": "WhatIf",
+      "weatherValid": "2026-10-15T17:45",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:262.40, y:204.00, width:691.20, height:452.00)",
+      "overflow": [],
+      "controlsOutside": []
+    }
+  },
+  {
+    "view": "Timeline",
+    "layout": {
+      "width": 1280,
+      "height": 800,
+      "frame": 2000,
+      "mode": "WhatIf",
+      "weatherValid": "2026-10-15T17:45",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:262.40, y:204.00, width:691.20, height:452.00)",
+      "overflow": [],
+      "controlsOutside": []
+    }
+  },
+  {
+    "view": "DataSources",
+    "layout": {
+      "width": 1280,
+      "height": 800,
+      "frame": 2032,
+      "mode": "WhatIf",
+      "weatherValid": "2026-10-15T17:45",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:262.40, y:204.00, width:691.20, height:452.00)",
+      "overflow": [],
+      "controlsOutside": []
+    }
+  },
+  {
+    "view": "CityComparison",
+    "layout": {
+      "width": 1280,
+      "height": 800,
+      "frame": 2061,
+      "mode": "WhatIf",
+      "weatherValid": "2026-10-15T17:45",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:262.40, y:204.00, width:691.20, height:452.00)",
+      "overflow": [],
+      "controlsOutside": []
+    }
+  },
+  {
+    "view": "ScenarioFiles",
+    "layout": {
+      "width": 1280,
+      "height": 800,
+      "frame": 2089,
+      "mode": "WhatIf",
+      "weatherValid": "2026-10-15T17:45",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:262.40, y:204.00, width:691.20, height:452.00)",
+      "overflow": [],
+      "controlsOutside": []
+    }
+  },
+  {
+    "view": "Demo",
+    "layout": {
+      "width": 1280,
+      "height": 800,
+      "frame": 2116,
+      "mode": "Demonstration",
+      "weatherValid": "2026-10-15T17:45",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:262.40, y:204.00, width:691.20, height:452.00)",
+      "overflow": [],
+      "controlsOutside": []
+    }
+  },
+  {
+    "view": "Sensitivity",
+    "layout": {
+      "width": 1280,
+      "height": 800,
+      "frame": 2145,
+      "mode": "WhatIf",
+      "weatherValid": "2026-10-15T17:45",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:262.40, y:204.00, width:691.20, height:452.00)",
+      "overflow": [],
+      "controlsOutside": []
+    }
+  },
+  {
+    "view": "ObjectInspector",
+    "layout": {
+      "width": 1280,
+      "height": 800,
+      "frame": 2174,
+      "mode": "WhatIf",
+      "weatherValid": "2026-10-15T17:45",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:262.40, y:204.00, width:691.20, height:452.00)",
+      "overflow": [],
+      "controlsOutside": []
+    }
+  }
+]

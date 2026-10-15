@@ -1,0 +1,23 @@
+[
+  {
+    "source": "imd",
+    "error": "Response status code does not indicate success: 401 (Unauthorized).",
+    "url": "https://mausam.imd.gov.in/api/warnings_district_api.php?id=573"
+  },
+  {
+    "source": "history",
+    "status": 200,
+    "bytes": 1832,
+    "retrievedUtc": "2026-10-15T11:19:26.7963806Z",
+    "url": "https://archive-api.open-meteo.com/v1/archive?latitude=12.97194&longitude=77.59369&start_date=2026-10-01&end_date=2026-10-01&hourly=temperature_2m,relative_humidity_2m,precipitation,rain,wind_speed_10m,wind_direction_10m,cloud_cover,shortwave_radiation&models=era5&timezone=Asia%2FKolkata&wind_speed_unit=kmh",
+    "preview": "{\"latitude\":13.0,\"longitude\":77.5,\"generationtime_ms\":1.6845464706420898,\"utc_offset_seconds\":19800,\"timezone\":\"Asia/Kolkata\",\"timezone_abbreviation\":\"GMT+5:30\",\"elevation\":918.0,\"hourly_units\":{\"time"
+  },
+  {
+    "source": "air",
+    "status": 200,
+    "bytes": 348,
+    "retrievedUtc": "2026-10-15T11:19:28.7272465Z",
+    "url": "https://air-quality-api.open-meteo.com/v1/air-quality?latitude=12.97194&longitude=77.59369&current=pm2_5,pm10&timezone=Asia%2FKolkata",
+    "preview": "{\"latitude\":13.0,\"longitude\":77.600006,\"generationtime_ms\":0.3845691680908203,\"utc_offset_seconds\":19800,\"timezone\":\"Asia/Kolkata\",\"timezone_abbreviation\":\"GMT+5:30\",\"elevation\":918.0,\"current_units\":"
+  }
+]

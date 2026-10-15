@@ -1,0 +1,30 @@
+{
+  "success": true,
+  "command": "command eval",
+  "data": {
+    "command": "eval",
+    "parameters": {
+      "code": "var r=UnityEditor.Build.Reporting.BuildReport.GetLatestReport(); return new {result=r.summary.result.ToString(), duration=r.summary.totalTime.TotalSeconds,bytes=r.summary.totalSize,errors=r.summary.totalErrors,warnings=r.summary.totalWarnings,output=r.summary.outputPath};"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "result": "Succeeded",
+        "duration": 38.0239045,
+        "bytes": 104458179,
+        "errors": 0,
+        "warnings": 1,
+        "output": "C:/Users/Roshan/OneDrive/Desktop/DHARA_CODEX/Builds/Windows-Visual/DHARA.exe"
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

@@ -31,4 +31,4 @@ foreach($guid in @('0471249ae03741b7ac613be5c482d908','70f8de0b65bc4baaa160a5243
 New-Item -ItemType Directory -Path 'TestResults' -Force | Out-Null
 @{executedUtc=[DateTime]::UtcNow.ToString('o');scope='Syntax and source checks, not Unity compilation or rendering';sourceFiles=$sourceCount;assemblies=$assemblies.Count;issues=$issues.ToArray();passed=($issues.Count -eq 0)} | ConvertTo-Json -Depth 6 | Set-Content 'TestResults/source-results.json'
 if($issues.Count) {$issues | Write-Output;exit 1}
-Write-Output "PASS $sourceCount C# files: syntax, $($assemblies.Count) assembly definitions, asset GUIDs/metas, runtime branding strings. Unity compilation remains unverified."
+Write-Output "PASS $sourceCount C# files: syntax, $($assemblies.Count) assembly definitions, asset GUIDs/metas, runtime branding strings. This script does not run Unity compilation."

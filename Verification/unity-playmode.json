@@ -1,0 +1,84 @@
+{
+  "success": true,
+  "command": "command test_status",
+  "data": {
+    "command": "test_status",
+    "parameters": {},
+    "result": {
+      "status": "completed",
+      "duration": 44.93,
+      "summary": {
+        "total": 8,
+        "passed": 8,
+        "failed": 0,
+        "skipped": 0,
+        "inconclusive": 0
+      },
+      "results": [
+        {
+          "FullName": "Dhara.Tests.ApplicationTests.ActualSlidersDriveEffectsDrainageCloudLightingAndReset",
+          "Status": "Passed",
+          "Duration": 2.4270016,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.ApplicationTests.FailedWeatherRequestLeavesApplicationUsable",
+          "Status": "Passed",
+          "Duration": 0.1422329,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.ApplicationTests.HttpMalformedAndMissingResponsesFailHonestly",
+          "Status": "Passed",
+          "Duration": 0.1164167,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.ApplicationTests.RapidSwitchRefreshAndSceneReloadPreserveLatestLocation",
+          "Status": "Passed",
+          "Duration": 1.9275336,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.ApplicationTests.RealRefreshFailureRetainsDataAndAutomaticRetryRecovers",
+          "Status": "Passed",
+          "Duration": 15.4127413,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.ApplicationTests.RealRequestTimeoutIsBoundedAndCleanupCancelsPendingRequest",
+          "Status": "Passed",
+          "Duration": 20.0739627,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.ApplicationTests.RealWeatherForAllLocationButtonsAndExactForecastSelection",
+          "Status": "Passed",
+          "Duration": 2.2784458,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.ApplicationTests.SceneBootsAndScenarioDrivesWaterRainAndWind",
+          "Status": "Passed",
+          "Duration": 2.513253,
+          "Message": null,
+          "StackTrace": null
+        }
+      ]
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

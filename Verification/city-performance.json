@@ -1,0 +1,37 @@
+{
+  "success": true,
+  "command": "command eval_file",
+  "data": {
+    "command": "eval_file",
+    "parameters": {
+      "file": "TestResults/CityPerformance.cs"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "scope": "Unity Editor warm benchmark; ten complete searches, not an FPS or laptop guarantee",
+        "casesPerSearch": 36,
+        "minimumMs": 3.5174000000000003,
+        "meanMs": 3.8959400000000004,
+        "maximumMs": 5.9923,
+        "meanAllocatedBytes": 0,
+        "spatialObjects": 19,
+        "meshRenderers": 988,
+        "connectionLines": 18,
+        "maximumRainParticles": 12000,
+        "unityAllocatedBytes": 365951104,
+        "allocationCounterReliable": false,
+        "allocationNote": "The Mono allocation counter returned zero despite object construction. This does not establish zero allocations."
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

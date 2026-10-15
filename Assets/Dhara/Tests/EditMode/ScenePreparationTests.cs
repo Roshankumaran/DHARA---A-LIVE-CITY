@@ -11,7 +11,7 @@ namespace Dhara.Tests
         [Test]
         public void PreparingScenePreservesExistingObjectsAndConfiguration()
         {
-            var scene=EditorSceneManager.NewScene(NewSceneSetup.EmptyScene,NewSceneMode.Additive);
+            var scene=EditorSceneManager.NewPreviewScene();
             try
             {
                 var original=new GameObject("Preserved scene object"); SceneManager.MoveGameObjectToScene(original,scene);
@@ -20,7 +20,7 @@ namespace Dhara.Tests
                 Assert.That(second,Is.SameAs(first)); Assert.That(second.City.Seed,Is.EqualTo(1234));
                 Assert.That(original!=null,Is.True); Assert.That(scene.rootCount,Is.EqualTo(2));
             }
-            finally { EditorSceneManager.CloseScene(scene,true); }
+            finally { EditorSceneManager.ClosePreviewScene(scene); }
         }
     }
 }

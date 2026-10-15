@@ -1,0 +1,10 @@
+{
+  "classification": "Demonstration",
+  "location": "Chennai",
+  "baseline": 150,
+  "intervention": 99.46467333333133,
+  "visibleRounded": 99.46,
+  "csvMatchesJson": true,
+  "sourceTime": "2000-01-01T12:00",
+  "retrievedUtc": null
+}

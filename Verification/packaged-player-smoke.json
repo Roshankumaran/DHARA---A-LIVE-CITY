@@ -1,0 +1,27 @@
+{
+  "worldAndDashboardRendered": true,
+  "whatIfPanelOpened": true,
+  "currentProcessState": "No DHARA process found at final check; not claimed to be left running",
+  "verifiedUtc": "2026-10-14T16:34:29.3752734Z",
+  "startupObserved": true,
+  "fatalStartupErrorsObserved": false,
+  "liveLocationsObserved": [
+    "Bengaluru",
+    "Chennai"
+  ],
+  "chennaiObserved": {
+    "rainMmPerHour": 0.4,
+    "temperatureC": 26.3,
+    "cloudPercent": 94,
+    "wetnessPercent": 8,
+    "windKmh": 2.9,
+    "timeIst": "2026-10-14T22:00",
+    "windDegrees": 7
+  },
+  "previousPlayerSmoke": "All four scenario sliders, forecast selection, live restoration and normal exit verified in preceding pass; same runtime assembly",
+  "requestedScreen": "1600x900 windowed; also observed maximized",
+  "launchedExecutable": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX\\TestResults\\Extracted-20261014-220056\\DHARA\\DHARA.exe",
+  "forcedNetworkFailureInRelease": "Not tested; HTTP, invalid data, DNS failure, timeout, retry and cancellation passed in actual Unity Play Mode",
+  "archive": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX\\Builds\\DHARA-Windows-x64-20261014-220013.zip",
+  "screenshot": "Screenshots/packaged-chennai-live.png"
+}

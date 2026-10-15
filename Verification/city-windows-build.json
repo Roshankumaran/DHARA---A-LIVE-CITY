@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "command": "build",
+  "data": {
+    "target": "StandaloneWindows64",
+    "logFile": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX\\Logs\\build-StandaloneWindows64-1792066917674.log",
+    "version": null,
+    "editorErrors": [
+      {
+        "type": "license-error",
+        "raw": "[Licensing::Module] LicensingClient has failed validation; ignoring",
+        "message": "[Licensing::Module] LicensingClient has failed validation; ignoring",
+        "lineNumber": 11
+      },
+      {
+        "type": "license-error",
+        "raw": "[Licensing::Module] Error: Access token is unavailable; failed to update",
+        "message": "[Licensing::Module] Error: Access token is unavailable; failed to update",
+        "lineNumber": 20
+      }
+    ],
+    "provenance": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX\\Logs\\build-StandaloneWindows64-1792066917674.provenance.json",
+    "outputPath": null
+  },
+  "errors": [],
+  "warnings": []
+}

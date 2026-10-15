@@ -1,0 +1,76 @@
+{
+  "status": "completed",
+  "duration": 45.48,
+  "summary": {
+    "total": 9,
+    "passed": 8,
+    "failed": 1,
+    "skipped": 0,
+    "inconclusive": 0
+  },
+  "results": [
+    {
+      "FullName": "Dhara.Tests.ApplicationTests.ActualSlidersDriveEffectsDrainageCloudLightingAndReset",
+      "Status": "Passed",
+      "Duration": 2.4773604,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Dhara.Tests.ApplicationTests.FailedWeatherRequestLeavesApplicationUsable",
+      "Status": "Passed",
+      "Duration": 0.109486,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Dhara.Tests.ApplicationTests.HttpMalformedAndMissingResponsesFailHonestly",
+      "Status": "Passed",
+      "Duration": 0.0999032,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Dhara.Tests.ApplicationTests.InterventionControlsPreserveFrozenBaselineAndLiveData",
+      "Status": "Passed",
+      "Duration": 0.450558,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Dhara.Tests.ApplicationTests.RapidSwitchRefreshAndSceneReloadPreserveLatestLocation",
+      "Status": "Passed",
+      "Duration": 2.4167518,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Dhara.Tests.ApplicationTests.RealRefreshFailureRetainsDataAndAutomaticRetryRecovers",
+      "Status": "Passed",
+      "Duration": 15.4076332,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Dhara.Tests.ApplicationTests.RealRequestTimeoutIsBoundedAndCleanupCancelsPendingRequest",
+      "Status": "Passed",
+      "Duration": 20.0841906,
+      "Message": null,
+      "StackTrace": null
+    },
+    {
+      "FullName": "Dhara.Tests.ApplicationTests.RealWeatherForAllLocationButtonsAndExactForecastSelection",
+      "Status": "Failed",
+      "Duration": 1.9017668,
+      "Message": "  Expected: same as <Dhara.WeatherData>\r\n  But was:  <Dhara.WeatherData>\r\n",
+      "StackTrace": "at Dhara.Tests.ApplicationTests+<RealWeatherForAllLocationButtonsAndExactForecastSelection>d__9.MoveNext () [0x00330] in C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX\\Assets\\Dhara\\Tests\\PlayMode\\ApplicationTests.cs:128\r\nat UnityEngine.TestTools.TestEnumerator+<Execute>d__7.MoveNext () [0x0003a] in .\\Library\\PackageCache\\com.unity.test-framework@bd7f943e9647\\UnityEngine.TestRunner\\NUnitExtensions\\Attributes\\TestEnumerator.cs:44\r\n"
+    },
+    {
+      "FullName": "Dhara.Tests.ApplicationTests.SceneBootsAndScenarioDrivesWaterRainAndWind",
+      "Status": "Passed",
+      "Duration": 2.486477,
+      "Message": null,
+      "StackTrace": null
+    }
+  ]
+}

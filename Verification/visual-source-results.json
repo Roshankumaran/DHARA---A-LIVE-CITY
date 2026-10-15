@@ -1,0 +1,8 @@
+{
+  "scope": "Syntax and source checks, not Unity compilation or rendering",
+  "sourceFiles": 17,
+  "assemblies": 5,
+  "executedUtc": "2026-10-15T03:23:51.5683739Z",
+  "issues": [],
+  "passed": true
+}

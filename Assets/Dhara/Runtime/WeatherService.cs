@@ -15,6 +15,7 @@ namespace Dhara
         public event Action Updated;
         public int Selected { get; private set; }
         public Func<Location,string> RequestUrl = WeatherRequest.Url;
+        public readonly WeatherDataStore[] CityCache={new WeatherDataStore(),new WeatherDataStore(),new WeatherDataStore(),new WeatherDataStore(),new WeatherDataStore()};
         Coroutine loop;
         UnityWebRequest active;
         public static string Url(Location location) => WeatherRequest.Url(location);
@@ -55,6 +56,7 @@ namespace Dhara
                     {
                         var response = WeatherJson.Parse(active.downloadHandler.text);
                         data.Accept(response,DateTime.UtcNow); failures = 0;
+                        CityCache[Selected].Accept(response,data.Status.RetrievedUtc.Value);
                     }
                     catch (Exception ex) { data.Fail("Invalid weather response: " + ex.Message); failures++; }
                 }

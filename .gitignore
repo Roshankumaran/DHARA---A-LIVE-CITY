@@ -9,3 +9,8 @@ Builds/
 *.sln
 .vs/
 TestResults/
+
+# Generated IDE files and local scratch output
+*.slnx
+/1E-09
+/Assets/TestResults.meta

@@ -1,0 +1,24 @@
+{
+  "layoutChecks": 42,
+  "editMode": {
+    "passed": 49,
+    "total": 49,
+    "failed": 0,
+    "report": "Verification/city-final-editmode.xml"
+  },
+  "sourceReport": "docs/LIVING-CITY.md",
+  "sourceFiles": 43,
+  "weatherApiChecks": 5,
+  "layoutFailures": 0,
+  "packagedFilesVerified": 174,
+  "playMode": {
+    "passed": 15,
+    "total": 15,
+    "failed": 0,
+    "report": "Verification/city-final-playmode.xml"
+  },
+  "extractedFilesVerified": 174,
+  "coreChecks": 33,
+  "imdAdvisory": "Unavailable: HTTP 401",
+  "assemblyDefinitions": 5
+}

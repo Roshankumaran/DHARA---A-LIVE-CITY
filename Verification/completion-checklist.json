@@ -1,0 +1,35 @@
+{
+  "head": "d194b8f532e6ef1432014eca8b121f34fcebc5a2",
+  "initialBroken": [],
+  "initialImplemented": [
+    "Five-city live weather",
+    "Forecast preview",
+    "What-if lab and reset",
+    "Deterministic water/wetness/solar rules",
+    "Procedural district with rain/wind/cloud effects",
+    "Windows build automation"
+  ],
+  "initialMissingDependencies": [],
+  "initialUnverified": [
+    "HTTP/malformed/missing response paths through UnityWebRequest",
+    "Actual request timeout",
+    "Rapid switch and refresh cancellation",
+    "Scene reload",
+    "Distributable archive integrity"
+  ],
+  "branch": "master",
+  "projectRoot": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX",
+  "initialVerified": [
+    "Earlier 22 Edit Mode and 5 Play Mode tests",
+    "Earlier real five-city API and player smoke evidence"
+  ],
+  "initialDeploymentBlockers": [],
+  "checkpoint": "TestResults/Checkpoints/before-completion-pass.zip",
+  "currentNewVerification": [
+    "22/22 Edit Mode",
+    "8/8 Play Mode including initial gaps",
+    "33/33 standalone core",
+    "5/5 genuine weather HTTP 200",
+    "AMD64 package with all 174 file hashes verified"
+  ]
+}

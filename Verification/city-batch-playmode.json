@@ -1,0 +1,19 @@
+{
+  "success": true,
+  "command": "test",
+  "data": {
+    "projectPath": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX",
+    "output": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX\\TestResults\\city-playmode.xml",
+    "reports": {
+      "nunit": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX\\TestResults\\city-playmode.xml",
+      "junit": null
+    },
+    "coverage": {
+      "requested": false,
+      "enabled": false,
+      "output": null
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

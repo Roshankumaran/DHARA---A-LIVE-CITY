@@ -1,0 +1,281 @@
+{
+  "success": true,
+  "command": "command run_tests",
+  "data": {
+    "command": "run_tests",
+    "parameters": {
+      "mode": "EditMode",
+      "filter": "Dhara.Tests",
+      "async_tests": "false"
+    },
+    "result": {
+      "Summary": {
+        "Total": 35,
+        "Passed": 35,
+        "Failed": 0,
+        "Skipped": 0,
+        "Inconclusive": 0
+      },
+      "Results": [
+        {
+          "FullName": "Dhara.Tests.DistrictHydrologyTests.AllInterventionsConserveMassDuringOverflow",
+          "Status": "Passed",
+          "Duration": 0.0354011,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.DistrictHydrologyTests.ComparisonFreezesInputAndUsesIdenticalConditions",
+          "Status": "Passed",
+          "Duration": 0.0052261,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.DistrictHydrologyTests.DrainageCannotRemoveUnavailableWater",
+          "Status": "Passed",
+          "Duration": 0.0002258,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.DistrictHydrologyTests.DrainageReducesCollectionStorage",
+          "Status": "Passed",
+          "Duration": 0.0008015,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.DistrictHydrologyTests.GreenRoofRetentionHasFiniteCapacity",
+          "Status": "Passed",
+          "Duration": 0.0003717,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.DistrictHydrologyTests.InvalidConfigurationRejectedAndInputsRemainFinite",
+          "Status": "Passed",
+          "Duration": 0.0010832,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.DistrictHydrologyTests.ModelCopiesConfigurationAndIsReproducible",
+          "Status": "Passed",
+          "Duration": 0.0001687,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.DistrictHydrologyTests.PermeablePavingInfiltratesAtConfiguredRate",
+          "Status": "Passed",
+          "Duration": 0.000201,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.DistrictHydrologyTests.RainDepthUsesCorrectAreaAndMassIsConserved",
+          "Status": "Passed",
+          "Duration": 0.0002237,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.DrainageExperimentTests.CapturedBaselineIsIndependentAndZeroUpgradeResetsComparison",
+          "Status": "Passed",
+          "Duration": 0.0006706,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.DrainageExperimentTests.DryConditionsCannotCreateInventedBenefitsOrNegativeWater",
+          "Status": "Passed",
+          "Duration": 0.0002327,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.DrainageExperimentTests.IncompleteInputsCannotStartAnExperiment",
+          "Status": "Passed",
+          "Duration": 0.0002977,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.DrainageExperimentTests.OneHourComparisonMatchesProductionEquation",
+          "Status": "Passed",
+          "Duration": 0.0005067,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.CloudsReduceDaylight",
+          "Status": "Passed",
+          "Duration": 0.0034432,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.CurrentRainIsConvertedFromIntervalTotal",
+          "Status": "Passed",
+          "Duration": 0.0007287,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.DryWeatherRemovesWater",
+          "Status": "Passed",
+          "Duration": 0.0002705,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.FailedConnectionStatusIsSafe",
+          "Status": "Passed",
+          "Duration": 0.0013875,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.ForecastIndexPreservesTimestamp",
+          "Status": "Passed",
+          "Duration": 0.0008035,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.ForecastRefreshPreservesSelectedHourAndDetectsExpiry",
+          "Status": "Passed",
+          "Duration": 0.001779,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.LogIsBoundedAndDeduplicated",
+          "Status": "Passed",
+          "Duration": 0.0010889,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.LowerDrainageRetainsWater",
+          "Status": "Passed",
+          "Duration": 0.0001883,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.MissingDataPausesSafely",
+          "Status": "Passed",
+          "Duration": 0.0018078,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.NullAndAbsentValuesRemainMissing",
+          "Status": "Passed",
+          "Duration": 0.0043435,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.OfflineScenarioIsExplicitAndUsable",
+          "Status": "Passed",
+          "Duration": 0.0003562,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.RainCannotReduceWater",
+          "Status": "Passed",
+          "Duration": 0.00021,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.RainIncreasesEmission",
+          "Status": "Passed",
+          "Duration": 0.0001732,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.RefreshRetainsDataButLocationChangeClearsIt",
+          "Status": "Passed",
+          "Duration": 0.019476,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.RepeatedInputsAreDeterministic",
+          "Status": "Passed",
+          "Duration": 0.0005196,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.ReturnToLiveClearsHypotheticalOverrides",
+          "Status": "Passed",
+          "Duration": 0.0008155,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.ScenarioResetRestoresBaseline",
+          "Status": "Passed",
+          "Duration": 0.0004104,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.SmallSliderMovementsEventuallyLog",
+          "Status": "Passed",
+          "Duration": 0.0003383,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.StaleDataIsIdentified",
+          "Status": "Passed",
+          "Duration": 0.0006391,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.WaterStaysBounded",
+          "Status": "Passed",
+          "Duration": 0.008815,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.EnvironmentTests.WindIncreasesSway",
+          "Status": "Passed",
+          "Duration": 0.0003282,
+          "Message": null,
+          "StackTrace": null
+        },
+        {
+          "FullName": "Dhara.Tests.ScenePreparationTests.PreparingScenePreservesExistingObjectsAndConfiguration",
+          "Status": "Passed",
+          "Duration": 0.0104134,
+          "Message": null,
+          "StackTrace": null
+        }
+      ],
+      "Duration": 6,
+      "StatusPath": null,
+      "Mode": "EditMode",
+      "FilterApplied": "testname: Dhara.Tests",
+      "success": true,
+      "result": null
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

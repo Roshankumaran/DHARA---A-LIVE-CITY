@@ -1,0 +1,24 @@
+{
+  "checks": [
+    "Startup and correct product window title",
+    "Genuine Bengaluru current weather",
+    "City switch to Chennai and genuine current weather",
+    "City tools open",
+    "Deterministic demonstration explicitly labelled",
+    "Dry-start baseline calculated: 150.00 m3",
+    "Guide selects roof-1 and shows assigned area",
+    "Intervention calculated: 99.46 m3",
+    "Coverage visual changes",
+    "JSON and CSV exported and matched to visible result",
+    "Snapshot saved and reloaded as RECORDED with recalculation",
+    "Stop/reset returns to live input",
+    "Direct 3D roof click opens actual object inspector",
+    "Normal Alt-F4 shutdown requested"
+  ],
+  "observedUtc": "2026-10-15T12:31:38.7998172Z",
+  "normalCloseRequested": true,
+  "errorMatches": [],
+  "processStillRunning": false,
+  "executable": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX\\TestResults\\Extracted-LivingCity-20261015-175433\\DHARA\\DHARA.exe",
+  "testedFromExtractedZip": true
+}

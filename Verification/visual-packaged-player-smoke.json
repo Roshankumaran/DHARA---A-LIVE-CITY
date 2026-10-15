@@ -1,0 +1,55 @@
+{
+  "extractedFilesVerified": 174,
+  "scope": "Observed Windows application launched from final ZIP extraction; native UI clicks and player log",
+  "cityTemperaturesC": {
+    "Chennai": 27.4,
+    "Bengaluru": 25.6,
+    "Hyderabad": 27.2,
+    "Delhi": 23.1,
+    "Mumbai": 30.4
+  },
+  "intervention": {
+    "interventionMm": 57.7,
+    "runningDrainageRemained12": true,
+    "extraDrainageMmPerHour": 19.7,
+    "baselineMm": 73.5,
+    "resetObserved": true,
+    "reductionMm": 15.8
+  },
+  "exceptionsOrErrorsFound": false,
+  "executedUtc": "2026-10-15T03:24:26.3246732Z",
+  "extractedHashesMatch": true,
+  "screenshots": "Verification/Screenshots/ReferenceRedesign/standalone-*.jpg",
+  "forecast": {
+    "step": 9,
+    "initial": "2026-10-15T09:00 IST",
+    "selected": "2026-10-15T18:00 IST",
+    "returnedToLive": true
+  },
+  "processAbsent": true,
+  "shutdownLogPresent": true,
+  "modelValidTime": "2026-10-15T08:45 IST",
+  "refreshObserved": true,
+  "startupAndCityRendered": true,
+  "launch": {
+    "pid": 12856,
+    "exe": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX\\TestResults\\Extracted-Visual-Final-20261015-084838\\DHARA\\DHARA.exe",
+    "log": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX\\TestResults\\visual-final-player.log",
+    "startedUtc": "2026-10-15T03:18:40.4877802Z",
+    "zip": "C:\\Users\\Roshan\\OneDrive\\Desktop\\DHARA_CODEX\\Builds\\DHARA-Windows-x64-20261015-084804.zip"
+  },
+  "whatIf": {
+    "wetnessPercent": 100,
+    "rainMmPerHour": 98.3,
+    "visibleRain": true,
+    "waterRose": true,
+    "resetObserved": true
+  },
+  "normalUiShutdownRequested": true,
+  "limitations": [
+    "Forced network faults were tested in Unity Play Mode, not injected into this release player.",
+    "No low-end hardware benchmark or extended endurance run.",
+    "Native screenshots are logical pixels under Windows display scaling; exact resolution layout audits were in the Editor Canvas."
+  ],
+  "realWeatherAllFiveCitiesObserved": true
+}
