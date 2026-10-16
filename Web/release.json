@@ -1,8 +1,9 @@
 {
- "version":"API accuracy · 16 October 2026",
- "filename":"DHARA-LivingCity-Windows-x64-20261016-040756.zip",
- "url":"https://github.com/Roshankumaran/DHARA---A-LIVE-CITY/releases/download/dhara-api-20261016/DHARA-LivingCity-Windows-x64-20261016-040756.zip",
- "sha256":"44ACD258E10503E4034408242B677D16050B8E11FD6F9DE55F507C88090A0C12",
- "bytes":40067151,
- "unityTests":275
+  "version": "Official logo update \u00b7 16 October 2026",
+  "filename": "DHARA-LivingCity-Windows-x64-20261016-083620.zip",
+  "url": "https://github.com/Roshankumaran/DHARA---A-LIVE-CITY/releases/download/dhara-branding-20261016/DHARA-LivingCity-Windows-x64-20261016-083620.zip",
+  "sha256": "E181E0E9FF8F13B71EEA457C89A3FF3ACB8972C6090F8C59874184014D28354A",
+  "bytes": 41765065,
+  "unityTests": 275,
+  "validationSummary": "Unity branding/build checks passed; 27 web tests passed"
 }

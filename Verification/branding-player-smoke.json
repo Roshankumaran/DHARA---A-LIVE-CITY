@@ -1,0 +1,10 @@
+{
+  "playerId": 35544,
+  "fatalLogMatches": 0,
+  "observed": [
+    "Supplied original logo in native player header",
+    "Supplied icon visible in native title bar",
+    "Real Bengaluru API weather in running player"
+  ],
+  "responding": true
+}

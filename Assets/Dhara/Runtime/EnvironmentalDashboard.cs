@@ -108,7 +108,9 @@ namespace Dhara
             Region("Left background",root,0,0,.205f,1,paper);Region("Right background",root,.745f,0,.255f,1,paper);
             Region("Top background",root,.205f,.82f,.54f,.18f,paper);Region("Bottom background",root,.205f,0,.54f,.255f,paper);
             var header=Region("Header",root,0,.91f,1,.09f,card);
-            Icon(header,0,new Color(.05f,.55f,.68f),.02f,.20f,.035f,.60f);
+            var logo=Region("DHARA logo",header,.010f,.06f,.048f,.88f).gameObject.AddComponent<UnityEngine.UI.Image>();
+            logo.sprite=Resources.Load<Sprite>("Branding/DharaLogo");
+            logo.preserveAspect=true;logo.raycastTarget=false;
             Text(header,"Identity","DHARA",30,.063f,.40f,.13f,.52f,ink,true);
             Text(header,"Tagline","A LIVING CITY",13,.065f,.10f,.14f,.30f,muted);
             for(int i=0;i<Location.All.Length;i++){int index=i;locations.Add(Button(header,Location.All[i].Name,.215f+i*.102f,.15f,.097f,.7f,()=>{CloseExperiment();app.SelectLocation(index);}));}

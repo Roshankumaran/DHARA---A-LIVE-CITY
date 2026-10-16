@@ -1,4 +1,4 @@
-param([string]$BuildDirectory='Builds/Windows',[string]$ReportPath='Verification/windows-package.json')
+﻿param([string]$BuildDirectory='Builds/Windows',[string]$ReportPath='Verification/windows-package.json')
 $ErrorActionPreference='Stop'
 Set-Location (Split-Path $PSScriptRoot -Parent)
 $buildRoot=(Resolve-Path $BuildDirectory).Path
@@ -54,7 +54,7 @@ Weather source: Open-Meteo (https://open-meteo.com), CC BY 4.0.
 License: https://creativecommons.org/licenses/by/4.0/
 Uses temperature, rain, precipitation, wind, cloud, humidity and solar radiation.
 '@ | Set-Content -LiteralPath (Join-Path $stage 'RUN-DHARA.txt') -Encoding utf8
-if((Split-Path $buildRoot -Leaf) -eq 'Windows-API') {
+if((Split-Path $buildRoot -Leaf) -in @('Windows-API','Windows-Branded')) {
     @'
 
 API accuracy release:

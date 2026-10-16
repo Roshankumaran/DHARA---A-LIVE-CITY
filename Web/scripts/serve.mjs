@@ -9,7 +9,7 @@ const server=http.createServer(async(req,res)=>{
   let pathname=decodeURIComponent(new URL(req.url,'http://localhost').pathname);
   let file=path.resolve(root,'.'+(pathname==='/'?'/index.html':pathname));
   if(file!==root&&!file.startsWith(root+path.sep)){res.writeHead(403).end();return;}
-  if(!process.argv.includes('--production')&&pathname==='/city.png')file=path.join(root,'public/city.png');
+  if(!process.argv.includes('--production')&&['/city.png','/dhara-logo.png'].includes(pathname))file=path.join(root,'public',pathname.slice(1));
   if(!(await stat(file)).isFile()){res.writeHead(404).end();return;}
   res.writeHead(200,{'Content-Type':types[path.extname(file)]||'application/octet-stream','X-Content-Type-Options':'nosniff'});res.end(await readFile(file));
  }catch{res.writeHead(404,{'Content-Type':'text/plain'});res.end('Not found');}

@@ -16,6 +16,14 @@ namespace Dhara.Editor
     public static class DharaProject
     {
         const string ScenePath="Assets/Scenes/Dhara.unity";
+        public static void ConfigureBranding()
+        {
+            var texture=AssetDatabase.LoadAssetAtPath<Texture2D>("Assets/Dhara/Resources/Branding/DharaLogo.png");
+            if(texture==null)throw new InvalidOperationException("DHARA logo asset is missing.");
+            var target=UnityEditor.Build.NamedBuildTarget.Standalone;
+            var sizes=PlayerSettings.GetIconSizes(target,IconKind.Any);
+            PlayerSettings.SetIcons(target,sizes.Select(_=>texture).ToArray(),IconKind.Any);
+        }
         [InitializeOnLoadMethod]
         static void FirstOpen()
         {
@@ -113,6 +121,7 @@ namespace Dhara.Editor
             BuildWindowsAt("Builds/Windows-LivingCity");
         }
         public static void BuildApiWindows() { BuildWindowsAt("Builds/Windows-API"); }
+        public static void BuildBrandedWindows() { BuildWindowsAt("Builds/Windows-Branded"); }
         public static void BuildExplorationWindows() { BuildWindowsAt("Builds/Windows-Exploration"); }
         public static void BuildValidatedWindows() { BuildWindowsAt("Builds/Windows-Validated"); }
         public static void BuildExplorerWindows() { BuildWindowsAt("Builds/Windows-Explorer"); }
@@ -156,6 +165,7 @@ namespace Dhara.Editor
         }
         static void BuildWindowsAt(string directory)
         {
+            ConfigureBranding();
             if(!File.Exists("Assets/Dhara/SetupComplete.txt")) Prepare();
             if(!File.Exists("Assets/Dhara/SetupComplete.txt")) throw new InvalidOperationException("Finish first-open package and font preparation before building.");
             if(!File.Exists(ScenePath)) throw new InvalidOperationException("Main scene was not prepared.");

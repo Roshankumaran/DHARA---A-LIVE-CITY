@@ -1,0 +1,68 @@
+[
+  {
+    "layout": {
+      "width": 1280,
+      "height": 800,
+      "frame": 1902,
+      "mode": "Live",
+      "weatherValid": "2026-10-16T08:30",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:262.40, y:204.00, width:691.20, height:452.00)",
+      "overflow": [],
+      "controlsOutside": []
+    },
+    "logo": {
+      "sprite": "DharaLogo",
+      "preserveAspect": true,
+      "raycastTarget": false,
+      "isActiveAndEnabled": true
+    },
+    "width": 1280,
+    "height": 800
+  },
+  {
+    "layout": {
+      "width": 1600,
+      "height": 900,
+      "frame": 1953,
+      "mode": "Live",
+      "weatherValid": "2026-10-16T08:30",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:328.00, y:229.50, width:864.00, height:508.50)",
+      "overflow": [],
+      "controlsOutside": []
+    },
+    "logo": {
+      "sprite": "DharaLogo",
+      "preserveAspect": true,
+      "raycastTarget": false,
+      "isActiveAndEnabled": true
+    },
+    "width": 1600,
+    "height": 900
+  },
+  {
+    "layout": {
+      "width": 1920,
+      "height": 1080,
+      "frame": 2000,
+      "mode": "Live",
+      "weatherValid": "2026-10-16T08:30",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:393.60, y:275.40, width:1036.80, height:610.20)",
+      "overflow": [],
+      "controlsOutside": []
+    },
+    "logo": {
+      "sprite": "DharaLogo",
+      "preserveAspect": true,
+      "raycastTarget": false,
+      "isActiveAndEnabled": true
+    },
+    "width": 1920,
+    "height": 1080
+  }
+]

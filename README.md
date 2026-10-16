@@ -12,6 +12,8 @@ For Vercel, import this GitHub repository with **Root Directory `Web`**, **Frame
 
 Unity works locally and remains the interactive 3D client. The browser companion is suitable for Vercel; the Windows executable is distributed through [GitHub Releases](https://github.com/Roshankumaran/DHARA---A-LIVE-CITY/releases/tag/dhara-api-20261016), rather than executed on Vercel. Unity Web Build Support is absent, so browser-based 3D playback is not claimed.
 
+Latest logo update: [official artwork integration and verification](docs/BRANDING.md). The supplied logo appears in the Unity header and Windows icons, plus the web header/favicon. Run `Builds/Windows-Branded/DHARA.exe`, or download the [branded Windows release](https://github.com/Roshankumaran/DHARA---A-LIVE-CITY/releases/tag/dhara-branding-20261016). Earlier builds remain preserved.
+
 Latest API release: [validated weather, AQI, pollutants and 275 passing Unity tests](docs/API-ACCURACY.md). Run `Builds/Windows-API/DHARA.exe`, or extract `Builds/DHARA-LivingCity-Windows-x64-20261016-040756.zip`. Previous releases remain preserved.
 
 Previous exploration release: [city exploration, standing-water and 234-case verification report](docs/EXPLORATION-RELEASE.md). The current executable is `Builds/Windows-Exploration/DHARA.exe`; earlier releases remain preserved.

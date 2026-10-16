@@ -1,0 +1,20 @@
+{
+  "passed": true,
+  "originalSha256": "b3cb2672f2ee67c3fa80e5759376e915d387acb1d80704086462cbce3d748fd8",
+  "allCopiesIdentical": true,
+  "files": [
+    "C:\\Users\\Roshan\\Downloads\\DHARA LOGO.png",
+    "Assets\\Dhara\\Resources\\Branding\\DharaLogo.png",
+    "Web\\public\\dhara-logo.png",
+    "Web\\dist\\dhara-logo.png"
+  ],
+  "webLogoNaturalDimensions": [
+    1254,
+    1254
+  ],
+  "webDesktopDisplayDimensions": [
+    80,
+    80
+  ],
+  "webHorizontalOverflow": false
+}

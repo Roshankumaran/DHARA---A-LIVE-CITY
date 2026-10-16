@@ -95,7 +95,7 @@ $('export').addEventListener('click',()=>{
 });
 fetch('./release.json').then(r=>{if(!r.ok)throw Error('Release information unavailable');return r.json();}).then(release=>{
  const link=$('download');link.href=release.url;link.removeAttribute('aria-disabled');
- $('release').textContent=`${release.version} · ${(release.bytes/1048576).toFixed(1)} MiB · ${release.unityTests} Unity tests passed`;
+ $('release').textContent=`${release.version} · ${(release.bytes/1048576).toFixed(1)} MiB · ${release.validationSummary??(release.unityTests+' Unity tests passed')}`;
  $('checksum').textContent=release.sha256;
 }).catch(error=>{$('release').textContent=error.message;});
 changeCity();setInterval(render,1000);
