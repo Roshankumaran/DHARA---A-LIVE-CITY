@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "authenticated": false,
+  "httpStatus": 200,
+  "bytes": 41765065,
+  "sha256": "e181e0e9ff8f13b71eea457c89a3ff3acb8972c6090f8c59874184014d28354a",
+  "contentType": "application/octet-stream",
+  "contentDisposition": "attachment; filename=DHARA-LivingCity-Windows-x64-20261016-083620.zip",
+  "assetUrl": "https://github.com/Roshankumaran/DHARA---A-LIVE-CITY/releases/download/dhara-branding-20261016/DHARA-LivingCity-Windows-x64-20261016-083620.zip"
+}
