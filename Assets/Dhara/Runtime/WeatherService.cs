@@ -17,6 +17,7 @@ namespace Dhara
         public Func<Location,string> RequestUrl = WeatherRequest.Url;
         public readonly WeatherDataStore[] CityCache={new WeatherDataStore(),new WeatherDataStore(),new WeatherDataStore(),new WeatherDataStore(),new WeatherDataStore()};
         Coroutine loop;
+        bool enforceRetry;
         UnityWebRequest active;
         public static string Url(Location location) => WeatherRequest.Url(location);
         public void Select(int index)
@@ -33,11 +34,14 @@ namespace Dhara
             loop = StartCoroutine(RefreshLoop());
         }
         public void Refresh() => Restart(false);
+        public void CancelRequests()
+        {if(loop!=null)StopCoroutine(loop);loop=null;if(active!=null){active.Abort();active.Dispose();active=null;}data.Status.Loading=false;}
         IEnumerator RefreshLoop()
         {
             int failures = 0;
             while (true)
             {
+                if(enforceRetry&&Status.RetryUtc>DateTime.UtcNow)yield return new WaitForSecondsRealtime((float)(Status.RetryUtc.Value-DateTime.UtcNow).TotalSeconds);
                 data.BeginRequest(false);
                 UnityWebRequestAsyncOperation operation=null;
                 string startupError=null;
@@ -49,19 +53,23 @@ namespace Dhara
                 catch(Exception error) { startupError=error.Message; }
                 if(operation!=null) yield return operation;
                 if(startupError!=null) { data.Fail(startupError); failures++; }
-                else if (active.result != UnityWebRequest.Result.Success) { data.Fail(active.error); failures++; }
+                else if (active.result != UnityWebRequest.Result.Success) { data.Fail("HTTP "+active.responseCode+" · "+active.error); failures++; }
                 else
                 {
                     try
                     {
-                        var response = WeatherJson.Parse(active.downloadHandler.text);
-                        data.Accept(response,DateTime.UtcNow); failures = 0;
-                        CityCache[Selected].Accept(response,data.Status.RetrievedUtc.Value);
+                        var response = ApiValidation.Forecast(active.downloadHandler.text,DateTime.UtcNow);
+                        var retrievedUtc=DateTime.UtcNow;
+                        CityCache[Selected].Accept(response,retrievedUtc);
+                        data.Accept(response,retrievedUtc); failures = 0;
                     }
                     catch (Exception ex) { data.Fail("Invalid weather response: " + ex.Message); failures++; }
                 }
+                double delay=ApiRetry.Delay(failures,active?.responseCode??0,active?.GetResponseHeader("Retry-After"),DateTime.UtcNow);
+                enforceRetry=active!=null&&(active.responseCode==429||active.responseCode==503&&!string.IsNullOrWhiteSpace(active.GetResponseHeader("Retry-After")));
+                Status.RetryUtc=failures>0?DateTime.UtcNow.AddSeconds(delay):(DateTime?)null;
                 active?.Dispose(); active = null; Updated?.Invoke();
-                yield return new WaitForSecondsRealtime(failures == 0 ? 300 : Mathf.Min(300, 15 * Mathf.Pow(2, Mathf.Min(failures-1,5))));
+                yield return new WaitForSecondsRealtime((float)delay);
             }
         }
         void OnDestroy() { if (active != null) { active.Abort(); active.Dispose(); } }

@@ -1,0 +1,17 @@
+{
+  "playerId": 7340,
+  "exportRecords": 17,
+  "privateMemoryBytes": 937816064,
+  "responding": true,
+  "hasWindow": true,
+  "manuallyObserved": [
+    "LIVE WORLD with genuine Bengaluru weather",
+    "Air Quality page with all eight AQI/pollutant values",
+    "Weather page with WMO code 3 / Overcast and 900-second precipitation interval",
+    "Native CSV button produced a real 17-field file"
+  ],
+  "exportModifiedUtc": "2026-10-15T22:39:24.0977219Z",
+  "fatalLogMatches": 0,
+  "exportPath": "C:\\Users\\Roshan\\AppData\\LocalLow\\DHARA\\DHARA — A LIVING CITY\\EnvironmentalData\\DHARA_Environment_Bengaluru_20261015-223924-086.csv",
+  "exportBytes": 3426
+}

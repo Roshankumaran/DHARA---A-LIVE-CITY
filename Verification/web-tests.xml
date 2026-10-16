@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<testsuites>
+	<testcase name="Bengaluru actual saved weather schema" time="0.003026" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="Bengaluru actual saved AQ schema" time="0.001504" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="Chennai actual saved weather schema" time="0.002525" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="Chennai actual saved AQ schema" time="0.001148" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="Mumbai actual saved weather schema" time="0.001674" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="Mumbai actual saved AQ schema" time="0.000961" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="Delhi actual saved weather schema" time="0.001253" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="Delhi actual saved AQ schema" time="0.000905" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="Hyderabad actual saved weather schema" time="0.001060" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="Hyderabad actual saved AQ schema" time="0.001253" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="interval conversion fixture and null remain distinct" time="0.000858" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="reject wrong unit" time="0.000382" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="reject wrong timezone" time="0.000155" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="reject invalid humidity" time="0.000162" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="reject invalid WMO code" time="0.000147" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="reject misaligned array" time="0.000144" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="reject unordered times" time="0.000154" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="reject string numeric value" time="0.000463" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="reject invalid interval" time="0.000120" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="reject error body" time="0.000190" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="reject stale and future data" time="0.000102" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="reject impossible calendar dates" time="0.000074" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="CAMS AQI scales are validated independently" time="0.000127" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="retry seconds, dates and caps" time="0.000171" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="CSV uses source timestamps and escapes special characters" time="0.000612" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="CSV empty dataset still has header" time="0.000056" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<testcase name="URLs request the correct endpoints and all fields" time="0.000271" classname="test" file="C:\Users\Roshan\Downloads\DHARA_CODEX\Web\tests\data.test.mjs"/>
+	<!-- tests 27 -->
+	<!-- suites 0 -->
+	<!-- pass 27 -->
+	<!-- fail 0 -->
+	<!-- cancelled 0 -->
+	<!-- skipped 0 -->
+	<!-- todo 0 -->
+	<!-- duration_ms 132.7534 -->
+</testsuites>

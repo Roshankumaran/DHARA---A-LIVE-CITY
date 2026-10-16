@@ -29,18 +29,39 @@ namespace Dhara
         void OpenDataSources()
         {
             var panel=Tool("ENVIRONMENTAL DATA SOURCES");
-            var values=Text(panel,"Air quality state","",17,.03f,.53f,.94f,.35f,ink);
-            Button(panel,"Refresh air quality",.03f,.43f,.47f,.08f,()=>app.AirQuality.Select(app.Weather.Selected));
-            Button(panel,"Toggle optional haze",.51f,.43f,.46f,.08f,()=>app.AirQuality.HazeEnabled=!app.AirQuality.HazeEnabled);
-            Text(panel,"Weather advisory","WEATHER ADVISORY · UNAVAILABLE\nIndia Meteorological Department district-warning endpoint returned HTTP 401 during verification on 15 Oct 2026. Authorized access is required before integration. No advisory data is loaded.",16,.03f,.16f,.94f,.25f,muted);
-            Button(panel,"Open-Meteo / CAMS documentation",.03f,.04f,.94f,.08f,()=>Application.OpenURL("https://open-meteo.com/en/docs/air-quality-api"));
+            bool showWeather=false;
+            var values=Text(panel,"Air quality state","",14,.03f,.28f,.94f,.60f,ink);
+            Button(panel,"Refresh air quality",.03f,.18f,.30f,.08f,()=>app.AirQuality.Select(app.Weather.Selected));
+            Button(panel,"Weather / air quality",.35f,.18f,.31f,.08f,()=>showWeather=!showWeather);
+            Button(panel,"Toggle optional haze",.68f,.18f,.29f,.08f,()=>app.AirQuality.HazeEnabled=!app.AirQuality.HazeEnabled);
+            Text(panel,"Weather advisory","Simulation: DHARA model, not measured water levels. IMD advisories are unavailable; no authorized feed is configured.",12,.03f,.125f,.94f,.05f,muted);
+            Button(panel,"Open-Meteo / CAMS documentation",.03f,.04f,.61f,.08f,()=>Application.OpenURL("https://open-meteo.com/en/docs/air-quality-api"));
+            string exportStatus="";
+            var feedback=Text(panel,"Export status","",11,.03f,.005f,.94f,.035f,muted);
+            Button(panel,"Export data CSV",.66f,.04f,.31f,.08f,()=>{
+                try{
+                    var fields=new System.Collections.Generic.List<EnvironmentalParameter>(EnvironmentalParameters.Weather(app.Weather.Current,app.Weather.Status));
+                    fields.AddRange(EnvironmentalParameters.AirQuality(app.AirQuality.Data,app.AirQuality.Status));
+                    string city=Location.All[app.Weather.Selected].Name;
+                    string directory=System.IO.Path.Combine(Application.persistentDataPath,"EnvironmentalData");System.IO.Directory.CreateDirectory(directory);
+                    string path=System.IO.Path.Combine(directory,"DHARA_Environment_"+city+"_"+DateTime.UtcNow.ToString("yyyyMMdd-HHmmss-fff")+".csv");
+                    System.IO.File.WriteAllText(path,EnvironmentalParameters.Csv(city,fields),new System.Text.UTF8Encoding(true));
+                    exportStatus="CSV saved. Folder: "+directory;
+                    Application.OpenURL(new Uri(directory+System.IO.Path.DirectorySeparatorChar).AbsoluteUri);
+                }catch(Exception e){exportStatus="Export failed: "+e.Message;}
+                feedback.text=exportStatus;
+            });
             analysisJob=StartCoroutine(UpdateSources());
             IEnumerator UpdateSources()
             {
                 while(panel!=null)
                 {
                     var s=app.AirQuality;var d=s.Data;
-                    values.text="AIR QUALITY · "+Location.All[app.Weather.Selected].Name+"\nPM2.5  "+Value(d?.Pm25,"μg/m³")+"    PM10  "+Value(d?.Pm10,"μg/m³")+"\nVALID "+(d?.Time??"Unavailable")+" IST\nRETRIEVED "+(s.Status.RetrievedUtc?.ToString("o")??"Unavailable")+"\n"+(s.Status.Loading?"Loading…":s.Status.Error!=null?"REQUEST FAILED · retained data: "+s.Status.Error:s.Status.Stale?"STALE DATA":d==null?"Unavailable":"Model data received")+"\nCAMS global via Open-Meteo · modeled concentrations, not sensors\nHaze "+(s.HazeEnabled?"enabled":"disabled")+"; qualitative capped effect, live mode only.";
+                    var weather=app.Weather.Current;var status=showWeather?app.Weather.Status:s.Status;
+                    values.text=(showWeather?"WEATHER · Open-Meteo Forecast API":"AIR QUALITY · Open-Meteo / CAMS global")+" · "+Location.All[app.Weather.Selected].Name+"\n";
+                    var parameters=showWeather?EnvironmentalParameters.Weather(weather,status):EnvironmentalParameters.AirQuality(d,status);
+                    foreach(var field in parameters)values.text+=field.Name+"  "+Value(field.Value,field.Unit)+"\n";
+                    values.text+="VALID "+(showWeather?weather?.Time:d?.Time)+" IST · retrieved "+(status.RetrievedUtc?.ToString("HH:mm:ss 'UTC'")??"Unavailable")+"\n"+(status.Loading?"Loading…":status.Error!=null?"REQUEST FAILED: "+status.Error:status.Stale?"STALE DATA":status.RetrievedUtc.HasValue?"Model estimates received":"Unavailable")+"\n"+(showWeather?WeatherCondition.Describe(weather?.WeatherCode)+" · precipitation: preceding "+(weather?.IntervalSeconds.ToString()??"unknown")+" s total":"US and European AQI scales; neither is Indian NAQI")+"\nModel estimates, not sensors. Missing values remain unavailable.\n"+(showWeather?"Rain rate = interval rain / hours. Solar = interval mean.":"Haze "+(s.HazeEnabled?"enabled":"disabled")+": illustrative capped effect, live mode only.");
                     yield return new WaitForSecondsRealtime(.25f);
                 }
             }

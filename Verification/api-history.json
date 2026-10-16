@@ -1,0 +1,36 @@
+{
+  "source": "Open-Meteo archive / ERA5",
+  "records": 24,
+  "last": {
+    "Time": "2026-10-05T23:00",
+    "IntervalSeconds": 3600.0,
+    "IsForecast": true,
+    "Temperature": 21.3,
+    "RainMmPerHour": 0.5,
+    "PrecipitationMm": 0.5,
+    "WindKmh": 6.0,
+    "WindDegrees": 331.0,
+    "CloudPercent": 100.0,
+    "HumidityPercent": 95.0,
+    "SolarWm2": 0.0,
+    "WeatherCode": 53.0,
+    "HasSimulationInputs": true
+  },
+  "date": "2026-10-05",
+  "passed": true,
+  "first": {
+    "Time": "2026-10-05T00:00",
+    "IntervalSeconds": 3600.0,
+    "IsForecast": true,
+    "Temperature": 23.6,
+    "RainMmPerHour": 0.0,
+    "PrecipitationMm": 0.0,
+    "WindKmh": 7.2,
+    "WindDegrees": 148.0,
+    "CloudPercent": 95.0,
+    "HumidityPercent": 82.0,
+    "SolarWm2": 0.0,
+    "WeatherCode": 3.0,
+    "HasSimulationInputs": true
+  }
+}

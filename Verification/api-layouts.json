@@ -1,0 +1,110 @@
+[
+  {
+    "layout": {
+      "width": 1280,
+      "height": 800,
+      "frame": 1063,
+      "mode": "Live",
+      "weatherValid": "2026-10-16T04:00",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:262.40, y:204.00, width:691.20, height:452.00)",
+      "overflow": [],
+      "controlsOutside": []
+    },
+    "width": 1280,
+    "height": 800,
+    "details": "AIR QUALITY · Open-Meteo / CAMS global · Bengaluru\nUS AQI  62.0 USAQI\nEuropean AQI  40.0 EAQI\nPM2.5  15.0 μg/m³\nPM10  15.2 μg/m³\nNitrogen dioxide  19.8 μg/m³\nOzone  41.0 μg/m³\nSulphur dioxide  9.4 μg/m³\nCarbon monoxide  638.0 μg/m³\nVALID 2026-10-16T03:30 IST · retrieved 22:36:04 UTC\nModel estimates received\nUS and European AQI scales; neither is Indian NAQI\nModel estimates, not sensors. Missing values remain unavailable.\nHaze disabled: illustrative capped effect, live mode only.",
+    "page": "AirQuality"
+  },
+  {
+    "layout": {
+      "width": 1280,
+      "height": 800,
+      "frame": 1112,
+      "mode": "Live",
+      "weatherValid": "2026-10-16T04:00",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:262.40, y:204.00, width:691.20, height:452.00)",
+      "overflow": [],
+      "controlsOutside": []
+    },
+    "width": 1280,
+    "height": 800,
+    "details": "WEATHER · Open-Meteo Forecast API · Bengaluru\nTemperature  21.3 °C\nRelative humidity  97.0 %\nRain rate  0.0 mm/h\nPrecipitation  0.0 mm\nWind speed  4.8 km/h\nWind direction  250.0 °\nCloud cover  100.0 %\nShortwave radiation  0.0 W/m²\nWeather code  3.0 WMO\nVALID 2026-10-16T04:00 IST · retrieved 22:36:04 UTC\nModel estimates received\nOvercast · precipitation: preceding 900 s total\nModel estimates, not sensors. Missing values remain unavailable.\nRain rate = interval rain / hours. Solar = interval mean.",
+    "page": "Weather"
+  },
+  {
+    "layout": {
+      "width": 1600,
+      "height": 900,
+      "frame": 1177,
+      "mode": "Live",
+      "weatherValid": "2026-10-16T04:00",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:328.00, y:229.50, width:864.00, height:508.50)",
+      "overflow": [],
+      "controlsOutside": []
+    },
+    "width": 1600,
+    "height": 900,
+    "details": "AIR QUALITY · Open-Meteo / CAMS global · Bengaluru\nUS AQI  62.0 USAQI\nEuropean AQI  40.0 EAQI\nPM2.5  15.0 μg/m³\nPM10  15.2 μg/m³\nNitrogen dioxide  19.8 μg/m³\nOzone  41.0 μg/m³\nSulphur dioxide  9.4 μg/m³\nCarbon monoxide  638.0 μg/m³\nVALID 2026-10-16T03:30 IST · retrieved 22:36:04 UTC\nModel estimates received\nUS and European AQI scales; neither is Indian NAQI\nModel estimates, not sensors. Missing values remain unavailable.\nHaze disabled: illustrative capped effect, live mode only.",
+    "page": "AirQuality"
+  },
+  {
+    "layout": {
+      "width": 1600,
+      "height": 900,
+      "frame": 1237,
+      "mode": "Live",
+      "weatherValid": "2026-10-16T04:00",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:328.00, y:229.50, width:864.00, height:508.50)",
+      "overflow": [],
+      "controlsOutside": []
+    },
+    "width": 1600,
+    "height": 900,
+    "details": "WEATHER · Open-Meteo Forecast API · Bengaluru\nTemperature  21.3 °C\nRelative humidity  97.0 %\nRain rate  0.0 mm/h\nPrecipitation  0.0 mm\nWind speed  4.8 km/h\nWind direction  250.0 °\nCloud cover  100.0 %\nShortwave radiation  0.0 W/m²\nWeather code  3.0 WMO\nVALID 2026-10-16T04:00 IST · retrieved 22:36:04 UTC\nModel estimates received\nOvercast · precipitation: preceding 900 s total\nModel estimates, not sensors. Missing values remain unavailable.\nRain rate = interval rain / hours. Solar = interval mean.",
+    "page": "Weather"
+  },
+  {
+    "layout": {
+      "width": 1920,
+      "height": 1080,
+      "frame": 1304,
+      "mode": "Live",
+      "weatherValid": "2026-10-16T04:00",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:393.60, y:275.40, width:1036.80, height:610.20)",
+      "overflow": [],
+      "controlsOutside": []
+    },
+    "width": 1920,
+    "height": 1080,
+    "details": "AIR QUALITY · Open-Meteo / CAMS global · Bengaluru\nUS AQI  62.0 USAQI\nEuropean AQI  40.0 EAQI\nPM2.5  15.0 μg/m³\nPM10  15.2 μg/m³\nNitrogen dioxide  19.8 μg/m³\nOzone  41.0 μg/m³\nSulphur dioxide  9.4 μg/m³\nCarbon monoxide  638.0 μg/m³\nVALID 2026-10-16T03:30 IST · retrieved 22:36:04 UTC\nModel estimates received\nUS and European AQI scales; neither is Indian NAQI\nModel estimates, not sensors. Missing values remain unavailable.\nHaze disabled: illustrative capped effect, live mode only.",
+    "page": "AirQuality"
+  },
+  {
+    "layout": {
+      "width": 1920,
+      "height": 1080,
+      "frame": 1359,
+      "mode": "Live",
+      "weatherValid": "2026-10-16T04:00",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:393.60, y:275.40, width:1036.80, height:610.20)",
+      "overflow": [],
+      "controlsOutside": []
+    },
+    "width": 1920,
+    "height": 1080,
+    "details": "WEATHER · Open-Meteo Forecast API · Bengaluru\nTemperature  21.3 °C\nRelative humidity  97.0 %\nRain rate  0.0 mm/h\nPrecipitation  0.0 mm\nWind speed  4.8 km/h\nWind direction  250.0 °\nCloud cover  100.0 %\nShortwave radiation  0.0 W/m²\nWeather code  3.0 WMO\nVALID 2026-10-16T04:00 IST · retrieved 22:36:04 UTC\nModel estimates received\nOvercast · precipitation: preceding 900 s total\nModel estimates, not sensors. Missing values remain unavailable.\nRain rate = interval rain / hours. Solar = interval mean.",
+    "page": "Weather"
+  }
+]

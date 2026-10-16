@@ -1,0 +1,20 @@
+{
+  "checkedUtc": "2026-10-15T22:14:17.6487974Z",
+  "processId": 32600,
+  "executable": "C:\\Users\\Roshan\\Downloads\\DHARA_CODEX\\TestResults\\Extracted-Exploration-20261016-033619\\DHARA\\DHARA.exe",
+  "responding": true,
+  "title": "DHARA — A LIVING CITY",
+  "privateBytes": 949248000,
+  "workingSetBytes": 687706112,
+  "startupExceptions": [],
+  "manualObservations": [
+    "Real Bengaluru weather displayed: 21.4 C, 4.4 km/h, cloud 100%, valid 2026-10-16T03:30 IST.",
+    "What-if controls applied heavy rain and low drainage; collection reached its 150 m3 bound and Standing Water colored the roads.",
+    "Increasing drainage to about 55.9 mm/h with rain about 22.3 mm/h reduced collection from 150 through 148.9, 136.6, 121.8, 112.0, 98.7, 84.9 and 50.3 m3.",
+    "Tour started, moved through aerial approach to street level, paused with camera fixed while drainage continued, resumed and exited safely to overview.",
+    "Reset scenario restored zero rain/storage and 12 mm/h drainage.",
+    "Walk completed its street descent; clicking the city selected actual modeled infrastructure. Full directional/rotation/collision checks are automated component tests, not a claimed exhaustive manual traversal.",
+    "Return to Live restored the real baseline; Reset camera returned to overview. Player left open."
+  ],
+  "scope": "Fresh extracted final Windows package. Manual UI observations are separate from automated Unity test counts."
+}

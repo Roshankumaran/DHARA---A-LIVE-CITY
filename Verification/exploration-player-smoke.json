@@ -1,0 +1,12 @@
+{
+  "checkedUtc": "2026-10-15T22:17:50.8531269Z",
+  "processId": 24320,
+  "executable": "C:\\Users\\Roshan\\Downloads\\DHARA_CODEX\\TestResults\\Extracted-Exploration-20261016-034523\\DHARA\\DHARA.exe",
+  "responding": true,
+  "windowTitle": "DHARA — A LIVING CITY",
+  "startupExceptions": [],
+  "runtimeFilesIdenticalToManuallyTestedRelease": 173,
+  "extractedFilesHashVerified": 175,
+  "manualEvidence": "exploration-player-manual-tested.json",
+  "finalVisualObservation": "Fresh final extracted player rendered the city and genuine Bengaluru live conditions valid 2026-10-16T03:45 IST: 21.4 C, 4.6 km/h wind from 244 degrees, cloud 100%, humidity 97%. Left open."
+}

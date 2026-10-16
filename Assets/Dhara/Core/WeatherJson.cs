@@ -18,11 +18,11 @@ namespace Dhara
             if(root.TryGetValue("current",out var current) && current is Dictionary<string,object> c)
                 result.current=new ApiValues { time=String(c,"time"),interval=Number(c,"interval"),temperature_2m=Number(c,"temperature_2m"),
                     rain=Number(c,"rain"),precipitation=Number(c,"precipitation"),wind_speed_10m=Number(c,"wind_speed_10m"),wind_direction_10m=Number(c,"wind_direction_10m"),
-                    cloud_cover=Number(c,"cloud_cover"),relative_humidity_2m=Number(c,"relative_humidity_2m"),shortwave_radiation=Number(c,"shortwave_radiation") };
+                    cloud_cover=Number(c,"cloud_cover"),relative_humidity_2m=Number(c,"relative_humidity_2m"),shortwave_radiation=Number(c,"shortwave_radiation"),weather_code=Number(c,"weather_code") };
             if(root.TryGetValue("hourly",out var hourly) && hourly is Dictionary<string,object> h)
                 result.hourly=new ApiHourly { time=Strings(h,"time"),temperature_2m=Numbers(h,"temperature_2m"),rain=Numbers(h,"rain"),precipitation=Numbers(h,"precipitation"),
                     wind_speed_10m=Numbers(h,"wind_speed_10m"),wind_direction_10m=Numbers(h,"wind_direction_10m"),cloud_cover=Numbers(h,"cloud_cover"),
-                    relative_humidity_2m=Numbers(h,"relative_humidity_2m"),shortwave_radiation=Numbers(h,"shortwave_radiation") };
+                    relative_humidity_2m=Numbers(h,"relative_humidity_2m"),shortwave_radiation=Numbers(h,"shortwave_radiation"),weather_code=Numbers(h,"weather_code") };
             return result;
         }
         static string String(Dictionary<string,object> data,string key) => data.TryGetValue(key,out var value) ? value as string : null;

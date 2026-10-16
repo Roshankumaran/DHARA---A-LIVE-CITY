@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="1" result="Passed" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-15 21:54:33Z" end-time="2026-10-15 21:54:34Z" duration="0.7610008">
+  <test-suite type="TestSuite" id="1157" name="DHARA — A LIVING CITY" fullname="DHARA — A LIVING CITY" runstate="Runnable" testcasecount="146" result="Passed" start-time="2026-10-15 21:54:33Z" end-time="2026-10-15 21:54:34Z" duration="0.761001" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="PlayMode" />
+    </properties>
+    <test-suite type="Assembly" id="1151" name="Dhara.PlayModeTests.dll" fullname="C:/Users/Roshan/Downloads/DHARA_CODEX/Library/ScriptAssemblies/Dhara.PlayModeTests.dll" runstate="Runnable" testcasecount="146" result="Passed" start-time="2026-10-15 21:54:33Z" end-time="2026-10-15 21:54:34Z" duration="0.748544" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="4908" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="PlayMode" />
+        <property name="EditorOnly" value="False" />
+      </properties>
+      <test-suite type="TestSuite" id="1152" name="Dhara" fullname="Dhara" runstate="Runnable" testcasecount="146" result="Passed" start-time="2026-10-15 21:54:33Z" end-time="2026-10-15 21:54:34Z" duration="0.745487" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1153" name="Tests" fullname="Dhara.Tests" runstate="Runnable" testcasecount="146" result="Passed" start-time="2026-10-15 21:54:33Z" end-time="2026-10-15 21:54:34Z" duration="0.742751" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1014" name="ExplorationRuntimeTests" fullname="Dhara.Tests.ExplorationRuntimeTests" classname="Dhara.Tests.ExplorationRuntimeTests" runstate="Runnable" testcasecount="129" result="Passed" start-time="2026-10-15 21:54:33Z" end-time="2026-10-15 21:54:34Z" duration="0.737410" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1143" name="S32_HeavyRainCannotEnableObscuringBloom" fullname="Dhara.Tests.ExplorationRuntimeTests.S32_HeavyRainCannotEnableObscuringBloom" methodname="S32_HeavyRainCannotEnableObscuringBloom" classname="Dhara.Tests.ExplorationRuntimeTests" runstate="Runnable" seed="944293330" result="Passed" start-time="2026-10-15 21:54:33Z" end-time="2026-10-15 21:54:34Z" duration="0.710458" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: C:/Users/Roshan/AppData/LocalLow/DHARA/DHARA — A LIVING CITY\TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

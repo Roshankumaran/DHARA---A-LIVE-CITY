@@ -1,0 +1,39 @@
+{
+  "scope": "600 actual Editor game frames during 100 mm/h hypothetical rain, 80 km/h wind and moving tour; not a standalone or broad hardware benchmark",
+  "width": 1920,
+  "height": 1080,
+  "device": "NVIDIA GeForce RTX 4070 Laptop GPU",
+  "frames": 600,
+  "meanMs": 16.712574,
+  "p50Ms": 16.647398,
+  "p95Ms": 18.303196,
+  "maxMs": 57.7042961,
+  "managedMemoryStart": 847785984,
+  "managedMemoryEnd": 910401536,
+  "materialsStart": 88,
+  "materialsEnd": 88,
+  "objectsStart": 1283,
+  "objectsEnd": 1283,
+  "particles": [
+    {
+      "name": "Rainfall particles",
+      "count": 9800,
+      "maximum": 12000
+    },
+    {
+      "name": "Rain splash impacts",
+      "count": 212,
+      "maximum": 4000
+    },
+    {
+      "name": "Wind debris",
+      "count": 300,
+      "maximum": 300
+    },
+    {
+      "name": "Road rain ripples",
+      "count": 292,
+      "maximum": 600
+    }
+  ]
+}

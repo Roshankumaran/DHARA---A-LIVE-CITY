@@ -1,0 +1,694 @@
+[
+  {
+    "path": "DHARA.exe",
+    "matched": true
+  },
+  {
+    "path": "UnityCrashHandler64.exe",
+    "matched": true
+  },
+  {
+    "path": "UnityPlayer.dll",
+    "matched": true
+  },
+  {
+    "path": "D3D12\\D3D12Core.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\app.info",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\boot.config",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\globalgamemanagers",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\globalgamemanagers.assets",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\globalgamemanagers.assets.resS",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\level0",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\resources.assets",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\resources.assets.resS",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\RuntimeInitializeOnLoads.json",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\ScriptingAssemblies.json",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\sharedassets0.assets",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Dhara.Core.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Dhara.Runtime.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Mono.Security.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\mscorlib.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\netstandard.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Newtonsoft.Json.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.ComponentModel.Composition.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.Configuration.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.Core.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.Data.DataSetExtensions.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.Data.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.Drawing.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.EnterpriseServices.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.IO.Compression.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.IO.Compression.FileSystem.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.Net.Http.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.Numerics.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.Runtime.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.Runtime.Serialization.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.Security.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.ServiceModel.Internals.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.Transactions.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.Xml.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\System.Xml.Linq.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.AI.Navigation.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.Burst.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.Burst.Unsafe.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.Collections.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.Collections.LowLevel.ILSupport.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.InputSystem.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.InputSystem.ForUI.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.InternalAPIEngineBridge.004.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.Mathematics.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.Pipeline.Attributes.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.RenderPipeline.Universal.ShaderLibrary.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.RenderPipelines.Core.Runtime.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.RenderPipelines.Core.Runtime.Shared.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.RenderPipelines.Core.ShaderLibrary.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.RenderPipelines.GPUDriven.Runtime.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.RenderPipelines.Universal.2D.Runtime.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.RenderPipelines.Universal.Config.Runtime.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.RenderPipelines.Universal.Runtime.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.RenderPipelines.Universal.Shaders.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.TextMeshPro.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.Timeline.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.UnifiedRayTracing.Runtime.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.VisualScripting.Antlr3.Runtime.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.VisualScripting.Core.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.VisualScripting.Flow.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\Unity.VisualScripting.State.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.AccessibilityModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.AdaptivePerformanceModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.AIModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.AMDModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.AndroidJNIModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.AnimationModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.ARModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.AssetBundleModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.AudioModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.ClothModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.ClusterInputModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.ClusterRendererModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.ContentLoadModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.CoreModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.CrashReportingModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.DirectorModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.DSPGraphModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.GameCenterModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.GIModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.GraphicsStateCollectionSerializerModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.GridModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.HierarchyCoreModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.HierarchyModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.HotReloadModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.IdentifiersModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.ImageConversionModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.IMGUIModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.InputForUIModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.InputLegacyModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.InputModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.InsightsModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.JSONSerializeModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.LocalizationModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.MarshallingModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.MultiplayerModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.NVIDIAModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.ParticleSystemModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.PerformanceReportingModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.Physics2DModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.PhysicsBackendPhysXModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.PhysicsModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.PropertiesModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.RenderAs2DModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.RuntimeInitializeOnLoadManagerInitializerModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.ScreenCaptureModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.ShaderRuntimeModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.ShaderVariantAnalyticsModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.SharedInternalsModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.SpriteMaskModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.SpriteShapeModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.StreamingModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.SubstanceModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.SubsystemsModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.TerrainModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.TerrainPhysicsModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.TextCoreFontEngineModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.TextCoreTextEngineModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.TextRenderingModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.TilemapModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.TLSModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.UI.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.UIElementsModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.UIModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.UmbraModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.UnityAnalyticsCommonModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.UnityAnalyticsModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.UnityConnectModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.UnityConsentModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.UnityCurlModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.UnityWebRequestAssetBundleModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.UnityWebRequestAudioModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.UnityWebRequestModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.UnityWebRequestTextureModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.UnityWebRequestWWWModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.VectorGraphicsModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.VehiclesModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.VFXModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.VideoModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.VirtualTexturingModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.VRModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.WindModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Managed\\UnityEngine.XRModule.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Plugins\\x86_64\\lib_burst_generated.dll",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Resources\\unity default resources",
+    "matched": true
+  },
+  {
+    "path": "DHARA_Data\\Resources\\unity_builtin_extra",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\EmbedRuntime\\mono-2.0-bdwgc.dll",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\EmbedRuntime\\MonoPosixHelper.dll",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\etc\\mono\\browscap.ini",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\etc\\mono\\config",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\etc\\mono\\2.0\\DefaultWsdlHelpGenerator.aspx",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\etc\\mono\\2.0\\machine.config",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\etc\\mono\\2.0\\settings.map",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\etc\\mono\\2.0\\web.config",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\etc\\mono\\2.0\\Browsers\\Compat.browser",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\etc\\mono\\4.0\\DefaultWsdlHelpGenerator.aspx",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\etc\\mono\\4.0\\machine.config",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\etc\\mono\\4.0\\settings.map",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\etc\\mono\\4.0\\web.config",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\etc\\mono\\4.0\\Browsers\\Compat.browser",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\etc\\mono\\4.5\\DefaultWsdlHelpGenerator.aspx",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\etc\\mono\\4.5\\machine.config",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\etc\\mono\\4.5\\settings.map",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\etc\\mono\\4.5\\web.config",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\etc\\mono\\4.5\\Browsers\\Compat.browser",
+    "matched": true
+  },
+  {
+    "path": "MonoBleedingEdge\\etc\\mono\\mconfig\\config.xml",
+    "matched": true
+  }
+]

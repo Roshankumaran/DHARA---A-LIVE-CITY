@@ -1,0 +1,5 @@
+Bengaluru | 2026-10-16T03:30 IST | US AQI 62 | European AQI 40 | US AQI=62 USAQI; European AQI=40 EAQI; PM2.5=15 μg/m³; PM10=15.2 μg/m³; Nitrogen dioxide=19.8 μg/m³; Ozone=41 μg/m³; Sulphur dioxide=9.4 μg/m³; Carbon monoxide=638 μg/m³
+Chennai | 2026-10-16T03:30 IST | US AQI 26 | European AQI 35 | US AQI=26 USAQI; European AQI=35 EAQI; PM2.5=8.6 μg/m³; PM10=9.7 μg/m³; Nitrogen dioxide=21.4 μg/m³; Ozone=29 μg/m³; Sulphur dioxide=16.4 μg/m³; Carbon monoxide=352 μg/m³
+Mumbai | 2026-10-16T03:30 IST | US AQI 162 | European AQI 71 | US AQI=162 USAQI; European AQI=71 EAQI; PM2.5=71 μg/m³; PM10=92.9 μg/m³; Nitrogen dioxide=14.7 μg/m³; Ozone=122 μg/m³; Sulphur dioxide=18.9 μg/m³; Carbon monoxide=448 μg/m³
+Delhi | 2026-10-16T03:30 IST | US AQI 162 | European AQI 73 | US AQI=162 USAQI; European AQI=73 EAQI; PM2.5=75.9 μg/m³; PM10=92.4 μg/m³; Nitrogen dioxide=48.8 μg/m³; Ozone=26 μg/m³; Sulphur dioxide=29 μg/m³; Carbon monoxide=1010 μg/m³
+Hyderabad | 2026-10-16T03:30 IST | US AQI 81 | European AQI 34 | US AQI=81 USAQI; European AQI=34 EAQI; PM2.5=12 μg/m³; PM10=12.2 μg/m³; Nitrogen dioxide=7.6 μg/m³; Ozone=53 μg/m³; Sulphur dioxide=8 μg/m³; Carbon monoxide=311 μg/m³

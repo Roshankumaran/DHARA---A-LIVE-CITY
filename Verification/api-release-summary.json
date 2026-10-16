@@ -1,0 +1,51 @@
+{
+  "unityVersion": "6000.3.26f1",
+  "editMode": {
+    "total": "124",
+    "passed": "124",
+    "failed": "0"
+  },
+  "playMode": {
+    "total": "151",
+    "passed": "151",
+    "failed": "0"
+  },
+  "distinctUnityCases": 275,
+  "realCityWeatherChecks": 5,
+  "realCityAirQualityChecks": 5,
+  "realEra5Hours": 24,
+  "layoutChecks": 6,
+  "package": {
+    "archiveSha256": "44ACD258E10503E4034408242B677D16050B8E11FD6F9DE55F507C88090A0C12",
+    "archive": "C:\\Users\\Roshan\\Downloads\\DHARA_CODEX\\Builds\\DHARA-LivingCity-Windows-x64-20261016-040756.zip",
+    "createdUtc": "2026-10-15T22:38:22.8182526Z",
+    "allEntryHashesVerified": true,
+    "filesVerified": 174,
+    "bytes": 40067151,
+    "stage": "C:\\Users\\Roshan\\Downloads\\DHARA_CODEX\\TestResults\\Package-20261016-040756\\DHARA",
+    "architecture": "AMD64"
+  },
+  "playerSmoke": {
+    "playerId": 7340,
+    "exportRecords": 17,
+    "privateMemoryBytes": 937816064,
+    "responding": true,
+    "hasWindow": true,
+    "manuallyObserved": [
+      "LIVE WORLD with genuine Bengaluru weather",
+      "Air Quality page with all eight AQI/pollutant values",
+      "Weather page with WMO code 3 / Overcast and 900-second precipitation interval",
+      "Native CSV button produced a real 17-field file"
+    ],
+    "exportModifiedUtc": "2026-10-15T22:39:24.0977219Z",
+    "fatalLogMatches": 0,
+    "exportPath": "C:\\Users\\Roshan\\AppData\\LocalLow\\DHARA\\DHARA — A LIVING CITY\\EnvironmentalData\\DHARA_Environment_Bengaluru_20261015-223924-086.csv",
+    "exportBytes": 3426
+  },
+  "remaining": [
+    "Model estimates are not sensors or calibrated forecasts of street flooding",
+    "IMD authorized feed unavailable",
+    "Purchased SimplePoly source assets absent",
+    "No web deployment or unrelated PDF/screenshot export changes in this API release"
+  ]
+}

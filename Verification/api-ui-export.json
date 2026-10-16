@@ -1,0 +1,27 @@
+{
+  "success": true,
+  "command": "command eval",
+  "data": {
+    "command": "eval",
+    "parameters": {
+      "code": "var app=UnityEngine.Object.FindFirstObjectByType<Dhara.DharaApplication>();var button=app.GetComponentsInChildren<UnityEngine.UI.Button>().First(b=>b.name==\"Export data CSV\");button.onClick.Invoke();var dir=System.IO.Path.Combine(UnityEngine.Application.persistentDataPath,\"EnvironmentalData\");var path=System.IO.Directory.GetFiles(dir,\"*.csv\").OrderByDescending(p=>System.IO.File.GetLastWriteTimeUtc(p)).First();System.IO.File.Copy(path,\"Verification/api-ui-export.csv\",true);return new {path,bytes=new System.IO.FileInfo(path).Length,feedback=app.GetComponentsInChildren<TMPro.TMP_Text>().First(t=>t.name==\"Export status\").text};"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "path": "C:/Users/Roshan/AppData/LocalLow/DHARA/DHARA — A LIVING CITY\\EnvironmentalData\\DHARA_Environment_Bengaluru_20261015-223647-178.csv",
+        "bytes": 3426,
+        "feedback": "CSV saved. Folder: C:/Users/Roshan/AppData/LocalLow/DHARA/DHARA — A LIVING CITY\\EnvironmentalData"
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "C:\\Users\\Roshan\\Downloads\\DHARA_CODEX"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

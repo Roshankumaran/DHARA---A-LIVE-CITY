@@ -1,0 +1,43 @@
+{
+  "scope": "Local browser companion, not Unity WebGL",
+  "localhost": "http://127.0.0.1:5174",
+  "node": "24.12.0",
+  "tests": {
+    "passed": 27,
+    "failed": 0,
+    "evidence": "Verification/web-tests.xml"
+  },
+  "productionBuild": "npm ci --ignore-scripts && npm run build succeeded; six static output files",
+  "browserCitiesVerified": [
+    "Bengaluru",
+    "Chennai",
+    "Mumbai",
+    "Delhi",
+    "Hyderabad"
+  ],
+  "weatherRowsPerCity": 9,
+  "airQualityRowsPerCity": 8,
+  "browserForecast": "Selected real Hyderabad 2026-10-16T10:00 IST forecast, separately labeled from current AQ valid 07:30 IST",
+  "browserCsv": "Actual browser download, 17 rows, parsed and classified; see web-browser-csv.json",
+  "networkRecovery": "Genuine initial Bengaluru weather HTTP 503 displayed; subsequent automatic retry recovered to current valid 08:00 IST",
+  "responsiveChecks": [
+    {
+      "viewportWidth": 390,
+      "contentWidth": 375,
+      "horizontalOverflow": false
+    },
+    {
+      "viewportWidth": 1280,
+      "contentWidth": 1265,
+      "horizontalOverflow": false
+    }
+  ],
+  "unity": "Prior verified compilation, 124 Edit Mode + 151 Play Mode passed; Windows player works. No Unity code changed during web work.",
+  "webBuildSupportInstalled": false,
+  "vercelDeployment": "Prepared; not deployed or DNS-connected in this session",
+  "vercelRoot": "Web",
+  "framework": "Other",
+  "buildCommand": "npm run build",
+  "output": "dist",
+  "environmentVariablesRequired": []
+}

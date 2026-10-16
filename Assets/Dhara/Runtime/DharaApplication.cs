@@ -6,6 +6,7 @@ namespace Dhara
     {
         public Material SurfaceTemplate, ParticleTemplate;
         public CitySettings City = new CitySettings();
+        public bool FetchDataOnStart=true;
         public readonly SimulationState Simulation = new SimulationState();
         public readonly CausalEnvironmentEngine Engine = new CausalEnvironmentEngine();
         public WeatherService Weather { get; private set; }
@@ -33,10 +34,10 @@ namespace Dhara
             World.ViewCamera.rect=EnvironmentalDashboard.WorldViewport;
             Weather=gameObject.AddComponent<WeatherService>(); Weather.Updated+=ReceiveWeather;
             History=gameObject.AddComponent<HistoricalService>();
-            AirQuality=gameObject.AddComponent<AirQualityService>();AirQuality.Select(0);
+            AirQuality=gameObject.AddComponent<AirQualityService>();if(FetchDataOnStart)AirQuality.Select(0);
             CityComparison=gameObject.AddComponent<CityComparisonService>();CityComparison.Initialize(Weather);
             var dashboard=gameObject.AddComponent<EnvironmentalDashboard>(); dashboard.Initialize(this);
-            Weather.Select(0);
+            if(FetchDataOnStart)Weather.Select(0);
         }
         void ReceiveWeather()
         {
@@ -104,7 +105,7 @@ namespace Dhara
             int band=(int)(Engine.State.CollectionM3/5);
             if(band!=waterBand) { Engine.Record($"District collection {Engine.State.CollectionM3:0.0} m³ · {Engine.State.ElapsedSimulatedSeconds/60:0.0} model min."); waterBand=band; }
             World.Render(Engine.State,Simulation.Active,Time.unscaledDeltaTime);
-            RenderSettings.fogDensity=Simulation.Mode==WorldMode.Live?AirQuality.HazeDensity:.0018f;
+            RenderSettings.fogDensity=Mathf.Max(World.WeatherFogDensity, Simulation.Mode==WorldMode.Live?AirQuality.HazeDensity:0);
         }
         void OnDestroy() { if(Weather!=null) Weather.Updated-=ReceiveWeather; }
     }

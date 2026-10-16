@@ -1,0 +1,122 @@
+[
+  {
+    "layout": {
+      "width": 1920,
+      "height": 1080,
+      "frame": 1870,
+      "mode": "Live",
+      "weatherValid": "2026-10-16T03:30",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:393.60, y:275.40, width:1036.80, height:610.20)",
+      "overflow": [],
+      "controlsOutside": []
+    },
+    "view": "Live"
+  },
+  {
+    "layout": {
+      "width": 1920,
+      "height": 1080,
+      "frame": 1965,
+      "mode": "Forecast",
+      "weatherValid": "2026-10-16T03:30",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:393.60, y:275.40, width:1036.80, height:610.20)",
+      "overflow": [],
+      "controlsOutside": []
+    },
+    "view": "Forecast"
+  },
+  {
+    "layout": {
+      "width": 1920,
+      "height": 1080,
+      "frame": 2075,
+      "mode": "WhatIf",
+      "weatherValid": "2026-10-16T03:30",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:393.60, y:275.40, width:1036.80, height:610.20)",
+      "overflow": [],
+      "controlsOutside": []
+    },
+    "view": "WhatIf"
+  },
+  {
+    "layout": {
+      "width": 1920,
+      "height": 1080,
+      "frame": 2178,
+      "mode": "WhatIf",
+      "weatherValid": "2026-10-16T03:30",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:393.60, y:275.40, width:1036.80, height:610.20)",
+      "overflow": [],
+      "controlsOutside": []
+    },
+    "view": "StandingWater"
+  },
+  {
+    "layout": {
+      "width": 1920,
+      "height": 1080,
+      "frame": 2274,
+      "mode": "WhatIf",
+      "weatherValid": "2026-10-16T03:30",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:393.60, y:275.40, width:1036.80, height:610.20)",
+      "overflow": [],
+      "controlsOutside": []
+    },
+    "view": "Drainage"
+  },
+  {
+    "layout": {
+      "width": 1920,
+      "height": 1080,
+      "frame": 2371,
+      "mode": "WhatIf",
+      "weatherValid": "2026-10-16T03:30",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:393.60, y:275.40, width:1036.80, height:610.20)",
+      "overflow": [],
+      "controlsOutside": []
+    },
+    "view": "Wetness"
+  },
+  {
+    "layout": {
+      "width": 1920,
+      "height": 1080,
+      "frame": 2479,
+      "mode": "WhatIf",
+      "weatherValid": "2026-10-16T03:30",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:393.60, y:275.40, width:1036.80, height:610.20)",
+      "overflow": [],
+      "controlsOutside": []
+    },
+    "view": "Tour"
+  },
+  {
+    "layout": {
+      "width": 1920,
+      "height": 1080,
+      "frame": 2583,
+      "mode": "WhatIf",
+      "weatherValid": "2026-10-16T03:30",
+      "loading": false,
+      "error": null,
+      "viewport": "(x:393.60, y:275.40, width:1036.80, height:610.20)",
+      "overflow": [],
+      "controlsOutside": []
+    },
+    "view": "Roam"
+  }
+]

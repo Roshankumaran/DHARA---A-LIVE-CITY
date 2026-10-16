@@ -1,0 +1,441 @@
+{
+  "executedUtc": "2026-10-15T22:25:30.2814089Z",
+  "scope": "Real HTTPS and production C# parser; CAMS model estimates, not sensors",
+  "results": [
+    {
+      "passed": true,
+      "fields": [
+        {
+          "Name": "US AQI",
+          "Unit": "USAQI",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement; US scale, not Indian NAQI",
+          "Value": 62.0,
+          "RetrievedUtc": "2026-10-15T22:25:27.2297071Z"
+        },
+        {
+          "Name": "European AQI",
+          "Unit": "EAQI",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement; European scale",
+          "Value": 40.0,
+          "RetrievedUtc": "2026-10-15T22:25:27.2297071Z"
+        },
+        {
+          "Name": "PM2.5",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 15.0,
+          "RetrievedUtc": "2026-10-15T22:25:27.2297071Z"
+        },
+        {
+          "Name": "PM10",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 15.2,
+          "RetrievedUtc": "2026-10-15T22:25:27.2297071Z"
+        },
+        {
+          "Name": "Nitrogen dioxide",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 19.8,
+          "RetrievedUtc": "2026-10-15T22:25:27.2297071Z"
+        },
+        {
+          "Name": "Ozone",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 41.0,
+          "RetrievedUtc": "2026-10-15T22:25:27.2297071Z"
+        },
+        {
+          "Name": "Sulphur dioxide",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 9.4,
+          "RetrievedUtc": "2026-10-15T22:25:27.2297071Z"
+        },
+        {
+          "Name": "Carbon monoxide",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 638.0,
+          "RetrievedUtc": "2026-10-15T22:25:27.2297071Z"
+        }
+      ],
+      "city": "Bengaluru",
+      "httpStatus": 200
+    },
+    {
+      "passed": true,
+      "fields": [
+        {
+          "Name": "US AQI",
+          "Unit": "USAQI",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement; US scale, not Indian NAQI",
+          "Value": 26.0,
+          "RetrievedUtc": "2026-10-15T22:25:27.9329405Z"
+        },
+        {
+          "Name": "European AQI",
+          "Unit": "EAQI",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement; European scale",
+          "Value": 35.0,
+          "RetrievedUtc": "2026-10-15T22:25:27.9329405Z"
+        },
+        {
+          "Name": "PM2.5",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 8.6,
+          "RetrievedUtc": "2026-10-15T22:25:27.9329405Z"
+        },
+        {
+          "Name": "PM10",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 9.7,
+          "RetrievedUtc": "2026-10-15T22:25:27.9329405Z"
+        },
+        {
+          "Name": "Nitrogen dioxide",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 21.4,
+          "RetrievedUtc": "2026-10-15T22:25:27.9329405Z"
+        },
+        {
+          "Name": "Ozone",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 29.0,
+          "RetrievedUtc": "2026-10-15T22:25:27.9329405Z"
+        },
+        {
+          "Name": "Sulphur dioxide",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 16.4,
+          "RetrievedUtc": "2026-10-15T22:25:27.9329405Z"
+        },
+        {
+          "Name": "Carbon monoxide",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 352.0,
+          "RetrievedUtc": "2026-10-15T22:25:27.9329405Z"
+        }
+      ],
+      "city": "Chennai",
+      "httpStatus": 200
+    },
+    {
+      "passed": true,
+      "fields": [
+        {
+          "Name": "US AQI",
+          "Unit": "USAQI",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement; US scale, not Indian NAQI",
+          "Value": 162.0,
+          "RetrievedUtc": "2026-10-15T22:25:28.8039443Z"
+        },
+        {
+          "Name": "European AQI",
+          "Unit": "EAQI",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement; European scale",
+          "Value": 71.0,
+          "RetrievedUtc": "2026-10-15T22:25:28.8039443Z"
+        },
+        {
+          "Name": "PM2.5",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 71.0,
+          "RetrievedUtc": "2026-10-15T22:25:28.8039443Z"
+        },
+        {
+          "Name": "PM10",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 92.9,
+          "RetrievedUtc": "2026-10-15T22:25:28.8039443Z"
+        },
+        {
+          "Name": "Nitrogen dioxide",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 14.7,
+          "RetrievedUtc": "2026-10-15T22:25:28.8039443Z"
+        },
+        {
+          "Name": "Ozone",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 122.0,
+          "RetrievedUtc": "2026-10-15T22:25:28.8039443Z"
+        },
+        {
+          "Name": "Sulphur dioxide",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 18.9,
+          "RetrievedUtc": "2026-10-15T22:25:28.8039443Z"
+        },
+        {
+          "Name": "Carbon monoxide",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 448.0,
+          "RetrievedUtc": "2026-10-15T22:25:28.8039443Z"
+        }
+      ],
+      "city": "Mumbai",
+      "httpStatus": 200
+    },
+    {
+      "passed": true,
+      "fields": [
+        {
+          "Name": "US AQI",
+          "Unit": "USAQI",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement; US scale, not Indian NAQI",
+          "Value": 162.0,
+          "RetrievedUtc": "2026-10-15T22:25:29.6027058Z"
+        },
+        {
+          "Name": "European AQI",
+          "Unit": "EAQI",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement; European scale",
+          "Value": 73.0,
+          "RetrievedUtc": "2026-10-15T22:25:29.6027058Z"
+        },
+        {
+          "Name": "PM2.5",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 75.9,
+          "RetrievedUtc": "2026-10-15T22:25:29.6027058Z"
+        },
+        {
+          "Name": "PM10",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 92.4,
+          "RetrievedUtc": "2026-10-15T22:25:29.6027058Z"
+        },
+        {
+          "Name": "Nitrogen dioxide",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 48.8,
+          "RetrievedUtc": "2026-10-15T22:25:29.6027058Z"
+        },
+        {
+          "Name": "Ozone",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 26.0,
+          "RetrievedUtc": "2026-10-15T22:25:29.6027058Z"
+        },
+        {
+          "Name": "Sulphur dioxide",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 29.0,
+          "RetrievedUtc": "2026-10-15T22:25:29.6027058Z"
+        },
+        {
+          "Name": "Carbon monoxide",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 1010.0,
+          "RetrievedUtc": "2026-10-15T22:25:29.6027058Z"
+        }
+      ],
+      "city": "Delhi",
+      "httpStatus": 200
+    },
+    {
+      "passed": true,
+      "fields": [
+        {
+          "Name": "US AQI",
+          "Unit": "USAQI",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement; US scale, not Indian NAQI",
+          "Value": 81.0,
+          "RetrievedUtc": "2026-10-15T22:25:30.2795052Z"
+        },
+        {
+          "Name": "European AQI",
+          "Unit": "EAQI",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement; European scale",
+          "Value": 34.0,
+          "RetrievedUtc": "2026-10-15T22:25:30.2795052Z"
+        },
+        {
+          "Name": "PM2.5",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 12.0,
+          "RetrievedUtc": "2026-10-15T22:25:30.2795052Z"
+        },
+        {
+          "Name": "PM10",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 12.2,
+          "RetrievedUtc": "2026-10-15T22:25:30.2795052Z"
+        },
+        {
+          "Name": "Nitrogen dioxide",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 7.6,
+          "RetrievedUtc": "2026-10-15T22:25:30.2795052Z"
+        },
+        {
+          "Name": "Ozone",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 53.0,
+          "RetrievedUtc": "2026-10-15T22:25:30.2795052Z"
+        },
+        {
+          "Name": "Sulphur dioxide",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 8.0,
+          "RetrievedUtc": "2026-10-15T22:25:30.2795052Z"
+        },
+        {
+          "Name": "Carbon monoxide",
+          "Unit": "μg/m³",
+          "Source": "Open-Meteo Air Quality API / CAMS global",
+          "ValidTime": "2026-10-16T03:30",
+          "Availability": "Available",
+          "Meaning": "Current model estimate, not a local sensor measurement",
+          "Value": 311.0,
+          "RetrievedUtc": "2026-10-15T22:25:30.2795052Z"
+        }
+      ],
+      "city": "Hyderabad",
+      "httpStatus": 200
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "success": true,
+  "command": "command console",
+  "data": {
+    "command": "console",
+    "parameters": {
+      "level": "warn",
+      "tail": "30"
+    },
+    "result": {
+      "entries": [],
+      "cursor": 0,
+      "session": "8e876c4c0795401e9a4ead6ffb38e010",
+      "returned": 0,
+      "dropped": false,
+      "reset": false,
+      "counts": {
+        "error": 0,
+        "warn": 0,
+        "log": 0
+      },
+      "groundTruth": {
+        "sampledUtc": "2026-10-15T22:04:15.7847845Z",
+        "ageMs": 100,
+        "compilationFailed": false,
+        "compiling": false,
+        "consoleErrors": 0,
+        "consoleWarnings": 0,
+        "consoleLogs": 0,
+        "seeded": true
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "C:\\Users\\Roshan\\Downloads\\DHARA_CODEX"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}

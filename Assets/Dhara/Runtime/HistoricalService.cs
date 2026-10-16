@@ -27,10 +27,11 @@ namespace Dhara
             {
                 active=UnityWebRequest.Get(url);active.timeout=20;yield return active.SendWebRequest();
                 if(active.result==UnityWebRequest.Result.Success)
-                {try{var parsed=HistoricalWeather.Parse(active.downloadHandler.text);Records.AddRange(parsed);Status.RetrievedUtc=DateTime.UtcNow;Status.Error=null;}catch(Exception e){Status.Error="Historical response: "+e.Message;}}
+                {try{var parsed=HistoricalWeather.ParseValidated(active.downloadHandler.text,Date);Records.AddRange(parsed);Status.RetrievedUtc=DateTime.UtcNow;Status.Error=null;}catch(Exception e){Status.Error="Historical response: "+e.Message;}}
                 else Status.Error=active.error;
+                double retryDelay=ApiRetry.Delay(attempt+1,active.responseCode,active.GetResponseHeader("Retry-After"),DateTime.UtcNow);
                 active.Dispose();active=null;if(Records.Count>0)break;
-                if(attempt==0)yield return new WaitForSecondsRealtime(2);
+                if(attempt==0)yield return new WaitForSecondsRealtime((float)retryDelay);
             }
             Status.Loading=false;job=null;
         }

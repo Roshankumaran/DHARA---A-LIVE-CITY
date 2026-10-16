@@ -12,6 +12,8 @@ namespace Dhara
         DharaApplication app;
         readonly Color paper=new Color(.965f,.980f,.990f), card=Color.white, tint=new Color(.925f,.962f,.978f);
         readonly Color ink=new Color(.055f,.14f,.26f), muted=new Color(.32f,.42f,.51f), accent=new Color(.02f,.46f,.42f), line=new Color(.84f,.90f,.94f);
+        TMP_Text navigationStatus;
+        RectTransform tourControls;
         TMP_Text status,cityTitle,mode,source,forecastLabel,scenarioNote,insights,experimentInput,experimentResult;
         readonly TMP_Text[] metrics=new TMP_Text[6], outputs=new TMP_Text[5], eventRows=new TMP_Text[3];
         RectTransform lab,forecast,live,experimentPanel,waterBar,wetBar;
@@ -122,10 +124,14 @@ namespace Dhara
             var cityHeader=Region("City heading",root,.205f,.82f,.54f,.075f,card,true);
             cityTitle=Text(cityHeader,"Selected city","",24,.025f,.40f,.68f,.55f,ink,true);
             mode=Text(cityHeader,"Simulation mode","Awaiting weather",13,.027f,.03f,.68f,.38f,accent);
-            Button(cityHeader,"Reset camera",.72f,.20f,.27f,.63f,()=>app.World.ViewCamera.GetComponent<OrbitCamera>().Home());
+            Button(cityHeader,"Reset camera",.72f,.20f,.085f,.63f,()=>app.World.ViewCamera.GetComponent<OrbitCamera>().Home()).GetComponentInChildren<TMP_Text>().text="Reset";
+            Button(cityHeader,"Walk",.8125f,.20f,.085f,.63f,()=>app.World.ViewCamera.GetComponent<OrbitCamera>().ToStreet());
+            Button(cityHeader,"Tour / cancel",.905f,.20f,.085f,.63f,()=>{var camera=app.World.ViewCamera.GetComponent<OrbitCamera>();if(camera.TourRunning)camera.CancelTour();else camera.StartTour();}).GetComponentInChildren<TMP_Text>().text="Tour";
+            foreach(var cameraButton in cityHeader.GetComponentsInChildren<UnityEngine.UI.Button>())
+                cameraButton.GetComponentInChildren<TMP_Text>().fontSize=12;
             var right=Region("Environment status",root,.755f,.49f,.235f,.405f,card,true);
             Text(right,"Heading","ENVIRONMENT STATUS",17,.035f,.88f,.94f,.10f,ink,true);
-            outputs[0]=MetricCard(right,"SIMULATED WATER STORAGE",4,.65f,.22f,true);waterBar=Progress(right,"Storage progress",.667f);
+            outputs[0]=MetricCard(right,"SIMULATED STANDING WATER",4,.65f,.22f,true);waterBar=Progress(right,"Storage progress",.667f);
             outputs[1]=MetricCard(right,"SURFACE WETNESS",0,.43f,.20f,true);wetBar=Progress(right,"Wetness progress",.443f);
             string[] rows={"DRAINAGE CAPACITY","SOLAR ESTIMATE","MODEL TIME"};
             for(int i=0;i<3;i++)
@@ -136,12 +142,13 @@ namespace Dhara
                 outputs[i+2]=Text(row,"Value","",17,.65f,0,.34f,1,ink,true);
             }
             var log=Region("Activity log",root,.755f,.265f,.235f,.21f,card,true);
-            Text(log,"Heading","ACTIVITY LOG",17,.035f,.77f,.60f,.20f,ink,true);
+            Text(log,"Heading","ENVIRONMENTAL CHANGE LOG",13,.035f,.77f,.65f,.20f,ink,true);
             Button(log,"Clear log",.69f,.78f,.28f,.19f,()=>app.Engine.Events.Clear());
             for(int i=0;i<3;i++)
             {
                 Region("Timeline marker "+i,log,.045f,.64f-i*.225f,.009f,.04f,i==0?accent:line,true);
                 eventRows[i]=Text(log,"Event "+i,"",12,.08f,.49f-i*.225f,.88f,.23f,muted);
+                eventRows[i].enableAutoSizing=true;eventRows[i].fontSizeMin=10;eventRows[i].fontSizeMax=12;
             }
             var insight=Region("Environmental insights",root,.755f,.075f,.235f,.175f,card,true);
             Text(insight,"Heading","ENVIRONMENTAL INSIGHTS",14,.035f,.79f,.93f,.19f,ink,true);
@@ -166,8 +173,16 @@ namespace Dhara
             live=Region("Live controls",footer,.025f,.03f,.95f,.66f);
             Text(live,"Live explanation","A district responding to weather.\nExplore forecast hours or test rainfall, wind, heat and drainage in the What-if Lab.",16,0,.12f,.97f,.79f,muted);
             var footnote=Region("Footnote",root,0,0,1,.062f,card);
-            Text(footnote,"Navigation","Right drag: orbit · Middle / WASD: pan\nScroll: zoom · Home: overview · Click modeled surfaces to inspect",11,.02f,0,.40f,1,muted);
+            Text(footnote,"Navigation","Walk: WASD / arrows; Shift faster; right drag: 360° look\n1: overview · 2: street · 3: roam · Esc: release input · click city: resume",11,.02f,0,.40f,1,muted);
             Text(footnote,"Model disclosure","SIMULATED · 60× model clock\nGeneric district · simplified water models",10,.76f,0,.23f,1,muted);
+            tourControls=Region("Tour controls",root,.22f,.26f,.51f,.09f,card,true);
+            navigationStatus=Text(tourControls,"Tour status","",12,.02f,.58f,.96f,.40f,accent,true);
+            Button(tourControls,"Pause",0,0,.2f,.58f,()=>app.World.ViewCamera.GetComponent<OrbitCamera>().PauseTour());
+            Button(tourControls,"Resume",.2f,0,.2f,.58f,()=>app.World.ViewCamera.GetComponent<OrbitCamera>().ResumeTour());
+            Button(tourControls,"Restart",.4f,0,.2f,.58f,()=>app.World.ViewCamera.GetComponent<OrbitCamera>().RestartTour());
+            Button(tourControls,"Exit",.6f,0,.2f,.58f,()=>app.World.ViewCamera.GetComponent<OrbitCamera>().CancelTour());
+            Button(tourControls,"Overview",.8f,0,.2f,.58f,()=>app.World.ViewCamera.GetComponent<OrbitCamera>().ToOverview());
+            tourControls.gameObject.SetActive(false);
             CreateExperiment(root);
             CreateStudio(root);
             app.ControlsChanged+=Sync;Sync();
@@ -229,6 +244,9 @@ namespace Dhara
         void Update()
         {
             if(app==null || Time.unscaledTime<nextRefresh)return;nextRefresh=Time.unscaledTime+.25f;
+            var cameraControl=app.World.ViewCamera.GetComponent<OrbitCamera>();
+            tourControls.gameObject.SetActive(cameraControl.TourRunning);navigationStatus.text=cameraControl.NavigationStatus;
+            for(int i=0;i<viewButtons.Count;i++)StyleButton(viewButtons[i],app.Spatial.Overlay==viewModes[i]);
             var simulation=app.Simulation;var weather=simulation.Active;var state=app.Engine.State;var connection=app.Weather.Status;
             if(overlayLegend!=null)overlayLegend.text=(app.Spatial.Preview!=null?"FROZEN INTERVENTION · ":"RUNNING WORLD · ")+app.Spatial.Legend;
             if(objectPanel!=null&&objectPanel.gameObject.activeSelf)objectDetails.text=app.Spatial.InspectSelected();
@@ -253,7 +271,7 @@ namespace Dhara
             outputs[3].text=valid && Numbers.IsFinite(weather.SolarWm2)?state.SolarKw.ToString("0.00")+" kW":"Unavailable";
             outputs[4].text=(state.ElapsedSimulatedSeconds/60).ToString("0.0")+" min";Fill(waterBar,valid?state.CollectionM3/150:0);Fill(wetBar,valid?state.Wetness:0);
             for(int i=0;i<eventRows.Length;i++)
-            {if(i>=app.Engine.Events.Count){eventRows[i].text="";continue;}var item=app.Engine.Events[i];string message=item.Message.Replace('\n',' ');if(message.Length>72)message=message.Substring(0,69)+"...";eventRows[i].text="<color=#08786D>"+item.Timestamp.ToString("HH:mm:ss")+"</color>  "+message;}
+            {if(i>=app.Engine.Events.Count){eventRows[i].text="";continue;}var item=app.Engine.Events[i];string message=item.Message.Replace('\n',' ');eventRows[i].text="<color=#08786D>"+item.Timestamp.ToString("HH:mm:ss")+"</color>  "+message;}
             if(valid)
             {
                 var r=app.Engine.District.Result;

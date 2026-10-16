@@ -1,3 +1,9 @@
+> Latest API release: [weather/AQI validation, actual 275-case results and Windows delivery](API-ACCURACY.md).
+
+> Latest exploration release: [standing water, city navigation, tour and actual 234-case results](EXPLORATION-RELEASE.md).
+
+> Latest validation: [16 October 2026 results and final Windows release](VALIDATION-20261016.md). Historical evidence below is retained.
+
 > Historical verification record. See [Living City implementation and current evidence](LIVING-CITY.md) for the current source and release.
 
 # DHARA completion and verification — 14 October 2026

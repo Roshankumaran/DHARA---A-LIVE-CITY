@@ -5,7 +5,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
 namespace Dhara
 {
-    public enum DistrictOverlay { Normal, Water, Runoff, Surfaces, Connections, Intervention }
+    public enum DistrictOverlay { Normal, Water, Runoff, Surfaces, Connections, Intervention, Drainage, Wetness }
     public sealed class DistrictObject
     {
         public string Id,Zone;
@@ -19,6 +19,7 @@ namespace Dhara
         MaterialPropertyBlock block;
         readonly List<LineRenderer> paths=new List<LineRenderer>();
         Material pathMaterial;
+        Renderer[] drainageSurfaces;
         public readonly List<DistrictObject> Objects=new List<DistrictObject>();
         public DistrictOverlay Overlay {get;private set;}
         public DistrictHydrology Preview {get;private set;}
@@ -30,6 +31,7 @@ namespace Dhara
         {
             app=application;
             block=new MaterialPropertyBlock();
+            drainageSurfaces=System.Array.FindAll(GetComponentsInChildren<Renderer>(),r=>r.name=="Open stormwater channel");
             int roof=0,road=0,green=0,collection=0;
             foreach(var renderer in GetComponentsInChildren<MeshRenderer>())
             {
@@ -50,12 +52,13 @@ namespace Dhara
                 line.SetPositions(new[]{from,new Vector3(from.x,1,9.1f),new Vector3(34,1,42)});line.enabled=false;paths.Add(line);
             }
         }
-        public string Legend => Overlay==DistrictOverlay.Normal?"Normal materials · shared city weather":
-            Overlay==DistrictOverlay.Water?"Pale → blue: retained volume / capacity; collection / 150 m³":
-            Overlay==DistrictOverlay.Runoff?"Pale → orange: runoff / rain; cyan lines: instantaneous modeled routing":
-            Overlay==DistrictOverlay.Surfaces?"Blue roofs · gray roads · green strips · cyan collection":
-            Overlay==DistrictOverlay.Connections?"Cyan lines: all modeled surfaces → shared collection (schematic)":
-            "Green roof tint / teal road tint: uniform intervention fraction; cyan garden at collection";
+        public string Legend => Overlay==DistrictOverlay.Normal?"CITY VIEW · weather-driven materials":
+            Overlay==DistrictOverlay.Water?$"STANDING WATER · {Model.Result.StorageM3:0.0} / 150 m³ · patches illustrate shared storage, not local depth":
+            Overlay==DistrictOverlay.Drainage?$"DRAINAGE · channels highlighted · {app.Simulation.Drainage:0.0} mm/h nominal · {Model.LastDrainedM3:0.000} m³ removed in last step":
+            Overlay==DistrictOverlay.Wetness?$"SURFACE WETNESS · {app.Engine.State.Wetness*100:0}% shared road wetness · pale dry to teal wet":
+            Overlay==DistrictOverlay.Connections?"Schematic shared collection connections; not a surveyed hydraulic network":
+            Overlay==DistrictOverlay.Runoff?"Calculated aggregate runoff fraction":Overlay==DistrictOverlay.Surfaces?"Conceptual surface categories":
+            "FROZEN SCENARIO COMPARISON · green roofs / permeable paving; results in Resilience Studio";
         public void SetOverlay(DistrictOverlay overlay){Overlay=overlay;Repaint();}
         public void ShowComparison(DistrictComparison c)
         {
@@ -94,17 +97,23 @@ namespace Dhara
             if(app==null)return;var m=Model;
             foreach(var obj in Objects)
             {
-                Color color=obj.Original;
+                if(Overlay==DistrictOverlay.Normal && Selected!=obj && HighlightedZone==null)
+                {obj.Renderer.SetPropertyBlock(null);continue;}
+                Color color=obj.Renderer.sharedMaterial.color;
+                if(Overlay==DistrictOverlay.Wetness && obj.Zone=="road")color=Color.Lerp(new Color(.85f,.92f,.95f),new Color(.02f,.48f,.48f),(float)app.Engine.State.Wetness);
+                if(Overlay==DistrictOverlay.Drainage && obj.Zone=="collection")color=new Color(.02f,.65f,.7f);
                 if(Overlay==DistrictOverlay.Surfaces)color=obj.Zone=="roof"?new Color(.3f,.56f,.78f):obj.Zone=="road"?Color.gray:obj.Zone=="green"?new Color(.28f,.62f,.3f):Color.cyan;
                 if(Overlay==DistrictOverlay.Intervention)
                 {if(obj.Zone=="roof")color=Color.Lerp(color,new Color(.14f,.64f,.28f),(float)m.Configuration.GreenRoofFraction);if(obj.Zone=="road")color=Color.Lerp(color,new Color(.1f,.65f,.61f),(float)m.Configuration.PermeableFraction);if(obj.Zone=="collection"&&m.Configuration.GardenCapacityM3>0)color=new Color(.2f,.65f,.6f);}
-                if(Overlay==DistrictOverlay.Water)
-                {double ratio=obj.Zone=="collection"?m.Result.StorageM3/150:obj.Zone=="roof"?m.Zones[1].RetainedM3/(DistrictHydrology.RoofArea*.02):0;color=Color.Lerp(new Color(.85f,.92f,.95f),new Color(.06f,.35f,.9f),(float)ratio);}
+                if(Overlay==DistrictOverlay.Water&&(obj.Zone=="collection"||obj.Zone=="road"))
+                {double ratio=m.Result.StorageM3/150;color=Color.Lerp(new Color(.85f,.92f,.95f),new Color(.06f,.35f,.9f),(float)ratio);}
                 if(Overlay==DistrictOverlay.Runoff)
                 {double runoff=0,input=0;foreach(var z in m.Zones)if(z.Id==obj.Zone||(obj.Zone=="roof"&&z.Id=="green-roof")||(obj.Zone=="road"&&z.Id=="permeable")){runoff+=z.RunoffM3;input+=z.RainM3;}color=Color.Lerp(new Color(.94f,.92f,.86f),new Color(.92f,.38f,.08f),input>0?(float)(runoff/input):0);}
                 if(Selected==obj||HighlightedZone==obj.Zone||(HighlightedZone=="green-roof"&&obj.Zone=="roof")||(HighlightedZone=="permeable"&&obj.Zone=="road"))color=Color.Lerp(color,Color.yellow,.65f);
                 block.SetColor("_BaseColor",color);obj.Renderer.SetPropertyBlock(block);
             }
+            if(drainageSurfaces!=null)foreach(var drain in drainageSurfaces)
+            {if(Overlay==DistrictOverlay.Drainage){block.SetColor("_BaseColor",Color.Lerp(new Color(.1f,.35f,.4f),Color.cyan,(float)Numbers.Clamp(m.LastDrainedM3/.1,0,1)));drain.SetPropertyBlock(block);}else drain.SetPropertyBlock(null);}
             foreach(var path in paths)path.enabled=Overlay==DistrictOverlay.Connections||Overlay==DistrictOverlay.Runoff;
         }
         void OnDestroy(){if(pathMaterial!=null)Destroy(pathMaterial);}

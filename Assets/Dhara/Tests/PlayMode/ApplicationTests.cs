@@ -162,19 +162,19 @@ namespace Dhara.Tests
             app.transform.Find("Environmental monitoring dashboard/Activity log/Clear log").GetComponent<Button>().onClick.Invoke();Assert.That(app.Engine.Events,Is.Empty);
         }
         // These loopback endpoints only inject failures. They never provide successful weather data.
-        sealed class FaultEndpoint : IDisposable
+        internal sealed class FaultEndpoint : IDisposable
         {
             readonly System.Net.Sockets.TcpListener listener;
             readonly System.Threading.CancellationTokenSource stop=new System.Threading.CancellationTokenSource();
             System.Net.Sockets.TcpClient client;
             public string Url { get; }
-            public FaultEndpoint(int status,string body,bool stall=false)
+            public FaultEndpoint(int status,string body,bool stall=false,string retryAfter=null)
             {
                 listener=new System.Net.Sockets.TcpListener(System.Net.IPAddress.Loopback,0);listener.Start();
                 Url="http://127.0.0.1:"+((System.Net.IPEndPoint)listener.LocalEndpoint).Port+"/failure";
-                _=Serve(status,body,stall);
+                _=Serve(status,body,stall,retryAfter);
             }
-            async System.Threading.Tasks.Task Serve(int status,string body,bool stall)
+            async System.Threading.Tasks.Task Serve(int status,string body,bool stall,string retryAfter)
             {
                 try
                 {
@@ -186,7 +186,7 @@ namespace Dhara.Tests
                         else
                         {
                             var payload=System.Text.Encoding.UTF8.GetBytes(body);
-                            var header=System.Text.Encoding.ASCII.GetBytes("HTTP/1.1 "+status+" Test fault\r\nContent-Type: application/json\r\nContent-Length: "+payload.Length+"\r\nConnection: close\r\n\r\n");
+                            var header=System.Text.Encoding.ASCII.GetBytes("HTTP/1.1 "+status+" Test fault\r\n"+(retryAfter==null?"":"Retry-After: "+retryAfter+"\r\n")+"Content-Type: application/json\r\nContent-Length: "+payload.Length+"\r\nConnection: close\r\n\r\n");
                             await stream.WriteAsync(header,0,header.Length,stop.Token).ConfigureAwait(false);
                             await stream.WriteAsync(payload,0,payload.Length,stop.Token).ConfigureAwait(false);
                         }

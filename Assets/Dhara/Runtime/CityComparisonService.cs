@@ -17,7 +17,7 @@ namespace Dhara
             {
                 var data=weather.CityCache[i];if(!force&&data.Status.RetrievedUtc.HasValue&&DateTime.UtcNow-data.Status.RetrievedUtc.Value<TimeSpan.FromMinutes(5))continue;
                 data.BeginRequest(false);active=UnityWebRequest.Get(weather.RequestUrl(Location.All[i]));active.timeout=20;yield return active.SendWebRequest();
-                if(active.result==UnityWebRequest.Result.Success){try{data.Accept(WeatherJson.Parse(active.downloadHandler.text),DateTime.UtcNow);}catch(Exception e){data.Fail(e.Message);}}
+                if(active.result==UnityWebRequest.Result.Success){try{data.Accept(ApiValidation.Forecast(active.downloadHandler.text,DateTime.UtcNow),DateTime.UtcNow);}catch(Exception e){data.Fail(e.Message);}}
                 else data.Fail(active.error);
                 active.Dispose();active=null;
             }

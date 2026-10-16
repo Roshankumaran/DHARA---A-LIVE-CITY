@@ -1,0 +1,10 @@
+{
+  "passed": true,
+  "rows": 17,
+  "checks": [
+    "real UI button created nonempty CSV",
+    "RFC CSV reader round trip",
+    "city, valid/retrieval times present",
+    "AQI and pollutant units retained"
+  ]
+}

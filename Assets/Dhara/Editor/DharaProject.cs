@@ -112,6 +112,48 @@ namespace Dhara.Editor
             PlayerSettings.productName="DHARA — A LIVING CITY";AssetDatabase.SaveAssets();
             BuildWindowsAt("Builds/Windows-LivingCity");
         }
+        public static void BuildApiWindows() { BuildWindowsAt("Builds/Windows-API"); }
+        public static void BuildExplorationWindows() { BuildWindowsAt("Builds/Windows-Exploration"); }
+        public static void BuildValidatedWindows() { BuildWindowsAt("Builds/Windows-Validated"); }
+        public static void BuildExplorerWindows() { BuildWindowsAt("Builds/Windows-Explorer"); }
+        public static void BuildAnimationWindows()
+        {
+            PlayerSettings.productName="DHARA \u2014 A LIVING CITY";
+            AssetDatabase.SaveAssets();
+            BuildWindowsAt("Builds/Windows-Animation");
+        }
+        [MenuItem("DHARA/Build public Web application")]
+        public static void BuildPublicWeb()
+        {
+            if (!BuildPipeline.IsBuildTargetSupported(BuildTargetGroup.WebGL, BuildTarget.WebGL))
+                throw new InvalidOperationException("Install Web Build Support for Unity 6000.3.26f1 before building the browser release.");
+            if (!File.Exists(ScenePath)) throw new InvalidOperationException("Main scene was not prepared.");
+            var previousCompression = PlayerSettings.WebGL.compressionFormat;
+            var previousFallback = PlayerSettings.WebGL.decompressionFallback;
+            var previousTemplate = PlayerSettings.WebGL.template;
+            try
+            {
+                // The loader handles decompression, so static hosting needs no Content-Encoding rules.
+                PlayerSettings.WebGL.compressionFormat = WebGLCompressionFormat.Gzip;
+                PlayerSettings.WebGL.decompressionFallback = true;
+                PlayerSettings.WebGL.template = "PROJECT:DHARA";
+                var report = BuildPipeline.BuildPlayer(new BuildPlayerOptions
+                {
+                    scenes = new[] { ScenePath }, locationPathName = "Builds/Web-Dhara",
+                    target = BuildTarget.WebGL, options = BuildOptions.None
+                });
+                if (report.summary.result != BuildResult.Succeeded)
+                    throw new InvalidOperationException("Web build failed: " + report.summary.result);
+                Debug.Log("DHARA public browser build created: Builds/Web-Dhara");
+            }
+            finally
+            {
+                PlayerSettings.WebGL.compressionFormat = previousCompression;
+                PlayerSettings.WebGL.decompressionFallback = previousFallback;
+                PlayerSettings.WebGL.template = previousTemplate;
+                AssetDatabase.SaveAssets();
+            }
+        }
         static void BuildWindowsAt(string directory)
         {
             if(!File.Exists("Assets/Dhara/SetupComplete.txt")) Prepare();

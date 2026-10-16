@@ -22,6 +22,8 @@ namespace Dhara
             var current=response?.current?.Convert();
             if(current==null || !DateTime.TryParseExact(current.Time,"yyyy-MM-dd'T'HH:mm",CultureInfo.InvariantCulture,DateTimeStyles.None,out var currentTime))
                 throw new FormatException("Missing or invalid current weather timestamp");
+            if(Current!=null&&DateTime.TryParseExact(Current.Time,"yyyy-MM-dd'T'HH:mm",CultureInfo.InvariantCulture,DateTimeStyles.None,out var previousTime)&&currentTime<previousTime)
+                throw new FormatException("Older response cannot replace newer same-location weather");
             var forecast=new List<WeatherData>();
             if(response.hourly?.time!=null)
                 for(int i=0;i<response.hourly.time.Length;i++)

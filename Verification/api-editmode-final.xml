@@ -1,0 +1,792 @@
+<?xml version="1.0" encoding="utf-8"?>
+<test-run id="2" testcasecount="121" result="Passed" total="121" passed="121" failed="0" inconclusive="0" skipped="0" asserts="0" engine-version="3.5.0.0" clr-version="4.0.30319.42000" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.1663924">
+  <test-suite type="TestSuite" id="1000" name="DHARA — A LIVING CITY" fullname="DHARA — A LIVING CITY" runstate="Runnable" testcasecount="121" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.166392" total="121" passed="121" failed="0" inconclusive="0" skipped="0" asserts="0">
+    <properties>
+      <property name="platform" value="EditMode" />
+    </properties>
+    <test-suite type="Assembly" id="1136" name="Dhara.Tests.dll" fullname="C:/Users/Roshan/Downloads/DHARA_CODEX/Library/ScriptAssemblies/Dhara.Tests.dll" runstate="Runnable" testcasecount="121" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.158866" total="121" passed="121" failed="0" inconclusive="0" skipped="0" asserts="0">
+      <properties>
+        <property name="_PID" value="25748" />
+        <property name="_APPDOMAIN" value="Unity Child Domain" />
+        <property name="platform" value="EditMode" />
+        <property name="EditorOnly" value="True" />
+      </properties>
+      <test-suite type="TestSuite" id="1137" name="Dhara" fullname="Dhara" runstate="Runnable" testcasecount="121" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.157484" total="121" passed="121" failed="0" inconclusive="0" skipped="0" asserts="0">
+        <properties />
+        <test-suite type="TestSuite" id="1138" name="Tests" fullname="Dhara.Tests" runstate="Runnable" testcasecount="121" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.156357" total="121" passed="121" failed="0" inconclusive="0" skipped="0" asserts="0">
+          <properties />
+          <test-suite type="TestFixture" id="1001" name="AirQualityTests" fullname="Dhara.Tests.AirQualityTests" classname="Dhara.Tests.AirQualityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.037965" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1002" name="PollutantsKeepNullSeparateFromZero" fullname="Dhara.Tests.AirQualityTests.PollutantsKeepNullSeparateFromZero" methodname="PollutantsKeepNullSeparateFromZero" classname="Dhara.Tests.AirQualityTests" runstate="Runnable" seed="1220401648" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.022560" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1003" name="WrongUnitsAndNegativePollutantsAreRejected" fullname="Dhara.Tests.AirQualityTests.WrongUnitsAndNegativePollutantsAreRejected" methodname="WrongUnitsAndNegativePollutantsAreRejected" classname="Dhara.Tests.AirQualityTests" runstate="Runnable" seed="1217327188" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.002214" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1004" name="ApiAccuracyTests" fullname="Dhara.Tests.ApiAccuracyTests" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" testcasecount="34" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.031850" total="34" passed="34" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1035" name="AirQualityRetainsScalesConcentrationsAndMissing" fullname="Dhara.Tests.ApiAccuracyTests.AirQualityRetainsScalesConcentrationsAndMissing" methodname="AirQualityRetainsScalesConcentrationsAndMissing" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="270420267" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000337" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1005" name="CurrentAndHourlyHaveDifferentRainIntervals" fullname="Dhara.Tests.ApiAccuracyTests.CurrentAndHourlyHaveDifferentRainIntervals" methodname="CurrentAndHourlyHaveDifferentRainIntervals" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="122929060" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.003251" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1034" name="HistoricalRequestDateMustMatch" fullname="Dhara.Tests.ApiAccuracyTests.HistoricalRequestDateMustMatch" methodname="HistoricalRequestDateMustMatch" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="1116189802" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.001007" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1023" name="MissingAndZeroHaveDifferentAvailability" fullname="Dhara.Tests.ApiAccuracyTests.MissingAndZeroHaveDifferentAvailability" methodname="MissingAndZeroHaveDifferentAvailability" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="259460171" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.002470" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1033" name="OlderResponseCannotOverwriteSameLocation" fullname="Dhara.Tests.ApiAccuracyTests.OlderResponseCannotOverwriteSameLocation" methodname="OlderResponseCannotOverwriteSameLocation" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="872473707" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.001063" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1022" name="RejectsFutureResponse" fullname="Dhara.Tests.ApiAccuracyTests.RejectsFutureResponse" methodname="RejectsFutureResponse" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="525488637" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000279" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1040" name="RejectsInvalidAirQuality" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidAirQuality" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.001468" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1036" name="RejectsInvalidAirQuality(&quot;USAQI&quot;,&quot;EAQI&quot;)" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidAirQuality(&quot;USAQI&quot;,&quot;EAQI&quot;)" methodname="RejectsInvalidAirQuality" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="346603208" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000364" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1037" name="RejectsInvalidAirQuality(&quot;μg/m³&quot;,&quot;mg/m³&quot;)" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidAirQuality(&quot;μg/m³&quot;,&quot;mg/m³&quot;)" methodname="RejectsInvalidAirQuality" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="993538932" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000112" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1038" name="RejectsInvalidAirQuality(&quot;\&quot;us_aqi\&quot;:0&quot;,&quot;\&quot;us_aqi\&quot;:-1&quot;)" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidAirQuality(&quot;\&quot;us_aqi\&quot;:0&quot;,&quot;\&quot;us_aqi\&quot;:-1&quot;)" methodname="RejectsInvalidAirQuality" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="1016012496" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000073" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1039" name="RejectsInvalidAirQuality(&quot;\&quot;carbon_monoxide\&quot;:200&quot;,&quot;\&quot;carbon_monoxide\&quot;:true&quot;)" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidAirQuality(&quot;\&quot;carbon_monoxide\&quot;:200&quot;,&quot;\&quot;carbon_monoxide\&quot;:true&quot;)" methodname="RejectsInvalidAirQuality" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="561384686" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000072" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-suite type="ParameterizedMethod" id="1020" name="RejectsInvalidExternalData" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidExternalData" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" testcasecount="14" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.002699" total="14" passed="14" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1006" name="RejectsInvalidExternalData(&quot;19800&quot;,&quot;0&quot;)" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidExternalData(&quot;19800&quot;,&quot;0&quot;)" methodname="RejectsInvalidExternalData" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="679647122" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000267" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1007" name="RejectsInvalidExternalData(&quot;iso8601&quot;,&quot;unixtime&quot;)" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidExternalData(&quot;iso8601&quot;,&quot;unixtime&quot;)" methodname="RejectsInvalidExternalData" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="975193284" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000112" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1008" name="RejectsInvalidExternalData(&quot;seconds&quot;,&quot;hours&quot;)" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidExternalData(&quot;seconds&quot;,&quot;hours&quot;)" methodname="RejectsInvalidExternalData" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="1193951480" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000075" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1009" name="RejectsInvalidExternalData(&quot;\&quot;interval\&quot;:900&quot;,&quot;\&quot;interval\&quot;:0&quot;)" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidExternalData(&quot;\&quot;interval\&quot;:900&quot;,&quot;\&quot;interval\&quot;:0&quot;)" methodname="RejectsInvalidExternalData" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="621221520" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000075" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1010" name="RejectsInvalidExternalData(&quot;\&quot;interval\&quot;:900&quot;,&quot;\&quot;interval\&quot;:null&quot;)" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidExternalData(&quot;\&quot;interval\&quot;:900&quot;,&quot;\&quot;interval\&quot;:null&quot;)" methodname="RejectsInvalidExternalData" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="1019678347" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000095" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1011" name="RejectsInvalidExternalData(&quot;\&quot;rain\&quot;:2&quot;,&quot;\&quot;rain\&quot;:-1&quot;)" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidExternalData(&quot;\&quot;rain\&quot;:2&quot;,&quot;\&quot;rain\&quot;:-1&quot;)" methodname="RejectsInvalidExternalData" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="1588905869" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000091" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1012" name="RejectsInvalidExternalData(&quot;\&quot;rain\&quot;:2&quot;,&quot;\&quot;rain\&quot;:\&quot;2\&quot;&quot;)" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidExternalData(&quot;\&quot;rain\&quot;:2&quot;,&quot;\&quot;rain\&quot;:\&quot;2\&quot;&quot;)" methodname="RejectsInvalidExternalData" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="965226195" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000087" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1013" name="RejectsInvalidExternalData(&quot;\&quot;rain\&quot;:\&quot;mm\&quot;&quot;,&quot;\&quot;rain\&quot;:\&quot;inch\&quot;&quot;)" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidExternalData(&quot;\&quot;rain\&quot;:\&quot;mm\&quot;&quot;,&quot;\&quot;rain\&quot;:\&quot;inch\&quot;&quot;)" methodname="RejectsInvalidExternalData" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="128274075" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000080" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1014" name="RejectsInvalidExternalData(&quot;\&quot;temperature_2m\&quot;:25&quot;,&quot;\&quot;temperature_2m\&quot;:200&quot;)" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidExternalData(&quot;\&quot;temperature_2m\&quot;:25&quot;,&quot;\&quot;temperature_2m\&quot;:200&quot;)" methodname="RejectsInvalidExternalData" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="1250387676" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000077" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1015" name="RejectsInvalidExternalData(&quot;\&quot;weather_code\&quot;:61&quot;,&quot;\&quot;weather_code\&quot;:62&quot;)" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidExternalData(&quot;\&quot;weather_code\&quot;:61&quot;,&quot;\&quot;weather_code\&quot;:62&quot;)" methodname="RejectsInvalidExternalData" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="673334296" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000080" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1016" name="RejectsInvalidExternalData(&quot;\&quot;weather_code\&quot;:61&quot;,&quot;\&quot;weather_code\&quot;:61.5&quot;)" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidExternalData(&quot;\&quot;weather_code\&quot;:61&quot;,&quot;\&quot;weather_code\&quot;:61.5&quot;)" methodname="RejectsInvalidExternalData" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="1912805326" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000080" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1017" name="RejectsInvalidExternalData(&quot;[0,null]&quot;,&quot;[0]&quot;)" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidExternalData(&quot;[0,null]&quot;,&quot;[0]&quot;)" methodname="RejectsInvalidExternalData" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="647858822" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000080" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1018" name="RejectsInvalidExternalData(&quot;2026-10-16T13:00&quot;,&quot;2026-10-16T11:00&quot;)" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidExternalData(&quot;2026-10-16T13:00&quot;,&quot;2026-10-16T11:00&quot;)" methodname="RejectsInvalidExternalData" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="459397173" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000086" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1019" name="RejectsInvalidExternalData(&quot;2026-10-16T12:00&quot;,&quot;bad time&quot;)" fullname="Dhara.Tests.ApiAccuracyTests.RejectsInvalidExternalData(&quot;2026-10-16T12:00&quot;,&quot;bad time&quot;)" methodname="RejectsInvalidExternalData" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="230788178" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000129" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1021" name="RejectsOldResponseEvenWhenRetrievedNow" fullname="Dhara.Tests.ApiAccuracyTests.RejectsOldResponseEvenWhenRetrievedNow" methodname="RejectsOldResponseEvenWhenRetrievedNow" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="1745181690" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000285" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1024" name="RetainedFailurePreservesProvenance" fullname="Dhara.Tests.ApiAccuracyTests.RetainedFailurePreservesProvenance" methodname="RetainedFailurePreservesProvenance" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="1624733500" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000698" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1032" name="RetryAfterHttpDateIsRespected" fullname="Dhara.Tests.ApiAccuracyTests.RetryAfterHttpDateIsRespected" methodname="RetryAfterHttpDateIsRespected" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="953290755" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.012439" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-suite type="ParameterizedMethod" id="1031" name="RetryBackoffHonorsServerLimits" fullname="Dhara.Tests.ApiAccuracyTests.RetryBackoffHonorsServerLimits" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" testcasecount="5" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.001554" total="5" passed="5" failed="0" inconclusive="0" skipped="0" asserts="0">
+              <properties />
+              <test-case id="1026" name="RetryBackoffHonorsServerLimits(1,429,&quot;120&quot;,120)" fullname="Dhara.Tests.ApiAccuracyTests.RetryBackoffHonorsServerLimits(1,429,&quot;120&quot;,120)" methodname="RetryBackoffHonorsServerLimits" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="1080643323" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000369" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1027" name="RetryBackoffHonorsServerLimits(1,503,&quot;60&quot;,60)" fullname="Dhara.Tests.ApiAccuracyTests.RetryBackoffHonorsServerLimits(1,503,&quot;60&quot;,60)" methodname="RetryBackoffHonorsServerLimits" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="453517190" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000094" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1028" name="RetryBackoffHonorsServerLimits(1,429,&quot;bad&quot;,15)" fullname="Dhara.Tests.ApiAccuracyTests.RetryBackoffHonorsServerLimits(1,429,&quot;bad&quot;,15)" methodname="RetryBackoffHonorsServerLimits" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="1045643618" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000123" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1029" name="RetryBackoffHonorsServerLimits(8,500,null,300)" fullname="Dhara.Tests.ApiAccuracyTests.RetryBackoffHonorsServerLimits(8,500,null,300)" methodname="RetryBackoffHonorsServerLimits" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="1869066636" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000077" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+              <test-case id="1030" name="RetryBackoffHonorsServerLimits(1,429,&quot;999999&quot;,86400)" fullname="Dhara.Tests.ApiAccuracyTests.RetryBackoffHonorsServerLimits(1,429,&quot;999999&quot;,86400)" methodname="RetryBackoffHonorsServerLimits" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="1863734205" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000048" asserts="0">
+                <properties>
+                  <property name="retryIteration" value="0" />
+                  <property name="repeatIteration" value="0" />
+                </properties>
+              </test-case>
+            </test-suite>
+            <test-case id="1025" name="StaleMetadataRemainsStale" fullname="Dhara.Tests.ApiAccuracyTests.StaleMetadataRemainsStale" methodname="StaleMetadataRemainsStale" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="1523539443" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000807" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1041" name="WeatherCodeDoesNotInventUnknownConditions" fullname="Dhara.Tests.ApiAccuracyTests.WeatherCodeDoesNotInventUnknownConditions" methodname="WeatherCodeDoesNotInventUnknownConditions" classname="Dhara.Tests.ApiAccuracyTests" runstate="Runnable" seed="985129020" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000321" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1042" name="DistrictHydrologyTests" fullname="Dhara.Tests.DistrictHydrologyTests" classname="Dhara.Tests.DistrictHydrologyTests" runstate="Runnable" testcasecount="10" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.015380" total="10" passed="10" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1048" name="AllInterventionsConserveMassDuringOverflow" fullname="Dhara.Tests.DistrictHydrologyTests.AllInterventionsConserveMassDuringOverflow" methodname="AllInterventionsConserveMassDuringOverflow" classname="Dhara.Tests.DistrictHydrologyTests" runstate="Runnable" seed="2122967061" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.006063" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1044" name="ComparisonFreezesInputAndUsesIdenticalConditions" fullname="Dhara.Tests.DistrictHydrologyTests.ComparisonFreezesInputAndUsesIdenticalConditions" methodname="ComparisonFreezesInputAndUsesIdenticalConditions" classname="Dhara.Tests.DistrictHydrologyTests" runstate="Runnable" seed="703776399" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000946" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1049" name="DrainageCannotRemoveUnavailableWater" fullname="Dhara.Tests.DistrictHydrologyTests.DrainageCannotRemoveUnavailableWater" methodname="DrainageCannotRemoveUnavailableWater" classname="Dhara.Tests.DistrictHydrologyTests" runstate="Runnable" seed="492565910" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000289" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1050" name="DrainageReducesCollectionStorage" fullname="Dhara.Tests.DistrictHydrologyTests.DrainageReducesCollectionStorage" methodname="DrainageReducesCollectionStorage" classname="Dhara.Tests.DistrictHydrologyTests" runstate="Runnable" seed="714461418" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000601" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1046" name="GreenRoofRetentionHasFiniteCapacity" fullname="Dhara.Tests.DistrictHydrologyTests.GreenRoofRetentionHasFiniteCapacity" methodname="GreenRoofRetentionHasFiniteCapacity" classname="Dhara.Tests.DistrictHydrologyTests" runstate="Runnable" seed="1713471942" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000460" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1051" name="InvalidConfigurationRejectedAndInputsRemainFinite" fullname="Dhara.Tests.DistrictHydrologyTests.InvalidConfigurationRejectedAndInputsRemainFinite" methodname="InvalidConfigurationRejectedAndInputsRemainFinite" classname="Dhara.Tests.DistrictHydrologyTests" runstate="Runnable" seed="1358407998" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000363" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1052" name="ModelCopiesConfigurationAndIsReproducible" fullname="Dhara.Tests.DistrictHydrologyTests.ModelCopiesConfigurationAndIsReproducible" methodname="ModelCopiesConfigurationAndIsReproducible" classname="Dhara.Tests.DistrictHydrologyTests" runstate="Runnable" seed="717141066" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000255" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1047" name="PermeablePavingInfiltratesAtConfiguredRate" fullname="Dhara.Tests.DistrictHydrologyTests.PermeablePavingInfiltratesAtConfiguredRate" methodname="PermeablePavingInfiltratesAtConfiguredRate" classname="Dhara.Tests.DistrictHydrologyTests" runstate="Runnable" seed="1476581917" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000244" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1045" name="RainDepthUsesCorrectAreaAndMassIsConserved" fullname="Dhara.Tests.DistrictHydrologyTests.RainDepthUsesCorrectAreaAndMassIsConserved" methodname="RainDepthUsesCorrectAreaAndMassIsConserved" classname="Dhara.Tests.DistrictHydrologyTests" runstate="Runnable" seed="158408743" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000256" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1043" name="TraceReportsCalculatedResultsAndProvenance" fullname="Dhara.Tests.DistrictHydrologyTests.TraceReportsCalculatedResultsAndProvenance" methodname="TraceReportsCalculatedResultsAndProvenance" classname="Dhara.Tests.DistrictHydrologyTests" runstate="Runnable" seed="855886806" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.004098" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1053" name="DrainageExperimentTests" fullname="Dhara.Tests.DrainageExperimentTests" classname="Dhara.Tests.DrainageExperimentTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.002641" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1055" name="CapturedBaselineIsIndependentAndZeroUpgradeResetsComparison" fullname="Dhara.Tests.DrainageExperimentTests.CapturedBaselineIsIndependentAndZeroUpgradeResetsComparison" methodname="CapturedBaselineIsIndependentAndZeroUpgradeResetsComparison" classname="Dhara.Tests.DrainageExperimentTests" runstate="Runnable" seed="1407482530" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000769" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1056" name="DryConditionsCannotCreateInventedBenefitsOrNegativeWater" fullname="Dhara.Tests.DrainageExperimentTests.DryConditionsCannotCreateInventedBenefitsOrNegativeWater" methodname="DryConditionsCannotCreateInventedBenefitsOrNegativeWater" classname="Dhara.Tests.DrainageExperimentTests" runstate="Runnable" seed="1425029196" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000294" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1057" name="IncompleteInputsCannotStartAnExperiment" fullname="Dhara.Tests.DrainageExperimentTests.IncompleteInputsCannotStartAnExperiment" methodname="IncompleteInputsCannotStartAnExperiment" classname="Dhara.Tests.DrainageExperimentTests" runstate="Runnable" seed="991301343" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000315" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1054" name="OneHourComparisonMatchesProductionEquation" fullname="Dhara.Tests.DrainageExperimentTests.OneHourComparisonMatchesProductionEquation" methodname="OneHourComparisonMatchesProductionEquation" classname="Dhara.Tests.DrainageExperimentTests" runstate="Runnable" seed="1617377938" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000243" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1058" name="EnvironmentTests" fullname="Dhara.Tests.EnvironmentTests" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" testcasecount="21" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.012839" total="21" passed="21" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1063" name="CloudsReduceDaylight" fullname="Dhara.Tests.EnvironmentTests.CloudsReduceDaylight" methodname="CloudsReduceDaylight" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="733732942" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.001160" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1069" name="CurrentRainIsConvertedFromIntervalTotal" fullname="Dhara.Tests.EnvironmentTests.CurrentRainIsConvertedFromIntervalTotal" methodname="CurrentRainIsConvertedFromIntervalTotal" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="1973710442" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000257" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1067" name="DryWeatherRemovesWater" fullname="Dhara.Tests.EnvironmentTests.DryWeatherRemovesWater" methodname="DryWeatherRemovesWater" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="2037907171" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000140" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1072" name="FailedConnectionStatusIsSafe" fullname="Dhara.Tests.EnvironmentTests.FailedConnectionStatusIsSafe" methodname="FailedConnectionStatusIsSafe" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="1798826307" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000246" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1071" name="ForecastIndexPreservesTimestamp" fullname="Dhara.Tests.EnvironmentTests.ForecastIndexPreservesTimestamp" methodname="ForecastIndexPreservesTimestamp" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="1784449507" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000338" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1078" name="ForecastRefreshPreservesSelectedHourAndDetectsExpiry" fullname="Dhara.Tests.EnvironmentTests.ForecastRefreshPreservesSelectedHourAndDetectsExpiry" methodname="ForecastRefreshPreservesSelectedHourAndDetectsExpiry" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="1447810002" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.001053" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1074" name="LogIsBoundedAndDeduplicated" fullname="Dhara.Tests.EnvironmentTests.LogIsBoundedAndDeduplicated" methodname="LogIsBoundedAndDeduplicated" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="964444579" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000470" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1061" name="LowerDrainageRetainsWater" fullname="Dhara.Tests.EnvironmentTests.LowerDrainageRetainsWater" methodname="LowerDrainageRetainsWater" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="1240348475" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000201" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1065" name="MissingDataPausesSafely" fullname="Dhara.Tests.EnvironmentTests.MissingDataPausesSafely" methodname="MissingDataPausesSafely" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="885894615" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.001008" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1070" name="NullAndAbsentValuesRemainMissing" fullname="Dhara.Tests.EnvironmentTests.NullAndAbsentValuesRemainMissing" methodname="NullAndAbsentValuesRemainMissing" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="1090612171" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000234" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1076" name="OfflineScenarioIsExplicitAndUsable" fullname="Dhara.Tests.EnvironmentTests.OfflineScenarioIsExplicitAndUsable" methodname="OfflineScenarioIsExplicitAndUsable" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="1137602892" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000380" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1060" name="RainCannotReduceWater" fullname="Dhara.Tests.EnvironmentTests.RainCannotReduceWater" methodname="RainCannotReduceWater" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="1267251793" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000244" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1059" name="RainIncreasesEmission" fullname="Dhara.Tests.EnvironmentTests.RainIncreasesEmission" methodname="RainIncreasesEmission" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="796967301" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000196" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1077" name="RefreshRetainsDataButLocationChangeClearsIt" fullname="Dhara.Tests.EnvironmentTests.RefreshRetainsDataButLocationChangeClearsIt" methodname="RefreshRetainsDataButLocationChangeClearsIt" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="1829447578" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.001865" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1068" name="RepeatedInputsAreDeterministic" fullname="Dhara.Tests.EnvironmentTests.RepeatedInputsAreDeterministic" methodname="RepeatedInputsAreDeterministic" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="1209889106" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000295" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1079" name="ReturnToLiveClearsHypotheticalOverrides" fullname="Dhara.Tests.EnvironmentTests.ReturnToLiveClearsHypotheticalOverrides" methodname="ReturnToLiveClearsHypotheticalOverrides" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="1524156193" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000276" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1064" name="ScenarioResetRestoresBaseline" fullname="Dhara.Tests.EnvironmentTests.ScenarioResetRestoresBaseline" methodname="ScenarioResetRestoresBaseline" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="381247670" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000232" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1075" name="SmallSliderMovementsEventuallyLog" fullname="Dhara.Tests.EnvironmentTests.SmallSliderMovementsEventuallyLog" methodname="SmallSliderMovementsEventuallyLog" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="1711618981" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000204" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1073" name="StaleDataIsIdentified" fullname="Dhara.Tests.EnvironmentTests.StaleDataIsIdentified" methodname="StaleDataIsIdentified" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="998172483" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000169" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1066" name="WaterStaysBounded" fullname="Dhara.Tests.EnvironmentTests.WaterStaysBounded" methodname="WaterStaysBounded" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="1015192774" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000643" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1062" name="WindIncreasesSway" fullname="Dhara.Tests.EnvironmentTests.WindIncreasesSway" methodname="WindIncreasesSway" classname="Dhara.Tests.EnvironmentTests" runstate="Runnable" seed="1857813072" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000176" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1080" name="ExplorationModelTests" fullname="Dhara.Tests.ExplorationModelTests" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" testcasecount="38" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.015416" total="38" passed="38" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1081" name="A01_ZeroRainAddsNoVolume" fullname="Dhara.Tests.ExplorationModelTests.A01_ZeroRainAddsNoVolume" methodname="A01_ZeroRainAddsNoVolume" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1023929327" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000191" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1082" name="A02_PositiveRainConvertsDepthToVolume" fullname="Dhara.Tests.ExplorationModelTests.A02_PositiveRainConvertsDepthToVolume" methodname="A02_PositiveRainConvertsDepthToVolume" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1820062994" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000150" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1083" name="A03_StrongerRainIncreasesInput" fullname="Dhara.Tests.ExplorationModelTests.A03_StrongerRainIncreasesInput" methodname="A03_StrongerRainIncreasesInput" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1076290629" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000173" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1084" name="A04_LowDrainRetainsMore" fullname="Dhara.Tests.ExplorationModelTests.A04_LowDrainRetainsMore" methodname="A04_LowDrainRetainsMore" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1687785008" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000356" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1085" name="A05_HighDrainRemovesMore" fullname="Dhara.Tests.ExplorationModelTests.A05_HighDrainRemovesMore" methodname="A05_HighDrainRemovesMore" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="971697631" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000214" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1086" name="A06_ZeroDrainRemovesNothing" fullname="Dhara.Tests.ExplorationModelTests.A06_ZeroDrainRemovesNothing" methodname="A06_ZeroDrainRemovesNothing" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1664897467" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000145" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1087" name="A07_RemovalLimitedToAvailableVolume" fullname="Dhara.Tests.ExplorationModelTests.A07_RemovalLimitedToAvailableVolume" methodname="A07_RemovalLimitedToAvailableVolume" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1332683186" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000174" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1088" name="A08_EmptyStoreNeverNegative" fullname="Dhara.Tests.ExplorationModelTests.A08_EmptyStoreNeverNegative" methodname="A08_EmptyStoreNeverNegative" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1106171388" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000135" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1089" name="A09_StorageBoundReportsOverflow" fullname="Dhara.Tests.ExplorationModelTests.A09_StorageBoundReportsOverflow" methodname="A09_StorageBoundReportsOverflow" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1312127504" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000153" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1090" name="A10_NegativeRainClamped" fullname="Dhara.Tests.ExplorationModelTests.A10_NegativeRainClamped" methodname="A10_NegativeRainClamped" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1612545193" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000130" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1091" name="A11_NegativeDrainClamped" fullname="Dhara.Tests.ExplorationModelTests.A11_NegativeDrainClamped" methodname="A11_NegativeDrainClamped" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="691234245" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000130" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1092" name="A12_NanRainPauses" fullname="Dhara.Tests.ExplorationModelTests.A12_NanRainPauses" methodname="A12_NanRainPauses" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="785697891" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000125" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1093" name="A13_InfiniteRainPauses" fullname="Dhara.Tests.ExplorationModelTests.A13_InfiniteRainPauses" methodname="A13_InfiniteRainPauses" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="2030071472" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000121" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1094" name="A14_ZeroAndNegativeTimeDoNotIntegrate" fullname="Dhara.Tests.ExplorationModelTests.A14_ZeroAndNegativeTimeDoNotIntegrate" methodname="A14_ZeroAndNegativeTimeDoNotIntegrate" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="178491326" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000194" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1095" name="A15_ReplayIsDeterministic" fullname="Dhara.Tests.ExplorationModelTests.A15_ReplayIsDeterministic" methodname="A15_ReplayIsDeterministic" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1449245753" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000341" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1096" name="A16_StoppingRainPreservesUndrainedStorage" fullname="Dhara.Tests.ExplorationModelTests.A16_StoppingRainPreservesUndrainedStorage" methodname="A16_StoppingRainPreservesUndrainedStorage" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="823499766" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000147" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1097" name="A17_StoppingRainAllowsDrainage" fullname="Dhara.Tests.ExplorationModelTests.A17_StoppingRainAllowsDrainage" methodname="A17_StoppingRainAllowsDrainage" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1994622025" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000169" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1098" name="A18_DrainRemovalUsesAreaEfficiencyAndTime" fullname="Dhara.Tests.ExplorationModelTests.A18_DrainRemovalUsesAreaEfficiencyAndTime" methodname="A18_DrainRemovalUsesAreaEfficiencyAndTime" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1300753632" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000170" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1099" name="A19_WhatIfRainDoesNotAlterLive" fullname="Dhara.Tests.ExplorationModelTests.A19_WhatIfRainDoesNotAlterLive" methodname="A19_WhatIfRainDoesNotAlterLive" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1499951600" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000258" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1100" name="A20_WhatIfDrainIsSeparateFromLive" fullname="Dhara.Tests.ExplorationModelTests.A20_WhatIfDrainIsSeparateFromLive" methodname="A20_WhatIfDrainIsSeparateFromLive" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1848186886" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000163" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1101" name="A21_ResetUsesLiveBaseline" fullname="Dhara.Tests.ExplorationModelTests.A21_ResetUsesLiveBaseline" methodname="A21_ResetUsesLiveBaseline" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="2075092712" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000314" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1102" name="A22_EngineResetClearsAccumulation" fullname="Dhara.Tests.ExplorationModelTests.A22_EngineResetClearsAccumulation" methodname="A22_EngineResetClearsAccumulation" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1744472668" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000221" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1103" name="A23_LongRunConservesMass" fullname="Dhara.Tests.ExplorationModelTests.A23_LongRunConservesMass" methodname="A23_LongRunConservesMass" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="748846466" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.003111" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1104" name="A24_ExtremeFiniteInputsAreClamped" fullname="Dhara.Tests.ExplorationModelTests.A24_ExtremeFiniteInputsAreClamped" methodname="A24_ExtremeFiniteInputsAreClamped" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1079769473" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000298" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1105" name="A25_SubdivisionsPreserveUnsaturatedBalance" fullname="Dhara.Tests.ExplorationModelTests.A25_SubdivisionsPreserveUnsaturatedBalance" methodname="A25_SubdivisionsPreserveUnsaturatedBalance" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="290059089" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000209" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1106" name="B01_ParsesCurrentTimestamp" fullname="Dhara.Tests.ExplorationModelTests.B01_ParsesCurrentTimestamp" methodname="B01_ParsesCurrentTimestamp" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1894201079" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000484" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1107" name="B02_Missing_Temperature" fullname="Dhara.Tests.ExplorationModelTests.B02_Missing_Temperature" methodname="B02_Missing_Temperature" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="87684296" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000142" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1108" name="B03_Missing_PrecipitationMm" fullname="Dhara.Tests.ExplorationModelTests.B03_Missing_PrecipitationMm" methodname="B03_Missing_PrecipitationMm" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="787229682" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000130" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1109" name="B04_Missing_RainMmPerHour" fullname="Dhara.Tests.ExplorationModelTests.B04_Missing_RainMmPerHour" methodname="B04_Missing_RainMmPerHour" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1596324258" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000122" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1110" name="B05_Missing_WindKmh" fullname="Dhara.Tests.ExplorationModelTests.B05_Missing_WindKmh" methodname="B05_Missing_WindKmh" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1604278088" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000129" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1111" name="B06_Missing_WindDegrees" fullname="Dhara.Tests.ExplorationModelTests.B06_Missing_WindDegrees" methodname="B06_Missing_WindDegrees" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1657766020" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000110" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1112" name="B07_Missing_CloudPercent" fullname="Dhara.Tests.ExplorationModelTests.B07_Missing_CloudPercent" methodname="B07_Missing_CloudPercent" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="308837172" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000106" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1113" name="B08_Missing_SolarWm2" fullname="Dhara.Tests.ExplorationModelTests.B08_Missing_SolarWm2" methodname="B08_Missing_SolarWm2" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1752593796" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000119" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1114" name="B09_MalformedJsonRejected" fullname="Dhara.Tests.ExplorationModelTests.B09_MalformedJsonRejected" methodname="B09_MalformedJsonRejected" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="817385526" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000452" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1115" name="B10_EmptyBodyRejected" fullname="Dhara.Tests.ExplorationModelTests.B10_EmptyBodyRejected" methodname="B10_EmptyBodyRejected" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1262091868" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000161" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1116" name="B18_MissingIsNotZero" fullname="Dhara.Tests.ExplorationModelTests.B18_MissingIsNotZero" methodname="B18_MissingIsNotZero" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1029253865" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000153" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1117" name="B19_CurrentIntervalAndHourlyUnitsRemainDistinct" fullname="Dhara.Tests.ExplorationModelTests.B19_CurrentIntervalAndHourlyUnitsRemainDistinct" methodname="B19_CurrentIntervalAndHourlyUnitsRemainDistinct" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="148533654" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000278" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1118" name="B20_FailureDoesNotCreateFreshLive" fullname="Dhara.Tests.ExplorationModelTests.B20_FailureDoesNotCreateFreshLive" methodname="B20_FailureDoesNotCreateFreshLive" classname="Dhara.Tests.ExplorationModelTests" runstate="Runnable" seed="1718748150" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000203" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1119" name="PlannerTests" fullname="Dhara.Tests.PlannerTests" classname="Dhara.Tests.PlannerTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.009382" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1121" name="DisabledOptionsYieldOnlyBaseline" fullname="Dhara.Tests.PlannerTests.DisabledOptionsYieldOnlyBaseline" methodname="DisabledOptionsYieldOnlyBaseline" classname="Dhara.Tests.PlannerTests" runstate="Runnable" seed="289173388" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000713" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1120" name="SearchIsBoundedAndReproducibleWithinConstraints" fullname="Dhara.Tests.PlannerTests.SearchIsBoundedAndReproducibleWithinConstraints" methodname="SearchIsBoundedAndReproducibleWithinConstraints" classname="Dhara.Tests.PlannerTests" runstate="Runnable" seed="1477121122" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.007826" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1122" name="ScenarioReportTests" fullname="Dhara.Tests.ScenarioReportTests" classname="Dhara.Tests.ScenarioReportTests" runstate="Runnable" testcasecount="3" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.010854" total="3" passed="3" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1125" name="CsvContainsCalculatedMetricsAndUnavailableValues" fullname="Dhara.Tests.ScenarioReportTests.CsvContainsCalculatedMetricsAndUnavailableValues" methodname="CsvContainsCalculatedMetricsAndUnavailableValues" classname="Dhara.Tests.ScenarioReportTests" runstate="Runnable" seed="1714752072" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.001973" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1124" name="IncompatibleOrTamperedSnapshotsAreRejected" fullname="Dhara.Tests.ScenarioReportTests.IncompatibleOrTamperedSnapshotsAreRejected" methodname="IncompatibleOrTamperedSnapshotsAreRejected" classname="Dhara.Tests.ScenarioReportTests" runstate="Runnable" seed="655819981" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.006458" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1123" name="SnapshotRoundTripRecalculatesAndClassifiesAsRecorded" fullname="Dhara.Tests.ScenarioReportTests.SnapshotRoundTripRecalculatesAndClassifiesAsRecorded" methodname="SnapshotRoundTripRecalculatesAndClassifiesAsRecorded" classname="Dhara.Tests.ScenarioReportTests" runstate="Runnable" seed="357262842" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.001515" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1126" name="ScenePreparationTests" fullname="Dhara.Tests.ScenePreparationTests" classname="Dhara.Tests.ScenePreparationTests" runstate="Runnable" testcasecount="1" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.006945" total="1" passed="1" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1127" name="PreparingScenePreservesExistingObjectsAndConfiguration" fullname="Dhara.Tests.ScenePreparationTests.PreparingScenePreservesExistingObjectsAndConfiguration" methodname="PreparingScenePreservesExistingObjectsAndConfiguration" classname="Dhara.Tests.ScenePreparationTests" runstate="Runnable" seed="26813591" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.006274" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1128" name="SensitivityTests" fullname="Dhara.Tests.SensitivityTests" classname="Dhara.Tests.SensitivityTests" runstate="Runnable" testcasecount="2" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.007255" total="2" passed="2" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1130" name="ExcessiveOrInvalidSweepIsRejected" fullname="Dhara.Tests.SensitivityTests.ExcessiveOrInvalidSweepIsRejected" methodname="ExcessiveOrInvalidSweepIsRejected" classname="Dhara.Tests.SensitivityTests" runstate="Runnable" seed="1726168662" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000948" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1129" name="SweepChangesOneVariableAndMatchesIndependentCalculation" fullname="Dhara.Tests.SensitivityTests.SweepChangesOneVariableAndMatchesIndependentCalculation" methodname="SweepChangesOneVariableAndMatchesIndependentCalculation" classname="Dhara.Tests.SensitivityTests" runstate="Runnable" seed="139728536" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.001606" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+          </test-suite>
+          <test-suite type="TestFixture" id="1131" name="TemporalTests" fullname="Dhara.Tests.TemporalTests" classname="Dhara.Tests.TemporalTests" runstate="Runnable" testcasecount="4" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.002701" total="4" passed="4" failed="0" inconclusive="0" skipped="0" asserts="0">
+            <properties />
+            <test-case id="1132" name="FrozenForecastSurvivesRefreshWithoutMislabelingNewLiveData" fullname="Dhara.Tests.TemporalTests.FrozenForecastSurvivesRefreshWithoutMislabelingNewLiveData" methodname="FrozenForecastSurvivesRefreshWithoutMislabelingNewLiveData" classname="Dhara.Tests.TemporalTests" runstate="Runnable" seed="581816575" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000401" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1135" name="HistoricalDateIsValidatedBeforeRequest" fullname="Dhara.Tests.TemporalTests.HistoricalDateIsValidatedBeforeRequest" methodname="HistoricalDateIsValidatedBeforeRequest" classname="Dhara.Tests.TemporalTests" runstate="Runnable" seed="1168502798" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000687" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1133" name="HistoricalParserKeepsMissingValuesAndRejectsWrongTimeZone" fullname="Dhara.Tests.TemporalTests.HistoricalParserKeepsMissingValuesAndRejectsWrongTimeZone" methodname="HistoricalParserKeepsMissingValuesAndRejectsWrongTimeZone" classname="Dhara.Tests.TemporalTests" runstate="Runnable" seed="29411154" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000333" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+            </test-case>
+            <test-case id="1134" name="HistoricalStateCannotOverwriteLiveAndFuture" fullname="Dhara.Tests.TemporalTests.HistoricalStateCannotOverwriteLiveAndFuture" methodname="HistoricalStateCannotOverwriteLiveAndFuture" classname="Dhara.Tests.TemporalTests" runstate="Runnable" seed="1020069118" result="Passed" start-time="2026-10-15 22:26:50Z" end-time="2026-10-15 22:26:50Z" duration="0.000322" asserts="0">
+              <properties>
+                <property name="retryIteration" value="0" />
+                <property name="repeatIteration" value="0" />
+              </properties>
+              <output><![CDATA[Saving results to: C:/Users/Roshan/AppData/LocalLow/DHARA/DHARA — A LIVING CITY\TestResults.xml
+]]></output>
+            </test-case>
+          </test-suite>
+        </test-suite>
+      </test-suite>
+    </test-suite>
+  </test-suite>
+</test-run>

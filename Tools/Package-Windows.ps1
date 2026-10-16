@@ -27,7 +27,11 @@ Internet access supplies live and forecast weather from Open-Meteo.
 Select a city in the header. WHAT-IF LAB controls rainfall, wind, temperature
 and drainage. Reset scenario restores the available live baseline. Return to
 live clears hypothetical overrides. FORECAST PREVIEW selects actual returned
-hourly records. Right drag: orbit; middle drag/WASD: pan; wheel: zoom; Home: overview.
+hourly records. Click WALK to enter the city. WASD: walk; Shift: faster; right drag: look.
+After changing sliders, click the city to resume walking. 1: overview; Home: reset; Esc: release input or exit tour.
+Overview: right drag to orbit; middle drag/WASD to pan; wheel to zoom.
+Tour traverses the city; Pause, Resume, Restart, Exit and Overview controls appear while touring.
+Views: City View, Standing Water, Drainage and Surface Wetness; legends disclose model scope.
 
 Urban Intervention Lab captures the current inputs as a frozen baseline. Adjust
 extra drainage to compare one simulated hour from zero storage; reset returns
@@ -50,6 +54,19 @@ Weather source: Open-Meteo (https://open-meteo.com), CC BY 4.0.
 License: https://creativecommons.org/licenses/by/4.0/
 Uses temperature, rain, precipitation, wind, cloud, humidity and solar radiation.
 '@ | Set-Content -LiteralPath (Join-Path $stage 'RUN-DHARA.txt') -Encoding utf8
+if((Split-Path $buildRoot -Leaf) -eq 'Windows-API') {
+    @'
+
+API accuracy release:
+City tools > Air quality / advisories > Weather / air quality displays the
+validated weather fields and US/European AQI, PM2.5, PM10, NO2, ozone, SO2 and CO.
+CAMS estimates are not local sensor measurements or Indian NAQI.
+Export data CSV writes all 17 current weather/AQ fields, units, sources,
+valid/retrieval times and availability to EnvironmentalData and opens that folder.
+Missing values stay unavailable. Historical ERA5 and WMO weather codes are supported.
+Rate-limited manual retries wait for Retry-After; ordinary failures can be retried.
+'@ | Add-Content -LiteralPath (Join-Path $stage 'RUN-DHARA.txt') -Encoding utf8
+}
 $manifest=@(Get-ChildItem -LiteralPath $stage -File -Recurse | ForEach-Object {
     @{path=[IO.Path]::GetRelativePath($stage,$_.FullName);bytes=$_.Length;sha256=(Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash}
 })

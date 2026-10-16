@@ -11,6 +11,8 @@ namespace Dhara
         RectTransform objectPanel;
         RectTransform studioDetail;
         TMP_Text overlayLegend;
+        readonly System.Collections.Generic.List<UnityEngine.UI.Button> viewButtons=new System.Collections.Generic.List<UnityEngine.UI.Button>();
+        static readonly DistrictOverlay[] viewModes={DistrictOverlay.Normal,DistrictOverlay.Water,DistrictOverlay.Drainage,DistrictOverlay.Wetness};
         UnityEngine.UI.Slider roofCoverage,pavingCoverage,studioDrainage,gardenCapacity;
         readonly DistrictExperiment districtExperiment=new DistrictExperiment();
         public DistrictComparison Comparison {get;private set;}
@@ -19,9 +21,10 @@ namespace Dhara
         void CreateStudio(Transform root)
         {
             var overlays=Region("Spatial overlays",root,.21f,.765f,.53f,.05f,card,true);
-            string[] overlayNames={"Normal","Water","Runoff","Surfaces","Connections","Coverage"};
-            overlayLegend=Text(root,"Overlay legend","",11,.21f,.725f,.53f,.04f,muted);
-            for(int i=0;i<overlayNames.Length;i++){int index=i;Button(overlays,overlayNames[i],i/6f,0,1/6f,1,()=>app.Spatial.SetOverlay((DistrictOverlay)index));}
+            string[] overlayNames={"City View","Standing Water","Drainage","Surface Wetness"};
+            Region("View legend background",root,.21f,.725f,.53f,.04f,paper,true);
+            overlayLegend=Text(root,"Overlay legend","",11,.21f,.725f,.53f,.04f,ink);
+            for(int i=0;i<overlayNames.Length;i++){int index=i;viewButtons.Add(Button(overlays,overlayNames[i],i/4f,0,1/4f,1,()=>{app.Spatial.ShowComparison(null);app.Spatial.SetOverlay(viewModes[index]);}));}
             objectPanel=Region("Infrastructure explorer",root,.755f,.075f,.235f,.405f,card,true);objectPanel.GetComponent<UnityEngine.UI.Image>().raycastTarget=true;
             Text(objectPanel,"Title","INFRASTRUCTURE EXPLORER",16,.03f,.88f,.94f,.10f,ink,true);
             objectDetails=Text(objectPanel,"Actual object properties","",14,.03f,.20f,.94f,.67f,ink);

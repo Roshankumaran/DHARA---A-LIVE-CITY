@@ -13,7 +13,8 @@ namespace Dhara
     public sealed class WeatherData
     {
         public string Time;
-        public double? Temperature, RainMmPerHour, PrecipitationMm, WindKmh, WindDegrees, CloudPercent, HumidityPercent, SolarWm2;
+        public double IntervalSeconds; public bool IsForecast;
+        public double? Temperature, RainMmPerHour, PrecipitationMm, WindKmh, WindDegrees, CloudPercent, HumidityPercent, SolarWm2, WeatherCode;
         public WeatherData Copy() => (WeatherData)MemberwiseClone();
         public bool HasSimulationInputs => Numbers.IsFinite(Temperature) && Numbers.IsFinite(RainMmPerHour) && Numbers.IsFinite(WindKmh) && Numbers.IsFinite(CloudPercent);
     }

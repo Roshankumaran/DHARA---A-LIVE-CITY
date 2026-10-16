@@ -14,3 +14,14 @@ TestResults/
 *.slnx
 /1E-09
 /Assets/TestResults.meta
+
+# Browser companion build output and local deployment/auth state
+Web/dist/
+**/node_modules/
+.vercel/
+.env
+.env.*
+!.env.example
+/Hosting/
+# Generated verification logs remain local; final reports/XML are versioned.
+/Verification/*.log

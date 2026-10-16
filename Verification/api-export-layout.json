@@ -1,0 +1,34 @@
+{
+  "success": true,
+  "command": "command eval_file",
+  "data": {
+    "command": "eval_file",
+    "parameters": {
+      "file": "Tools/QA/LayoutAudit.cs"
+    },
+    "result": {
+      "output": null,
+      "diagnostics": [],
+      "success": true,
+      "result": {
+        "width": 1920,
+        "height": 1080,
+        "frame": 2375,
+        "mode": "Live",
+        "weatherValid": "2026-10-16T04:00",
+        "loading": false,
+        "error": null,
+        "viewport": "(x:393.60, y:275.40, width:1036.80, height:610.20)",
+        "overflow": [],
+        "controlsOutside": []
+      }
+    },
+    "target": {
+      "host": "127.0.0.1",
+      "port": 7800,
+      "projectPath": "C:\\Users\\Roshan\\Downloads\\DHARA_CODEX"
+    }
+  },
+  "errors": [],
+  "warnings": []
+}
