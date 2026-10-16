@@ -25,13 +25,13 @@ The build runs 27 data/CSV regression tests, then creates `dist/`. Preview serve
 
 1. Import `Roshankumaran/DHARA---A-LIVE-CITY` from GitHub into Vercel.
 2. Name the project `dhara` (or another available project name).
-3. Set **Root Directory: Web**. This is case-sensitive. Do not select the Unity repository root or `Hosting/dhara`.
-4. Choose **Framework Preset: Other**, **Node.js: 24.x**, **Install Command: npm ci --ignore-scripts**, **Build Command: npm run build**, **Output Directory: dist**. `vercel.json` already defines the build/output and response security headers.
+3. For the existing `dhara` project imported at the repository root, keep **Root Directory: .**. The root `vercel.json` installs and builds inside `Web` and publishes only `Web/dist`, preventing an empty deployment/404. Alternatively, a project rooted at **Web** uses `Web/vercel.json` directly; do not select `Hosting/dhara`.
+4. Choose **Framework Preset: Other**, **Node.js: 24.x**. Leave command/output overrides disabled so the selected root's `vercel.json` supplies them. At the repository root these are **Install Command: npm --prefix Web ci --ignore-scripts**, **Build Command: npm --prefix Web run build**, **Output Directory: Web/dist**. With Root Directory `Web`, they are `npm ci --ignore-scripts`, `npm run build`, and `dist`. Both configurations include the response security headers.
 5. No environment variables or secrets are required. Choose production branch `main`, then Deploy.
 6. Verify the supplied Vercel URL: switch cities, select a forecast hour, download a CSV, and follow the Windows release link.
 7. After the deployment is ready, add `dhara.aftanfaiz.in` in Vercel Project Settings > Domains. Copy the exact DNS record Vercel shows into Hostinger's DNS panel. Use `dhara` as the subdomain host where Hostinger requests a relative name. Resolve conflicting existing records for that same host only when intentionally switching it to the new deployment. Keep unrelated apex/domain/email records intact. Wait for Vercel to confirm DNS and HTTPS.
 
-No deployment or DNS change is claimed merely because the configuration and production build exist. This session has no connected Vercel deployment tool/account.
+GitHub pushes to the connected production branch trigger Vercel builds. Verify the deployment status and public URL after each release; a successful build alone does not confirm the served page or DNS. DNS changes require access to the domain provider.
 
 The project has one document with section anchors, so no SPA catch-all rewrite is needed. Unknown asset paths should remain 404. `vercel.json` permits only the two required API origins for fetches. The browser connects directly to public Open-Meteo endpoints; no proxy is needed for the verified workflow. Provider outages and rate limits are surfaced, not hidden behind fabricated data. Browser network access is required.
 
