@@ -1,0 +1,10 @@
+{
+  "releaseUrl": "https://github.com/Roshankumaran/DHARA---A-LIVE-CITY/releases/tag/dhara-api-20261016",
+  "assetUrl": "https://github.com/Roshankumaran/DHARA---A-LIVE-CITY/releases/download/dhara-api-20261016/DHARA-LivingCity-Windows-x64-20261016-040756.zip",
+  "tag": "dhara-api-20261016",
+  "targetCommit": "2e7f19839e937169bcf8fc6e2d07f3167e0a1fcc",
+  "bytes": 40067151,
+  "sha256": "44acd258e10503e4034408242b677d16050b8e11fd6f9de55f507c88090a0c12",
+  "githubDigest": "sha256:44acd258e10503e4034408242b677d16050b8e11fd6f9de55f507c88090a0c12",
+  "assetState": "uploaded"
+}
